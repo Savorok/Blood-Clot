@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"spr_spikes_up","path":"sprites/spr_spikes_up/spr_spikes_up.yy",},"order":3,},
     {"id":{"name":"spr_confetii_indigo","path":"sprites/spr_confetii_indigo/spr_confetii_indigo.yy",},"order":3,},
+    {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"order":0,},
     {"id":{"name":"tile_set_other","path":"sprites/tile_set_other/tile_set_other.yy",},"order":0,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"spr_spikes_left","path":"sprites/spr_spikes_left/spr_spikes_left.yy",},"order":1,},
@@ -11,6 +12,7 @@
     {"id":{"name":"spr_bar_filler","path":"sprites/spr_bar_filler/spr_bar_filler.yy",},"order":1,},
     {"id":{"name":"ts_main_white","path":"tilesets/ts_main_white/ts_main_white.yy",},"order":0,},
     {"id":{"name":"spr_confetii_red","path":"sprites/spr_confetii_red/spr_confetii_red.yy",},"order":5,},
+    {"id":{"name":"Global_Controller","path":"objects/Global_Controller/Global_Controller.yy",},"order":0,},
     {"id":{"name":"ts_other_white","path":"tilesets/ts_other_white/ts_other_white.yy",},"order":1,},
     {"id":{"name":"spr_confetii_green","path":"sprites/spr_confetii_green/spr_confetii_green.yy",},"order":2,},
     {"id":{"name":"spr_confetii_yellow","path":"sprites/spr_confetii_yellow/spr_confetii_yellow.yy",},"order":7,},
@@ -69,6 +71,9 @@
     {"folderPath":"folders/Sprites/Tile Sets.yy","order":7,"resourceVersion":"1.0","name":"Tile Sets","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Particles/Blood.yy","order":1,"resourceVersion":"1.0","name":"Blood","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Particles/Confetii.yy","order":2,"resourceVersion":"1.0","name":"Confetii","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Player.yy","order":1,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Controllers.yy","order":2,"resourceVersion":"1.0","name":"Controllers","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Solid.yy","order":3,"resourceVersion":"1.0","name":"Solid","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
