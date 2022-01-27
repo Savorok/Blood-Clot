@@ -11,4 +11,10 @@ if(!Level_Controller.paused)
 		//scale player
 		scr_player_scale();
 	}
+	else
+	{
+		//set respawn timer and destroy player
+		Level_Controller.alarm[0] = Level_Controller.respawn_time;
+		instance_destroy();	
+	}
 }
