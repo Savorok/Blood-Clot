@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_blood",
-    "path": "sprites/spr_blood/spr_blood.yy",
+    "name": "spr_paint_bomb",
+    "path": "sprites/spr_paint_bomb/spr_paint_bomb.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_blood",
-    "path": "objects/obj_blood/obj_blood.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,16 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Blood",
-    "path": "folders/Objects/Particles/Blood.yy",
+    "name": "Bonus",
+    "path": "folders/Objects/Bonus.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_light_blood",
+  "name": "obj_paint_bomb",
   "tags": [],
   "resourceType": "GMObject",
 }

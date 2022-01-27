@@ -11,9 +11,7 @@ if(instance_exists(obj_hold_bar))
 		//calculates the % out of 35 ticks
 		n1 = (obj_player.hold_time/max_length)*100;
 		//turns it into a number relative to 16
-		cur_length = .16*n1
-		
-		
+		cur_length = .16*n1	
 	}
 	else
 	{

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_blood",
-    "path": "sprites/spr_blood/spr_blood.yy",
+    "name": "spr_confetii",
+    "path": "sprites/spr_confetii/spr_confetii.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,11 +29,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Blood",
-    "path": "folders/Objects/Particles/Blood.yy",
+    "name": "Confetii",
+    "path": "folders/Objects/Particles/Confetii.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_blood",
+  "name": "obj_confetii",
   "tags": [],
   "resourceType": "GMObject",
 }

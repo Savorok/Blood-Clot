@@ -19,7 +19,6 @@ if(!Level_Controller.paused)
 				instance_create_depth(obj_player.x,obj_player.y - 18,1,obj_hold_bar)	
 			}
 		}
-		
 	}
 	else
 	{

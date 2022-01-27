@@ -35,3 +35,8 @@ global.v_jump_towards = 1.2;
 
 #endregion
 
+#region resoloution variables
+
+cur_resoloution = 0;
+
+#endregion
