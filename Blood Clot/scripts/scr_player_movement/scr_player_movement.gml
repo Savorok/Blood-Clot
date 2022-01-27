@@ -45,7 +45,7 @@ function scr_player_movement()
 			h_speed -= acc;
 			if(h_speed > minimum_velocity){ h_speed -= fric;}
 			//drop some blood
-			alarm[3] = random_range(1,4)
+			alarm[1] = random_range(1,4)
 			
 		}
 		//right
@@ -54,7 +54,7 @@ function scr_player_movement()
 			h_speed +=	acc;
 			if(h_speed < -minimum_velocity){h_speed += fric;}
 			//drop some blood
-			alarm[3] = random_range(1,4)
+			alarm[1] = random_range(1,4)
 		}
 		//cancel friction
 		if((!key_left and !key_right) or (key_left and key_right))
@@ -80,7 +80,7 @@ function scr_player_movement()
 			holding_jump_key = true;
 			
 			//drop some blood
-			alarm[3] = random_range(1,4)
+			alarm[1] = random_range(1,4)
 		}
 		if(key_jump_release){holding_jump_key = false;}
 		
@@ -94,21 +94,29 @@ function scr_player_movement()
 				{
 					h_speed = global.jump_speed*-global.h_jump_towards;
 					v_speed = global.jump_speed*global.v_jump_towards;
+					//drop some blood
+					alarm[3] = random_range(10,15);
 				}
 				else if(left_wall and !key_left)
 				{
 					h_speed = global.jump_speed*-global.h_jump_away;
 					v_speed = global.jump_speed*global.v_jump_away;
+					//drop some blood
+					alarm[3] = random_range(10,15);
 				}
 				else if(right_wall and key_right)
 				{
 					h_speed = global.jump_speed*global.h_jump_towards;
 					v_speed = global.jump_speed*global.v_jump_towards;
+					//drop some blood
+					alarm[2] = random_range(10,15);
 				}
 				else if(right_wall and !key_right)
 				{
 					h_speed = global.jump_speed*global.h_jump_away;
 					v_speed = global.jump_speed*global.v_jump_away;
+					//drop some blood
+					alarm[2] = random_range(10,15);
 				}
 				
 				//adjust scale
@@ -123,6 +131,10 @@ function scr_player_movement()
 		{
 			v_speed -= Level_Controller.room_gravity*-0.3	
 		}
+		//create blood while sliding down walls
+		if(right_wall){alarm[2]=1;}
+		if(left_wall){alarm[3]=1;}
+		
 		
 	
 		#endregion
@@ -148,7 +160,7 @@ function scr_player_movement()
 			dead = true;
 		}
 	}
-	else
+	else if(key_action_release)
 	{
 		hold_time = 0;
 	}

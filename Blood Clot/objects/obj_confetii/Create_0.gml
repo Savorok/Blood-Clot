@@ -4,7 +4,7 @@ slow_down = random_range(1.25,2.5);
 scale = random_range(0.2,0.6);
 alpha = 2;
 
-colour = irandom_range(0,7);
+colour = irandom_range(0,5);
 image_index = colour;
 
 image_xscale = scale;
