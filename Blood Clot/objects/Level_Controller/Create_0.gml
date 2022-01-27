@@ -5,8 +5,8 @@ room_gravity = 0.3;
 
 respawn_time = 20;
 can_respawn = true;
-spawn_x = 550;
-spawn_y = 420;
+spawn_x = 0;
+spawn_y = 0;
 
 debug = false;
 

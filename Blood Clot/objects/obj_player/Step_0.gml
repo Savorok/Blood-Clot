@@ -10,6 +10,16 @@ if(!Level_Controller.paused)
 	
 		//scale player
 		scr_player_scale();
+		
+		//create hold-bar if needed
+		if(hold_time >= 1)
+		{
+			if(!instance_exists(obj_hold_bar))
+			{
+				instance_create_depth(obj_player.x,obj_player.y - 18,1,obj_hold_bar)	
+			}
+		}
+		
 	}
 	else
 	{

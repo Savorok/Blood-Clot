@@ -43,14 +43,18 @@ function scr_player_movement()
 		if(key_left)
 		{
 			h_speed -= acc;
-			if(h_speed > minimum_velocity){ h_speed -= fric;}//what???
+			if(h_speed > minimum_velocity){ h_speed -= fric;}
+			//drop some blood
+			alarm[3] = random_range(1,4)
 			
 		}
 		//right
 		if(key_right)
 		{
 			h_speed +=	acc;
-			if(h_speed < -minimum_velocity){h_speed += fric;}//how???
+			if(h_speed < -minimum_velocity){h_speed += fric;}
+			//drop some blood
+			alarm[3] = random_range(1,4)
 		}
 		//cancel friction
 		if((!key_left and !key_right) or (key_left and key_right))
@@ -73,7 +77,10 @@ function scr_player_movement()
 			x_scale = 0.75;
 			y_scale = 1.25;
 			
-			holding_jump_key = true;	
+			holding_jump_key = true;
+			
+			//drop some blood
+			alarm[3] = random_range(1,4)
 		}
 		if(key_jump_release){holding_jump_key = false;}
 		
@@ -126,5 +133,26 @@ function scr_player_movement()
 	
 	#endregion
 	
+	#region kill self
+	
+	if(key_action)
+	{
+		hold_time += 1;
+		x_scale += 0.025;
+		y_scale -= 0.025;
+		
+		if(hold_time >= max_hold_time)
+		{
+			var blood_amount = irandom_range(Blood_Controller.splatter_size-10,Blood_Controller.splatter_size+10);
+			repeat(blood_amount) instance_create_depth(obj_player.x,obj_player.y,1,obj_blood);
+			dead = true;
+		}
+	}
+	else
+	{
+		hold_time = 0;
+	}
+	
+	#endregion
 	
 }

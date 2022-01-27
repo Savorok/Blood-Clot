@@ -12,3 +12,7 @@ v_speed = 0;
 dead = false;
 on_ground = false;
 holding_jump_key = false;
+
+//action hold variables
+hold_time = 0;
+max_hold_time = 35;
