@@ -152,17 +152,21 @@ function scr_player_movement()
 		hold_time += 1;
 		x_scale += 0.025;
 		y_scale -= 0.025;
+		Camera_Controller.zoom = true;
+		//Camera_Controller.shaking = true;
 		
 		if(hold_time >= max_hold_time)
 		{
 			var blood_amount = irandom_range(Blood_Controller.splatter_size-10,Blood_Controller.splatter_size+10);
 			repeat(blood_amount) instance_create_depth(obj_player.x,obj_player.y,1,obj_blood);
-			dead = true;
+			//dead = true;
 		}
 	}
 	else if(key_action_release)
 	{
 		hold_time = 0;
+		Camera_Controller.zoom = false;
+		//Camera_Controller.shaking = false;
 	}
 	
 	#endregion

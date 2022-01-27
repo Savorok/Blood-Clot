@@ -1,5 +1,7 @@
 /// @description Init variables
 
+room_speed = 10;
+
 #region movement variables
 
 master_speed = 1.1;

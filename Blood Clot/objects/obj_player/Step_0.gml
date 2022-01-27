@@ -28,6 +28,10 @@ if(!Level_Controller.paused)
 	{
 		//set respawn timer and destroy player
 		Level_Controller.alarm[0] = Level_Controller.respawn_time;
+		//stop camera shaking and zooming
+		Camera_Controller.shaking = false;
+		Camera_Controller.zoom = false;
+				
 		instance_destroy();	
 	}
 }
