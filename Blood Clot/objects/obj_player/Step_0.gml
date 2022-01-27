@@ -2,11 +2,15 @@ if(!Level_Controller.paused)
 {
 	if(!dead)
 	{
+		#region movement and collision
+		
 		//handle player movement and collision
 		scr_player_movement();
 
 		//check if player is grounded
 		on_ground = scr_player_grounded();
+		
+		#endregion
 	
 		//scale player
 		scr_player_scale();

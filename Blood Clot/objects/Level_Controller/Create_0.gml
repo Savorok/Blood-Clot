@@ -11,3 +11,4 @@ spawn_y = 0;
 debug = false;
 
 paused = false; 
+level_complete = false;

@@ -2,7 +2,7 @@
 
 #region movement variables
 
-var master_speed = 1.1;
+master_speed = 1.1;
 
 //ground
 var ground_acc = 0.2;
