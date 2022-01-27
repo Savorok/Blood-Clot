@@ -33,7 +33,5 @@ global.v_jump_away = 0.7;
 global.h_jump_towards = 0.3;
 global.v_jump_towards = 1.2;
 
-
-
 #endregion
 
