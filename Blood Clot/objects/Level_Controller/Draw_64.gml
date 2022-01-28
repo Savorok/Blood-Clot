@@ -25,6 +25,15 @@ if(debug)
 	debug_info[3][0] = "Paused:";
 	debug_info[3][1] = string(paused);
 	
+	if(instance_exists(obj_player))
+	{
+		debug_info[4][0] = "cur_blood:";
+		debug_info[4][1] = string(obj_player.cur_blood);
+	
+		debug_info[5][0] = "Player alpha:";
+		debug_info[5][1] = string(obj_player.alpha);
+	}
+	
 	#endregion
 	
 	//draw debug info
@@ -34,7 +43,7 @@ if(debug)
 	x_pos = xx+20;
 	y_pos = yy+22;		
 	
-	for(var i = 0; i < 4; i++;)
+	for(var i = 0; i < array_length(debug_info); i++;)
 	{
 		draw_text(x_pos,y_pos,debug_info[i][0] + debug_info[i][1]);
 		

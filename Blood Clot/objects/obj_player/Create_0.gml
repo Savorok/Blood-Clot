@@ -1,8 +1,9 @@
 ///initialize player variables
 
-//sprite scale
+//sprite propertys
 x_scale = 1.0; 
 y_scale = 1.0;
+alpha = 1;
 
 //movement variables 
 h_speed = 0;
@@ -15,4 +16,9 @@ holding_jump_key = false;
 
 //action hold variables
 hold_time = 0;
-max_hold_time = 35;
+max_hold_time = 50;
+
+cur_blood = 3000;
+max_blood = 3000;
+min_blood = 50;
+

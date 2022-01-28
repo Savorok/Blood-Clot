@@ -11,9 +11,15 @@ if(!Level_Controller.paused)
 		on_ground = scr_player_grounded();
 		
 		#endregion
-	
+			
+		//player action 
+		scr_player_action();
+		
 		//scale player
 		scr_player_scale();
+		
+		//manage alpha
+		scr_player_alpha();
 		
 		//create hold-bar if needed
 		if(hold_time >= 1)
@@ -23,6 +29,15 @@ if(!Level_Controller.paused)
 				instance_create_depth(obj_player.x,obj_player.y - 18,1,obj_hold_bar)	
 			}
 		}
+		
+		//check blood level
+		if(cur_blood <= min_blood)
+		{
+			var amount_of_blood = irandom_range(Blood_Controller.splatter_size/2,Blood_Controller.splatter_size)
+			repeat(amount_of_blood) instance_create_depth(obj_player.x,obj_player.y,-100,obj_fast_blood);//crete blood splatter
+			dead = true;
+		}
+		
 	}
 	else
 	{
