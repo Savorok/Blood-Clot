@@ -1,35 +1,17 @@
 function scr_player_alpha()
 {
+	var M = (max_blood-max_blood/2)/(1-0.85);
+	var C = max_blood - M
 	
-	if(cur_blood = max_blood)
-	{
-		if(alpha < 1){ alpha += 0.005; }
-	}
-	else if(cur_blood > 2500 and cur_blood < max_blood)
-	{
-		if(alpha < 0.95){ alpha += 0.005; }	
-	}
-	else if(cur_blood > 2000 and cur_blood < 2500)
-	{
-		if(alpha < 0.90){ alpha += 0.005; }
-	}
-	else if(cur_blood > 1500 and cur_blood < 2000)
-	{
-		if(alpha < 0.85){ alpha += 0.005; }
-	}
-	else if(cur_blood > 1000 and cur_blood < 1500)
-	{
-		if(alpha < 0.80){ alpha += 0.005; }
-	}
-	else if(cur_blood > 500 and cur_blood < 1000)
-	{
-		if(alpha < 0.75){ alpha += 0.005; }
-	}
-							
+	expected_alpha = (cur_blood-C)/M
+	
+	//change sprite alpha over time
+	if(alpha < expected_alpha){alpha += 0.01;}
+	if(alpha > expected_alpha){alpha -= 0.01;}
+						
 	//limit alpha
 	if(alpha < 0.7){ image_alpha = 0.7; }
 	if(alpha > 1){image_alpha = 0.7; }
-	
-	image_alpha = alpha; 
-	
+		
+	image_alpha = alpha; 	
 }

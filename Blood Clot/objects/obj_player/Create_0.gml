@@ -20,5 +20,4 @@ max_hold_time = 50;
 
 cur_blood = 3000;
 max_blood = 3000;
-min_blood = 50;
-
+min_blood = 0;
