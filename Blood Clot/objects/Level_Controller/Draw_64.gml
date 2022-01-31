@@ -1,5 +1,14 @@
 /// @description Draw Debug
 
+//draw pause
+if(paused)
+{
+	draw_set_alpha(0.5);
+	draw_set_color(c_black);
+	draw_rectangle(0,0,window_get_width(),window_get_height(),0);
+	draw_set_alpha(1);
+}
+
 if(debug)
 {
 	var xx = view_get_xport(view_camera[0]);
@@ -34,8 +43,7 @@ if(debug)
 		debug_info[5][1] = string(obj_player.alpha);
 		
 		debug_info[6][0] = "In water?:";
-		debug_info[6][1] = string(obj_player.in_water);
-		
+		debug_info[6][1] = string(obj_player.in_water);	
 	}
 	
 	#endregion

@@ -7,7 +7,7 @@
     {"id":{"name":"obj_light_blood","path":"objects/obj_light_blood/obj_light_blood.yy",},"order":1,},
     {"id":{"name":"scr_player_state","path":"scripts/scr_player_state/scr_player_state.yy",},"order":6,},
     {"id":{"name":"Camera_Controller","path":"objects/Camera_Controller/Camera_Controller.yy",},"order":3,},
-    {"id":{"name":"obj_spikes_parent","path":"objects/obj_spikes_parent/obj_spikes_parent.yy",},"order":0,},
+    {"id":{"name":"obj_spikes_parent","path":"objects/obj_spikes_parent/obj_spikes_parent.yy",},"order":4,},
     {"id":{"name":"Level_Controller","path":"objects/Level_Controller/Level_Controller.yy",},"order":1,},
     {"id":{"name":"obj_spikes_left","path":"objects/obj_spikes_left/obj_spikes_left.yy",},"order":3,},
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"order":0,},

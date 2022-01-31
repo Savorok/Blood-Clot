@@ -40,8 +40,6 @@ function scr_calculate_player_movement()
 			fric = Level_Controller.room_friction;
 		}
 		
-		show_debug_message(string(acc) + " || " + string(max_speed) + " || " + string(fric));
-		
 		#endregion
 		
 	#region calculate movement
