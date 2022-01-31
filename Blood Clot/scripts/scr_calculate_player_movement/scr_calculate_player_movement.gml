@@ -1,5 +1,7 @@
-
-function scr_player_movement()
+///@description This function handles all player movement, 
+//local refrances to movement varibales are obtained from the global controller and are set based
+//on where the player is
+function scr_calculate_player_movement()
 {
 	//init variables
 	var acc, max_speed, fric;
@@ -7,8 +9,7 @@ function scr_player_movement()
 	
 	var left_wall = place_meeting(x-1,y,obj_solid);
 	var right_wall = place_meeting(x+1,y,obj_solid);
-	
-	
+		
 	#region Get key inputs
 			
 	key_left = keyboard_check(ord("A"));
@@ -162,12 +163,6 @@ function scr_player_movement()
 		if(left_wall){alarm[3]=1;}
 		
 		#endregion
-	
-	#endregion
-		
-	#region move and check for collisions 
-		
-	scr_collision();	
 	
 	#endregion
 		

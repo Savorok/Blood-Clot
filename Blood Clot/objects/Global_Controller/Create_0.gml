@@ -24,10 +24,12 @@ global.air_max_speed = air_max_speed*master_speed;
 var water_acc = 0.05;
 var water_fric = 0.05;
 var water_max_speed = 2;
+var water_gravity = 15;
 
 global.water_acc = water_acc*master_speed;
 global.water_fric = water_fric*master_speed;
 global.water_max_speed = water_max_speed*master_speed;
+global.water_gravity = water_gravity;
 
 //jump
 var jump_speed = -3.1;

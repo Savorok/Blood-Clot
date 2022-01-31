@@ -2,21 +2,16 @@ if(!Level_Controller.paused)
 {
 	if(!dead)
 	{
-		//check if we are in the water
-		if(place_meeting(x,y,obj_water)){ in_water = true; }
-		else{ in_water = false; }
-			
-		//handle player movement and collision
-		scr_player_movement();
-		//check if player is grounded
-		on_ground = scr_player_grounded();
-								
+		//get the players state and handle gravity
+		scr_player_state();
+		//calculate player movement
+		scr_calculate_player_movement();
+		//check for collisions and move
+		scr_collision_check_and_move();							
 		//player action 
 		scr_player_action();
-		
 		//scale player
 		scr_player_scale();
-		
 		//manage alpha
 		scr_player_alpha();
 		

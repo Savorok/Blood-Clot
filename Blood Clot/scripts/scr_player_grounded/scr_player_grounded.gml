@@ -1,3 +1,6 @@
+///@description this function will check if the player is on the ground, if they are return true, if not
+//apply a gravity force to the player and return false
+
 function scr_player_grounded()
 {
 	if(place_meeting(x,y+1,obj_solid))
@@ -11,7 +14,7 @@ function scr_player_grounded()
 	}
 	else if(in_water)
 	{
-		v_speed += Level_Controller.room_gravity/15;
+		v_speed += Level_Controller.room_gravity/global.water_gravity;
 		return false;
 	}
 	else

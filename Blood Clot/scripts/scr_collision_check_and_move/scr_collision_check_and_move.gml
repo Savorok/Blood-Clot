@@ -1,7 +1,10 @@
+///@description This function will check for vertical and horizontal collisions and if none will occur
+//it will move the player
 
-function scr_collision()
+function scr_collision_check_and_move()
 {
-	///moving horizontally
+	
+	#region horizontall
 		
 	//check for collision
 	if(place_meeting(x+h_speed,y,obj_solid))
@@ -11,8 +14,10 @@ function scr_collision()
 	}
 	//apply speed
 	x += h_speed;
+	
+	#endregion
 		
-	///move vertically
+	#region vertical
 		
 	//check for collision
 	if(place_meeting(x,y+v_speed,obj_solid))
@@ -30,4 +35,6 @@ function scr_collision()
 		
 	//apply speed
 	y += v_speed;
+	
+	#endregion
 }

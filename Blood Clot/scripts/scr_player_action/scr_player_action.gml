@@ -18,10 +18,7 @@ function scr_player_action(){
 			x_scale += 0.025;
 			y_scale -= 0.025;
 		}
-			
-		
-		
-		
+				
 		//small blood
 		if(hold_time < max_hold_time)
 		{
