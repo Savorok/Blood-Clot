@@ -20,7 +20,7 @@ function scr_player_action(){
 		}
 			
 		
-		//Camera_Controller.shaking = true;
+		
 		
 		//small blood
 		if(hold_time < max_hold_time)
@@ -29,6 +29,7 @@ function scr_player_action(){
 			repeat(blood_amount) instance_create_depth(obj_player.x,obj_player.y,1,obj_light_blood);
 			cur_blood -= blood_amount;
 			alpha -= blood_amount/10000;
+			Camera_Controller.shaking = true;
 		}
 		//large blood
 		else 
@@ -48,7 +49,7 @@ function scr_player_action(){
 	{
 		hold_time = 0;
 		Camera_Controller.zoom = false;
-		//Camera_Controller.shaking = false;
+		Camera_Controller.shaking = false;
 	}
 	else
 	{
