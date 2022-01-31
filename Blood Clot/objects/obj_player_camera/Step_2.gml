@@ -60,7 +60,7 @@ if(follow != noone)
 		}
 
 		if(Camera_Controller.shaking)
-		{
+		{			
 			x = camera_x - random_range(-shake_amount,shake_amount);
 			y = camera_y + random_range(-shake_amount,shake_amount);
 		}

@@ -34,3 +34,11 @@ alarm[0] = 1;
 //resize surface
 surface_resize(application_surface,window_width,window_height)
 
+//if player exists and no camera make one
+if(instance_exists(obj_player))
+{
+	if(!instance_exists(obj_player_camera))
+	{
+		instance_create_depth(obj_player.x,obj_player.y,1,obj_player_camera);
+	}
+}
