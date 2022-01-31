@@ -10,8 +10,8 @@ k = 0.035;
 d = 0.025;
 spread = 0.25;
 
-global.u_pixelH_Wave = shader_get_uniform(shader_wave,"pixelH");
-global.u_pixelW_Wave = shader_get_uniform(shader_wave,"pixelW");
-global.u_springCount = shader_get_uniform(shader_wave,"springCount");
-global.u_springs = shader_get_uniform(shader_wave,"springs");
-global.u_time = shader_get_uniform(shader_wave,"time");
+shader_value_pixelH = shader_get_uniform(shader_wave,"pixelH");
+shader_value_pixelW = shader_get_uniform(shader_wave,"pixelW");
+shader_value_springCount = shader_get_uniform(shader_wave,"springCount");
+shader_value_springs = shader_get_uniform(shader_wave,"springs");
+shader_value_time = shader_get_uniform(shader_wave,"time");

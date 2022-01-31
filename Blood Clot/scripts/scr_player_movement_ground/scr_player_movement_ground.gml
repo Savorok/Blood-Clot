@@ -1,5 +1,5 @@
 
-function scr_player_movement()
+function scr_player_movement_ground()
 {
 	//init variables
 	var acc, max_speed, fric;

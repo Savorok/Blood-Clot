@@ -30,11 +30,11 @@ resizeSurface = surface_create(sprite_width,sprite_height+transparencyBufferHeig
 surface_set_target(resizeSurface);
 	draw_clear_alpha(c_white,0);
 	shader_set(shader_wave);
-	shader_set_uniform_f(global.u_pixelH_Wave,ph);
-	shader_set_uniform_f(global.u_pixelW_Wave,pw);
-	shader_set_uniform_f(global.u_springCount,springCount);
-	shader_set_uniform_f_array(global.u_springs,springs);
-	shader_set_uniform_f(global.u_time,get_timer()*0.0000025);
+	shader_set_uniform_f(shader_value_pixelH,ph);
+	shader_set_uniform_f(shader_value_pixelW,pw);
+	shader_set_uniform_f(shader_value_springCount,springCount);
+	shader_set_uniform_f_array(shader_value_springs,springs);
+	shader_set_uniform_f(shader_value_time ,get_timer()*0.0000025);
 	draw_surface(waterSurface,0,0);
 	shader_reset();
 	surface_reset_target();

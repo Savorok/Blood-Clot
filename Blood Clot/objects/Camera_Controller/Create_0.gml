@@ -6,12 +6,6 @@ view_height = 360;
 window_width = 1920;
 window_height = 1080;
 
-h_view_speed = 15; 
-v_view_speed = 15;
-h_camera_border = 240;
-v_camera_border = 120;
-
-
 //shaking
 shake_amount = 10;
 shaking = false;
