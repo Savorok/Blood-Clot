@@ -32,6 +32,10 @@ if(debug)
 	
 		debug_info[5][0] = "Player alpha:";
 		debug_info[5][1] = string(obj_player.alpha);
+		
+		debug_info[6][0] = "In water?:";
+		debug_info[6][1] = string(obj_player.in_water);
+		
 	}
 	
 	#endregion

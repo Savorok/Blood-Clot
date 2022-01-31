@@ -9,9 +9,14 @@ function scr_player_grounded()
 		v_speed += Level_Controller.room_gravity*0.5;	
 		return false;
 	}
+	else if(in_water)
+	{
+		v_speed += Level_Controller.room_gravity/15;
+		return false;
+	}
 	else
 	{
 		v_speed += Level_Controller.room_gravity;
 		return false;
-	}
+	}	
 }

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Player.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_player_movement_water",
+  "name": "scr_player_movement",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -3,25 +3,14 @@ if(!Level_Controller.paused)
 	if(!dead)
 	{
 		//check if we are in the water
-		if(place_meeting(x,y,obj_water)){ cur_state = "in water"; }
-		else{ cur_state = "on ground"; }
-		
-		switch(cur_state)
-		{
-			case "on ground":
-				//handle player movement and collision
-				scr_player_movement_ground();
-				//check if player is grounded
-				on_ground = scr_player_grounded();
-				break;
+		if(place_meeting(x,y,obj_water)){ in_water = true; }
+		else{ in_water = false; }
 			
-			case "in water":
-				show_debug_message("In water");
-				scr_player_movement_water();
-				scr_player_water_gravity();
-				break;
-		}
-					
+		//handle player movement and collision
+		scr_player_movement();
+		//check if player is grounded
+		on_ground = scr_player_grounded();
+								
 		//player action 
 		scr_player_action();
 		

@@ -43,9 +43,8 @@
     {"id":{"name":"obj_paint_bomb","path":"objects/obj_paint_bomb/obj_paint_bomb.yy",},"order":0,},
     {"id":{"name":"spr_blood_bag","path":"sprites/spr_blood_bag/spr_blood_bag.yy",},"order":1,},
     {"id":{"name":"spr_filler_mask","path":"sprites/spr_filler_mask/spr_filler_mask.yy",},"order":2,},
-    {"id":{"name":"scr_player_movement_water","path":"scripts/scr_player_movement_water/scr_player_movement_water.yy",},"order":6,},
     {"id":{"name":"scr_resoloution","path":"scripts/scr_resoloution/scr_resoloution.yy",},"order":3,},
-    {"id":{"name":"scr_player_movement_ground","path":"scripts/scr_player_movement_ground/scr_player_movement_ground.yy",},"order":1,},
+    {"id":{"name":"scr_player_movement","path":"scripts/scr_player_movement/scr_player_movement.yy",},"order":1,},
     {"id":{"name":"obj_blood_bag","path":"objects/obj_blood_bag/obj_blood_bag.yy",},"order":2,},
     {"id":{"name":"spr_spikes_right","path":"sprites/spr_spikes_right/spr_spikes_right.yy",},"order":2,},
     {"id":{"name":"spr_paint_bomb","path":"sprites/spr_paint_bomb/spr_paint_bomb.yy",},"order":0,},
@@ -54,7 +53,6 @@
     {"id":{"name":"obj_hold_bar","path":"objects/obj_hold_bar/obj_hold_bar.yy",},"order":1,},
     {"id":{"name":"spr_water_mask","path":"sprites/spr_water_mask/spr_water_mask.yy",},"order":3,},
     {"id":{"name":"obj_blood","path":"objects/obj_blood/obj_blood.yy",},"order":0,},
-    {"id":{"name":"scr_player_water_gravity","path":"scripts/scr_player_water_gravity/scr_player_water_gravity.yy",},"order":7,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

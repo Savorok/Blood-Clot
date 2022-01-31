@@ -1,5 +1,5 @@
 
-function scr_player_movement_ground()
+function scr_player_movement()
 {
 	//init variables
 	var acc, max_speed, fric;
@@ -20,11 +20,17 @@ function scr_player_movement_ground()
 		
 	#region set acc, max speed and friction 
 		
-		if(!on_ground)
+		if(!on_ground and !in_water)
 		{
 			acc = global.air_acc;
 			max_speed = global.air_max_speed;
 			fric = global.air_fric;
+		}
+		else if(in_water)
+		{
+			acc = global.water_acc;
+			max_speed = global.water_max_speed;
+			fric = global.water_fric
 		}
 		else
 		{
@@ -33,9 +39,13 @@ function scr_player_movement_ground()
 			fric = Level_Controller.room_friction;
 		}
 		
+		show_debug_message(string(acc) + " || " + string(max_speed) + " || " + string(fric));
+		
 		#endregion
 		
 	#region calculate movement
+		
+		#region left and right
 		
 		//left
 		if(key_left)
@@ -66,24 +76,39 @@ function scr_player_movement_ground()
 		if(h_speed > max_speed){h_speed = max_speed;}
 		if(h_speed < -max_speed){h_speed = -max_speed;}
 		
-		//jumping
-		if(key_jump and on_ground)
+		#endregion
+		
+		#region jumping
+		
+		if(key_jump and on_ground and !in_water)
 		{
-			v_speed = global.jump_speed;
-			
+			v_speed = global.jump_speed;		
 			//scale player
 			x_scale = 0.75;
 			y_scale = 1.25;
-			
-			holding_jump_key = true;
-			
 			//drop some blood
 			alarm[1] = random_range(1,4)
+			holding_jump_key = true;
+		}	
+		if(key_jump and in_water)
+		{
+			v_speed = global.water_jump_speed;	
+			//scale player
+			x_scale = 0.75;
+			y_scale = 1.25;
+			//drop some blood
+			alarm[1] = random_range(1,4)
+			holding_jump_key = true;
 		}
+		
+		
+		
 		if(key_jump_release){holding_jump_key = false;}
 		
+		#endregion
 		
-		//wall jumping
+		#region wall jumping
+		
 		if(!on_ground and (left_wall or right_wall))
 		{
 			if(key_jump)
@@ -124,7 +149,10 @@ function scr_player_movement_ground()
 			holding_jump_key = true;
 		}
 		
-		//wall sliding
+		#endregion
+		
+		#region wall sliding
+		
 		if((left_wall or right_wall) and !on_ground and v_speed >= 0.5)
 		{
 			v_speed -= Level_Controller.room_gravity*-0.3	
@@ -133,9 +161,9 @@ function scr_player_movement_ground()
 		if(right_wall){alarm[2]=1;}
 		if(left_wall){alarm[3]=1;}
 		
-		
-	
 		#endregion
+	
+	#endregion
 		
 	#region move and check for collisions 
 		

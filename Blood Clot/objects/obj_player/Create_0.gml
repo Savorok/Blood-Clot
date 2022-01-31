@@ -12,6 +12,7 @@ v_speed = 0;
 //player properties
 dead = false;
 on_ground = false;
+in_water = false;
 holding_jump_key = false;
 cur_state = "on ground";
 
