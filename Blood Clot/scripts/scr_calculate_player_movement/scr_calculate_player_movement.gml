@@ -12,16 +12,16 @@ function scr_calculate_player_movement()
 		
 	#region Get key inputs
 			
-	key_left = keyboard_check(ord("A"));
-	key_right = keyboard_check(ord("D"));
-	key_jump = keyboard_check_pressed(vk_space);
-	key_jump_release = keyboard_check_released(vk_space);
+	key_left = keyboard_check(ord("A")) or (gamepad_button_check(0,gp_padl)) or (gamepad_axis_value(0,gp_axislh)  < 0);
+	key_right = keyboard_check(ord("D")) or (gamepad_button_check(0,gp_padr)) or (gamepad_axis_value(0,gp_axislh) > 0);
+	key_jump = keyboard_check_pressed(vk_space) or (gamepad_button_check_pressed(0,gp_face1));
+	key_jump_release = keyboard_check_released(vk_space) or (gamepad_button_check_released(0,gp_face1));
 				
 	#endregion
 		
 	#region set acc, max speed and friction 
 		
-		if(!on_ground and !in_water)
+		if(!on_ground and !in_water and !in_blood)
 		{
 			acc = global.air_acc;
 			max_speed = global.air_max_speed;
@@ -32,6 +32,12 @@ function scr_calculate_player_movement()
 			acc = global.water_acc;
 			max_speed = global.water_max_speed;
 			fric = global.water_fric
+		}
+		else if(in_blood)
+		{
+			acc = global.blood_acc;
+			max_speed = global.blood_max_speed;
+			fric = global.blood_fric
 		}
 		else
 		{
@@ -79,7 +85,7 @@ function scr_calculate_player_movement()
 		
 		#region jumping
 		
-		if(key_jump and on_ground and !in_water)
+		if(key_jump and on_ground and !in_water and !in_blood)
 		{
 			v_speed = global.jump_speed;		
 			//scale player
@@ -99,9 +105,16 @@ function scr_calculate_player_movement()
 			alarm[1] = random_range(1,4)
 			holding_jump_key = true;
 		}
-		
-		
-		
+		if(key_jump and in_blood)
+		{
+			v_speed = global.blood_jump_speed;	
+			//scale player
+			x_scale = 0.75;
+			y_scale = 1.25;
+			//drop some blood
+			alarm[1] = random_range(1,4)
+			holding_jump_key = true;
+		}		
 		if(key_jump_release){holding_jump_key = false;}
 		
 		#endregion
@@ -152,13 +165,13 @@ function scr_calculate_player_movement()
 		
 		#region wall sliding
 		
-		if((left_wall or right_wall) and !on_ground and v_speed >= 0.5)
+		if((left_wall or right_wall) and !on_ground and v_speed >= 0.5 and !in_water and !in_blood)
 		{
 			v_speed -= Level_Controller.room_gravity*-0.3	
 		}
 		//create blood while sliding down walls
-		if(right_wall){alarm[2]=1;}
-		if(left_wall){alarm[3]=1;}
+		if(right_wall and v_speed > 0){alarm[2]=1;}
+		if(left_wall and v_speed > 0){alarm[3]=1;}
 		
 		#endregion
 	

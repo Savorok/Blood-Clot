@@ -1,7 +1,7 @@
 function scr_player_action(){
 
-	key_action = keyboard_check(ord("E"));
-	key_action_release = keyboard_check_released(ord("E"));
+	key_action = keyboard_check(ord("E")) or (gamepad_button_check(0,gp_face3));
+	key_action_release = keyboard_check_released(ord("E")) or (gamepad_button_check_released(0,gp_face3));
 	
 	if(key_action and cur_blood > min_blood )
 	{

@@ -13,6 +13,7 @@ v_speed = 0;
 dead = false;
 on_ground = false;
 in_water = false;
+in_blood = false;
 holding_jump_key = false;
 
 //action hold variables

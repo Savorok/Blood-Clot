@@ -17,6 +17,11 @@ function scr_player_grounded()
 		v_speed += Level_Controller.room_gravity/global.water_gravity;
 		return false;
 	}
+	else if(in_blood)
+	{
+		v_speed += Level_Controller.room_gravity/global.blood_gravity;
+		return false;
+	}
 	else
 	{
 		v_speed += Level_Controller.room_gravity;

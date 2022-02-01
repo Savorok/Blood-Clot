@@ -44,6 +44,9 @@ if(debug)
 		
 		debug_info[6][0] = "In water?:";
 		debug_info[6][1] = string(obj_player.in_water);	
+		
+		debug_info[7][0] = "In blood?:";
+		debug_info[7][1] = string(obj_player.in_blood);	
 	}
 	
 	#endregion

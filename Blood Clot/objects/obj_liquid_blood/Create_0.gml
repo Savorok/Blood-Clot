@@ -1,6 +1,7 @@
 /// @description init variables
 
-#region blood variables
+
+#region water variables
 
 image_alpha = 0.5;
 transparencyBufferHeight = 32;
@@ -26,6 +27,10 @@ shader_value_time = shader_get_uniform(shader_wave,"time");
 #endregion
 
 #region water colours
+
+col_primary_blue = make_color_rgb(41,187,244);
+col_sec_blue = make_color_rgb(42,235,244);
+col_white_border = make_color_rgb(255,255,255);
 
 col_primary_red = make_color_rgb(215,6,6);
 col_sec_red = make_color_rgb(210,6,6);

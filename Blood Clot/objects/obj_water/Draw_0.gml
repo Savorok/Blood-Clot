@@ -1,6 +1,3 @@
-scr_calculate_water_colour();
-
-
 var _left = bbox_left;
 var _top = bbox_top;
 var _appScale = surface_get_height(application_surface)/360;
