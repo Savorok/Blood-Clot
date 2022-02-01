@@ -1,0 +1,46 @@
+/// @description init variables
+
+#region blood variables
+
+image_alpha = 0.5;
+transparencyBufferHeight = 32;
+springCount = ceil(sprite_width);
+springs[springCount] = 0;
+springsVelocity[springCount] = 0;
+springDeltaL[springCount] = 0;
+springDeltaR[springCount] = 0;
+k = 0.035;
+d = 0.025;
+spread = 0.25;
+
+#endregion
+
+#region shader input values
+
+shader_value_pixelH = shader_get_uniform(shader_wave,"pixelH");
+shader_value_pixelW = shader_get_uniform(shader_wave,"pixelW");
+shader_value_springCount = shader_get_uniform(shader_wave,"springCount");
+shader_value_springs = shader_get_uniform(shader_wave,"springs");
+shader_value_time = shader_get_uniform(shader_wave,"time");
+
+#endregion
+
+#region water colours
+
+col_primary_red = make_color_rgb(215,6,6);
+col_sec_red = make_color_rgb(210,6,6);
+col_red_border = make_color_rgb(220,6,6);
+
+col_primary = col_primary_red;
+col_secondary = col_sec_red;
+col_border = col_red_border;
+cur_alpha = 0.9;
+
+#endregion
+
+#region water properties
+
+max_blood_ammount = sprite_width * sprite_height * 8;
+cur_blood_ammount = max_blood_ammount;
+
+#endregion

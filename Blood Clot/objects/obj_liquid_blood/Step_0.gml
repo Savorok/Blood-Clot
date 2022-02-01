@@ -29,15 +29,3 @@ for (var i = 0; i <= springCount; i++)
 }
 
 #endregion
-
-if(cur_water <= 0)
-{
-	var new_obj = obj_liquid_blood
-	instance_create_depth(x,y,1,new_obj);	
-	
-		new_obj.image_xscale = image_xscale;
-		new_obj.image_yscale = image_yscale;
-	
-	instance_destroy();
-}
-

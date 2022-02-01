@@ -39,14 +39,14 @@ function scr_calculate_water_colour()
 	new_pB = linearEquation(pB1,pB2,max_water,cur_water);
 	
 	//secondary colour
-	new_sR = linearEquation(pR1,pR2,max_water,cur_water);
-	new_sG = linearEquation(pG1,pG2,max_water,cur_water);
-	new_sB = linearEquation(pB1,pB2,max_water,cur_water);
+	new_sR = linearEquation(sR1,sR2,max_water,cur_water);
+	new_sG = linearEquation(sG1,sG2,max_water,cur_water);
+	new_sB = linearEquation(sB1,sB2,max_water,cur_water);
 	
 	//border colour
-	new_bR = linearEquation(pR1,pR2,max_water,cur_water);
-	new_bG = linearEquation(pG1,pG2,max_water,cur_water);
-	new_bB = linearEquation(pB1,pB2,max_water,cur_water);
+	new_bR = linearEquation(bR1,bR2,max_water,cur_water);
+	new_bG = linearEquation(bG1,bG2,max_water,cur_water);
+	new_bB = linearEquation(bB1,bB2,max_water,cur_water);
 	
 	//alpha
 	new_alpha = linearEquation(0.5,0.9,max_water,cur_water);
@@ -59,10 +59,7 @@ function scr_calculate_water_colour()
 	col_secondary = make_color_rgb(new_sR,new_sG,new_sB);
 	col_border = make_color_rgb(new_bR,new_bG,new_bB);
 	cur_alpha = new_alpha
-	
-	show_debug_message("Primary:" + "(" + string(new_pR) + "," + string(new_pG) + "," + string(new_pB) + ")")
-	
-	
+
 	#endregion
 }
 
