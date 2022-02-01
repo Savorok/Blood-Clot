@@ -39,7 +39,7 @@
     {"id":{"name":"spr_checkpoint_mask","path":"sprites/spr_checkpoint_mask/spr_checkpoint_mask.yy",},"order":0,},
     {"id":{"name":"obj_finish","path":"objects/obj_finish/obj_finish.yy",},"order":0,},
     {"id":{"name":"spr_spikes_down","path":"sprites/spr_spikes_down/spr_spikes_down.yy",},"order":0,},
-    {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},"order":2,},
+    {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},"order":0,},
     {"id":{"name":"scr_player_grounded","path":"scripts/scr_player_grounded/scr_player_grounded.yy",},"order":0,},
     {"id":{"name":"obj_paint_bomb","path":"objects/obj_paint_bomb/obj_paint_bomb.yy",},"order":0,},
     {"id":{"name":"spr_blood_bag","path":"sprites/spr_blood_bag/spr_blood_bag.yy",},"order":1,},
@@ -54,6 +54,7 @@
     {"id":{"name":"obj_hold_bar","path":"objects/obj_hold_bar/obj_hold_bar.yy",},"order":1,},
     {"id":{"name":"spr_water_mask","path":"sprites/spr_water_mask/spr_water_mask.yy",},"order":3,},
     {"id":{"name":"obj_blood","path":"objects/obj_blood/obj_blood.yy",},"order":0,},
+    {"id":{"name":"scr_calculate_water_colour","path":"scripts/scr_calculate_water_colour/scr_calculate_water_colour.yy",},"order":4,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -109,6 +110,7 @@
     {"folderPath":"folders/Objects/Finish.yy","order":7,"resourceVersion":"1.0","name":"Finish","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Debug.yy","order":8,"resourceVersion":"1.0","name":"Debug","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Cameras.yy","order":10,"resourceVersion":"1.0","name":"Cameras","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Obstacles/Liquid.yy","order":3,"resourceVersion":"1.0","name":"Liquid","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

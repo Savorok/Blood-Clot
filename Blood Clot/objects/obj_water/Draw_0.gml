@@ -1,3 +1,5 @@
+scr_calculate_water_colour();
+
 
 var _left = bbox_left;
 var _top = bbox_top;
@@ -11,13 +13,13 @@ surface_set_target(waterSurface);
 	draw_clear_alpha(c_blue,0);
 	draw_surface_part_ext(application_surface, (_left - _camX) * _appScale, (_top - _camY) * _appScale, sprite_width * _appScale, sprite_height * _appScale, 0, transparencyBufferHeight, 1 / _appScale, 1 / _appScale, c_white, 1);
 	gpu_set_colorwriteenable(true,true,true,false);
-	draw_set_alpha(0.5);
-	draw_set_color($f4bb41);
+	draw_set_alpha(cur_alpha);
+	draw_set_color(col_primary);
 	draw_rectangle(0,transparencyBufferHeight,sprite_width,sprite_height+transparencyBufferHeight,false);
-	draw_set_color($f4eb42);
+	draw_set_color(col_secondary);
 	draw_line(0,transparencyBufferHeight+1,sprite_width,transparencyBufferHeight+1);
 
-	draw_set_color(c_white);
+	draw_set_color(col_border);
 	draw_line(0,transparencyBufferHeight,sprite_width,transparencyBufferHeight);
 	draw_set_alpha(1);
 	gpu_set_colorwriteenable(true,true,true,true);
@@ -29,7 +31,7 @@ ph = texture_get_texel_height(surface_get_texture(waterSurface));
 
 resizeSurface = surface_create(sprite_width,sprite_height+transparencyBufferHeight);
 surface_set_target(resizeSurface);
-	draw_clear_alpha(c_white,0);
+	draw_clear_alpha(col_border,0);
 	shader_set(shader_wave);
 	shader_set_uniform_f(shader_value_pixelH,ph);
 	shader_set_uniform_f(shader_value_pixelW,pw);
