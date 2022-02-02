@@ -8,7 +8,5 @@ can_respawn = true;
 spawn_x = 0;
 spawn_y = 0;
 
-debug = false;
-
 paused = false; 
 level_complete = false;

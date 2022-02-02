@@ -9,7 +9,7 @@ if(paused)
 	draw_set_alpha(1);
 }
 
-if(debug)
+if(Imgui_Controller.debug)
 {
 	var xx = view_get_xport(view_camera[0]);
 	var yy = view_get_yport(view_camera[0]);

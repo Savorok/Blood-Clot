@@ -1,9 +1,14 @@
+
+#region camera variables 
+
 var cur_camera_width = camera_get_view_width(view_camera[0]);
 var cur_camera_height = camera_get_view_height(view_camera[0]);
 var new_camera_width = cur_camera_width;
 var new_camera_height = cur_camera_height;
 var camera_x = camera_get_view_x(view_camera[0]);
 var camera_y = camera_get_view_y(view_camera[0]);
+
+#endregion
 
 if(follow != noone)
 {
@@ -38,6 +43,8 @@ if(follow != noone)
 				new_camera_height = cur_camera_height + zoom_h;
 			}	
 		}
+		
+		#region zoom
 
 		if(Camera_Controller.zoom)
 		{
@@ -58,12 +65,18 @@ if(follow != noone)
 				new_camera_height = cur_camera_height- zoom_h
 			}
 		}
-
+	
+		#endregion
+		
+		#region shaking		
+		
 		if(Camera_Controller.shaking)
 		{			
 			x = camera_x - random_range(-shake_amount,shake_amount);
 			y = camera_y + random_range(-shake_amount,shake_amount);
 		}
+		
+		#endregion
 
 		//set camera position and size
 		camera_set_view_pos(view_camera[0],x,y);

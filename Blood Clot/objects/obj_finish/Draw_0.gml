@@ -1,5 +1,5 @@
 /// @description Draw if in debug
-if(Level_Controller.debug)
+if(Imgui_Controller.debug)
 {
 	draw_self();	
 }
