@@ -79,7 +79,14 @@ global.v_jump_towards = 1.2;
 
 #region resoloution variables
 
-cur_resoloution = 1;
+cur_resoloution = 0;
 
 #endregion
 
+dev_mode = true;
+
+if(dev_mode and !instance_exists(Imgui_Controller))
+{
+	instance_create_depth(x,y,depth,imgui);
+	instance_create_depth(x,y,depth,Imgui_Controller);
+}

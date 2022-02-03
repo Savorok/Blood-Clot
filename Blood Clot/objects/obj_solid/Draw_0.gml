@@ -1,5 +1,8 @@
 /// @description Only draw when in debug mode
-if(Imgui_Controller.show_debug_masks)
+if(Global_Controller.dev_mode)
 {
-	draw_self();
+	if(Imgui_Controller.show_debug_masks)
+	{
+		draw_self();
+	}
 }

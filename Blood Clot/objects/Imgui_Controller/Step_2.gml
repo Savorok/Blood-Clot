@@ -15,14 +15,14 @@ if(imguigml_ready())
 	if(debug)
 	{
 		//activate the initial window 
-		imguigml_set_next_window_size(640, 480, EImGui_Cond.Once);
+		imguigml_set_next_window_size(menu_width, menu_height, EImGui_Cond.Once);
 		var dev_window = imguigml_begin("Dev Window",debug);
 		//set debug to the boolean value of open on the window
 		debug = dev_window[1];
 		
 		//set window scale and display mode
 		imguigml_set_display_mode(EImGui_DisplayMode.GUIAspect)
-		imguigml_set_display_scale(2,2);
+		imguigml_set_display_scale(scale,scale);
 		
 		//while the window is uncollapsed and open
 		if(dev_window[0] and dev_window[1])
@@ -59,6 +59,8 @@ if(imguigml_ready())
 			#endregion
 		
 			imguigml_separator();
+			
+			
 			
 			//player button
 			if(imguigml_button("Player") and !instance_exists(imgui_player))
