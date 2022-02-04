@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Bonus",
-    "path": "folders/Objects/Bonus.yy",
+    "name": "Finish and Checkpoint",
+    "path": "folders/Objects/Finish and Checkpoint.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_checkpoint",

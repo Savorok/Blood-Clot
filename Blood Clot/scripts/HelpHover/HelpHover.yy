@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "scripts",
-    "path": "folders/Objects/Controllers/imgui/scripts.yy",
+    "path": "folders/Objects/Debug/scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "HelpHover",
