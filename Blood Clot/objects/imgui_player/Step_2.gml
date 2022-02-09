@@ -9,7 +9,7 @@ if(!imguigml_ready()){exit;}
 
 #region get player variables
 
-var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0];
+var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false];
 if(instance_exists(obj_player))
 {
 	player_properties[0] = obj_player.dead; 
@@ -33,6 +33,8 @@ if(instance_exists(obj_player))
 	player_properties[18] = round(obj_player.y);
 	player_properties[19] =	Level_Controller.spawn_x;
 	player_properties[20] = Level_Controller.spawn_y;
+	player_properties[21] = obj_player.dead;
+	player_properties[22] = obj_player.on_ground;
 }
 
 #endregion
@@ -48,12 +50,46 @@ imguigml_set_display_scale(scale,scale);
 if(player_window[0] )
 {
 	
-	imguigml_columns(2);
+	imguigml_columns(3);
 	{
 		#region sprite and position properties
 					
 		//draw current sprite
+		imguigml_set_column_width(0, 80);
 		imguigml_sprite(player_properties[11],0,64,64);
+		imguigml_text(player_properties[12]);
+		
+		imguigml_next_column();
+		
+		//is dead?
+		imguigml_text("Dead:")
+		imguigml_same_line();
+		var chk_dead = imguigml_checkbox("", imguigml_mem("dead",player_properties[21]))
+		if(chk_dead[0])
+		{
+			if(chk_dead[1]){ obj_player.dead = true; }		
+		}
+		
+		imguigml_text("");
+		imguigml_text("on_ground")
+		imguigml_same_line();
+		var chk_on_ground = imguigml_checkbox("", imguigml_mem("on_ground",player_properties[22]))
+		if(chk_on_ground[0])
+		{
+			if(chk_on_ground[1]){ obj_player.on_ground = true; }		
+			//if(!chk_on_ground[1]){ obj_player.on_ground = false; }	
+		}
+		
+		
+		//var chk_on_ground = imguigml_checkbox("on_ground:")		
+		//var chk_in_water = imguigml_checkbox("in_water:")
+		//var chk_in_blood = imguigml_checkbox("in_blood:")
+		imguigml_text("");
+		//var chk_holding_jump_key = imguigml_checkbox("holding_jump_jey:")
+		
+		
+		
+		
 		
 		imguigml_next_column();
 		
@@ -93,13 +129,20 @@ if(player_window[0] )
 			Level_Controller.spawn_x = _xy_spawn[1];
 			Level_Controller.spawn_y = _xy_spawn[2];
 		}
-		imguigml_same_line();
 		
 		//to spawn button
+		imguigml_same_line();
 		if(imguigml_button("To Spawn") and instance_exists(obj_player))
 		{
 			obj_player.x = Level_Controller.spawn_x;
 			obj_player.y = Level_Controller.spawn_y;
+		}
+		//reset spawn
+		imguigml_same_line();
+		if(imguigml_button("Reset") and instance_exists(obj_player))
+		{
+			Level_Controller.spawn_x = default_spawn_x;
+			Level_Controller.spawn_y = default_spawn_y;
 		}
 		
 		//to finish button
@@ -109,19 +152,13 @@ if(player_window[0] )
 			obj_player.y = finish_y;
 		}
 		imguigml_same_line();
-		if(imguigml_button("Next Level"))
-		{
-			room_goto_next();
-		}
+		if(imguigml_button("Next Level")){ room_goto_next(); }
 		imguigml_same_line();
-		if(imguigml_button("Previous Level"))
-		{
-			room_goto_previous();
-		}
+		if(imguigml_button("Previous Level")){ room_goto_previous(); }
 			
 		imguigml_next_column();
 		
-		imguigml_text(player_properties[12]);
+		
 		
 		imguigml_separator();
 		
@@ -221,6 +258,10 @@ if(player_window[0] )
 			imguigml_separator();
 			
 		#endregion	
+		
+		#region acc
+		
+		#endregion
 	}
 	
 	
