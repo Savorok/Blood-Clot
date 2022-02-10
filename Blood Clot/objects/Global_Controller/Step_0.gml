@@ -11,7 +11,7 @@ if(keyboard_check(ord("F")))
 
 if(keyboard_check_pressed(vk_up))
 {
-	if(cur_ratio == 1){cur_ratio = 0;}
+	if(cur_ratio == 2){cur_ratio = 0;}
 	else{cur_ratio++;}
 	show_debug_message("Ratio:" + string(cur_ratio));
 }

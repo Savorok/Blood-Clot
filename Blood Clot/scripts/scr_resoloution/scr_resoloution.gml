@@ -63,9 +63,35 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 					h_res = 2160;
 					break;
 			}
-			break;
-			
+			break;			
 		#endregion
+		
+		#region //43:18
+		case 2:
+			w_view = 860;
+			h_view = 360;
+			switch(resoloution)
+			{
+				//860*360
+				case 0:
+					w_res = 860;
+					h_res = 360;
+					break;
+				//1720*720
+				case 1:
+					w_res = 1720;
+					h_res = 720;
+					break;		
+				//3440*1440
+				case 2:
+					w_res = 3440;
+					h_res = 1440;
+					break;
+			}
+			break;
+		
+		#endregion
+		
 		
 		default:
 		show_debug_message("Invalid Aspect Ratio");
@@ -86,10 +112,8 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	window_set_size(w_res,h_res);
 	surface_resize(application_surface,w_res,h_res);
 	//if blood surface is there resize
-	if(surface_exists(Blood_Controller.surface_blood))
-	{
-		surface_resize(Blood_Controller.surface_blood,w_res,h_res);
-	}
+	if(surface_exists(Blood_Controller.surface_blood)){surface_resize(Blood_Controller.surface_blood,w_res,h_res);}
+	if(surface_exists(obj_water.waterSurface)){surface_resize(obj_water.waterSurface,w_res,h_res);}
 	
 	//fullscreen
 	if(fullscreen){ window_set_fullscreen(true); }

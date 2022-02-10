@@ -28,12 +28,14 @@ imguigml_set_display_scale(scale,scale);
 if(camera_window[0])
 {
 	//aspect ratio
-	var comb = imguigml_combo("Aspect Ratio:",item,items);
+	imguigml_text("Aspect Ratio:");
+	imguigml_same_line();
+	var comb = imguigml_combo("",cur_aspect_ratio,aspect_ratios);
 	if(comb[0])
 	{
-		show_debug_message(comb[1])
-		item = items[comb[1]]
+		cur_aspect_ratio = comb[1];
 	}
+
 	
 	
 	
