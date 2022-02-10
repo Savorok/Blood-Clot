@@ -80,6 +80,8 @@ global.v_jump_towards = 1.2;
 #region resoloution variables
 
 cur_resoloution = 0;
+cur_ratio = 0;
+fullscreen = false;
 
 #endregion
 

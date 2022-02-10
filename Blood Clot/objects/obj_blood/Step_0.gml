@@ -20,9 +20,20 @@ if(!Level_Controller.paused)
 		}
 	
 		//draw to surface
-		surface_set_target(Blood_Controller.surface_blood);
-		draw_sprite_ext(spr_blood,0,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
-		surface_reset_target();
+		if(surface_exists(Blood_Controller.surface_blood))
+		{
+			surface_set_target(Blood_Controller.surface_blood);
+			draw_sprite_ext(spr_blood,0,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
+			surface_reset_target();
+		}
+	}
+	else if(place_meeting(x,y,obj_water) or place_meeting(x,y,obj_blood))
+	{
+		if(speed > 0)
+		{
+			speed -= slow_down;
+			alpha -= 0.01;
+		}
 	}
 	else
 	{

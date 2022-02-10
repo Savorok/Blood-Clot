@@ -44,7 +44,7 @@ cur_alpha = 0.5;
 
 #region water properties
 
-max_water = 4000;//sprite_width * sprite_height * 8;
+max_water = sprite_width * sprite_height * 8;
 cur_water = max_water;
 
 #endregion

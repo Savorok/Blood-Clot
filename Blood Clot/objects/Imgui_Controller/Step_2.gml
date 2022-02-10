@@ -59,13 +59,17 @@ if(imguigml_ready())
 			#endregion
 		
 			imguigml_separator();
-			
-			
-			
+					
 			//player button
 			if(imguigml_button("Player") and !instance_exists(imgui_player))
 			{
 				instance_create_depth(0,0,depth,imgui_player);
+			}
+			imguigml_same_line();
+			//cameras button
+			if(imguigml_button("Camera") and !instance_exists(imgui_cameras))
+			{
+				instance_create_depth(0,0,depth,imgui_cameras);
 			}
 		}		
 		//end the panel input
