@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_confetii",
-    "path": "sprites/spr_confetii/spr_confetii.yy",
+    "name": "spr_confetti",
+    "path": "sprites/spr_confetti/spr_confetti.yy",
   },
   "solid": false,
   "visible": true,

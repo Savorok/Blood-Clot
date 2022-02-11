@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_confetii",
-    "path": "sprites/spr_confetii/spr_confetii.yy",
+    "name": "spr_confetti",
+    "path": "sprites/spr_confetti/spr_confetti.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,11 +29,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Confetii",
-    "path": "folders/Objects/Particles/Confetii.yy",
+    "name": "Confetti",
+    "path": "folders/Objects/Particles/Confetti.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_confetii",
+  "name": "obj_confetti",
   "tags": [],
   "resourceType": "GMObject",
 }

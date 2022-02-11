@@ -21,7 +21,7 @@ if(!Level_Controller.paused)
 	
 		//draw to surface
 		surface_set_target(Blood_Controller.surface_blood);
-		draw_sprite_ext(spr_confetii,colour,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
+		draw_sprite_ext(spr_confetti,colour,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
 		surface_reset_target();
 	}
 	else

@@ -30,18 +30,23 @@ if(camera_window[0])
 	//aspect ratio
 	imguigml_text("Aspect Ratio:");
 	imguigml_same_line();
-	var comb = imguigml_combo("",cur_aspect_ratio,aspect_ratios);
-	if(comb[0])
+	var comb_aspect_ratio = imguigml_combo("",cur_aspect_ratio,aspect_ratios);
+	if(comb_aspect_ratio[0])
 	{
-		cur_aspect_ratio = comb[1];
+		cur_aspect_ratio = comb_aspect_ratio[1];
 	}
-
+	
+	//aspect ratio
+	imguigml_text("Window Size:");
+	imguigml_same_line();
+	var comb_window_size = imguigml_combo("",cur_resoloution,resoloutions);
+	if(comb_window_size[0])
+	{
+		cur_resoloution = comb_window_size[1];
+	}
 	
 	
 	
-	//resoloution
-	var resoloution = ["1920*1080","3840*2160"];
-	imguigml_combo("Screen Resoloution:",0,resoloution);
 	
 	//view size
 	imguigml_text("View Size");

@@ -1,6 +1,6 @@
 
 //pause functionality
-key_pause = keyboard_check_pressed(vk_escape);
+key_pause = keyboard_check_pressed(vk_escape) or gamepad_button_check_pressed(0,gp_start);
 
 if(key_pause and !paused)
 { 
