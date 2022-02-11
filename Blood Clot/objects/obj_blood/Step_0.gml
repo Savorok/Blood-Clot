@@ -27,12 +27,13 @@ if(!Level_Controller.paused)
 			surface_reset_target();
 		}
 	}
-	else if(place_meeting(x,y,obj_water) or place_meeting(x,y,obj_blood))
+	else if(place_meeting(x,y,obj_water) or place_meeting(x,y,obj_liquid_blood))
 	{
 		if(speed > 0)
 		{
 			speed -= slow_down;
 			alpha -= 0.01;
+			show_debug_message("Here")
 		}
 	}
 	else
