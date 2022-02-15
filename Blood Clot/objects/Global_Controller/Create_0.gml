@@ -79,9 +79,9 @@ global.v_jump_towards = 1.2;
 
 #region resoloution variables
 
-cur_resoloution = 0;
-cur_ratio = 0;
-fullscreen = false;
+cur_resoloution = 2;
+cur_ratio = 1;
+fullscreen = true;
 
 #endregion
 
@@ -91,4 +91,4 @@ if(dev_mode and !instance_exists(Imgui_Controller))
 {
 	instance_create_depth(x,y,depth,imgui);
 	instance_create_depth(x,y,depth,Imgui_Controller);
-}
+} 

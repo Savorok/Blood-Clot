@@ -33,7 +33,6 @@ if(!Level_Controller.paused)
 		{
 			speed -= slow_down;
 			alpha -= 0.01;
-			show_debug_message("Here")
 		}
 	}
 	else

@@ -9,7 +9,7 @@ if(!imguigml_ready()){exit;}
 
 #region get player variables
 
-var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false];
+var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false,false,false];
 if(instance_exists(obj_player))
 {
 	player_properties[0] = obj_player.dead; 
@@ -35,6 +35,8 @@ if(instance_exists(obj_player))
 	player_properties[20] = Level_Controller.spawn_y;
 	player_properties[21] = obj_player.dead;
 	player_properties[22] = obj_player.on_ground;
+	player_properties[23] = obj_player.in_water;
+	player_properties[24] = obj_player.in_blood;
 }
 
 #endregion
@@ -64,20 +66,39 @@ if(player_window[0] )
 		//is dead?
 		imguigml_text("Dead:")
 		imguigml_same_line();
-		var chk_dead = imguigml_checkbox("", imguigml_mem("dead",player_properties[21]))
+		var chk_dead = imguigml_checkbox("", player_properties[21])
 		if(chk_dead[0])
 		{
 			if(chk_dead[1]){ obj_player.dead = true; }		
 		}
 		
+		
+		//on ground
 		imguigml_text("");
 		imguigml_text("on_ground")
 		imguigml_same_line();
-		var chk_on_ground = imguigml_checkbox("", imguigml_mem("on_ground",player_properties[22]))
+		var chk_on_ground = imguigml_checkbox("",player_properties[22])
 		if(chk_on_ground[0])
 		{
-			if(chk_on_ground[1]){ obj_player.on_ground = true; }		
-			//if(!chk_on_ground[1]){ obj_player.on_ground = false; }	
+			if(chk_on_ground[1]){ obj_player.on_ground = true; }			
+		}
+		
+		//in water
+		imguigml_text("in_water")
+		imguigml_same_line();
+		var chk_in_water = imguigml_checkbox("",player_properties[23])
+		if(chk_in_water[0])
+		{
+			if(chk_in_water[1]){ obj_player.in_water = true; }			
+		}
+		
+		//in blood
+		imguigml_text("in_blood")
+		imguigml_same_line();
+		var chk_in_blood = imguigml_checkbox("",player_properties[24])
+		if(chk_in_blood[0])
+		{
+			if(chk_in_blood[1]){ obj_player.in_blood = true; }			
 		}
 		
 		
