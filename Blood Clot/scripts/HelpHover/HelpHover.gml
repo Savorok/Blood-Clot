@@ -1,6 +1,6 @@
-function HelpHover(hover_text = "Default text")
+function HelpHover(hover_text = "Default text", hover_icon = "?")
 {
-	imguigml_text_disabled("(?)")
+	imguigml_text_disabled("(" + hover_icon + ")")
 	if(imguigml_is_item_hovered())
 	{
 		imguigml_begin_tooltip();

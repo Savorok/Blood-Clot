@@ -7,17 +7,10 @@ window_width = 1920;
 window_height = 1080;
 
 //shaking
-shake_amount = 10;
 shaking = false;
 
 //zooming
 zoom = false;
-
-zoom_w = 25.6;
-zoom_h = 14.4;
-max_zoom_width = 128;
-max_zoom_height = 72;
-return_time = 2;
 
 //set window size
 window_set_size(window_width,window_height);

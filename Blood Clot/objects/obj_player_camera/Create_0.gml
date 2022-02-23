@@ -12,13 +12,13 @@ pan_speed = 15;
 follow = obj_player;
 
 //shaking
-shake_amount = Camera_Controller.shake_amount;
+shake_amount = 10;
 
 //zooming
-zoom_w = Camera_Controller.zoom_w;
-zoom_h = Camera_Controller.zoom_h;
-max_zoom_width = Camera_Controller.max_zoom_width;
-max_zoom_height = Camera_Controller.max_zoom_height;
-return_time = Camera_Controller.return_time;
+zoom_w = 25.6;
+zoom_h = 14.4;
+max_zoom_width = 128;
+max_zoom_height = 72;
+return_time = 2;
 
 camera_set_view_size(view_camera[0],Camera_Controller.view_width,Camera_Controller.view_height);

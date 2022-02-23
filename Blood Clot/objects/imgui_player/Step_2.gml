@@ -309,95 +309,61 @@ if(player_window[0] )
 	var cur_movement_tab = imguigml_collapsing_header("Current Movement Variabes")
 	if(cur_movement_tab[0])
 	{
-		imguigml_columns(4);
-		{
-			#region column headers
-	
-				imguigml_text("Var"); 
-				imguigml_push_item_width(32);
-				imguigml_pop_item_width();  
+		imguigml_text("h_speed:");
+		imguigml_same_line();
+		imguigml_slider_float("##h_speed_slider",movement_properties[0],-5,5);
+		imguigml_same_line();
+		imguigml_text("v_speed:");
+		imguigml_same_line();
+		imguigml_slider_float("##v_speed_slider",movement_properties[1],-5,5);
 		
-				imguigml_next_column();
+		imguigml_text("Acc_amount:");
+		imguigml_same_line();
+		imguigml_input_float("##acc_amount",1.0,1.0,1.0);
 		
-				imguigml_text("Min"); 
-				imguigml_push_item_width(32);
-				imguigml_pop_item_width();  
+		imguigml_text("Max_speed:");
+		imguigml_same_line();
+		imguigml_input_float("##Max_speed",1.0,1.0,1.0);
 		
-				imguigml_next_column();
-	
-				imguigml_text("Max"); 
-				imguigml_push_item_width(32);
-				imguigml_pop_item_width(); 
-		
-				imguigml_next_column();
-		
-				imguigml_text("Value"); 
-				imguigml_push_item_width(32);
-				imguigml_pop_item_width(); 
-		
-				imguigml_separator();
-				imguigml_next_column();
-		
-				#endregion
-		
-			#region h_speed
-		
-					#region var
-		
-					imguigml_text("h_speed"); 
-					imguigml_pop_item_width();  
-					imguigml_same_line();
-					
-					#endregion
-		
-					#region min
-		
-					imguigml_next_column();
-					imguigml_text("0"); 
-					imguigml_pop_item_width();  
-					imguigml_same_line();
-		
-					#endregion
-			
-					#region max
-		
-					imguigml_next_column();
-					imguigml_text(movement_properties[2]); 
-					imguigml_pop_item_width();  
-					imguigml_same_line();
-		
-					#endregion
-			
-					#region value
-				
-					imguigml_next_column();
-					_cur_h_speed = imguigml_slider_float("##value",movement_properties[0],0,movement_properties[2]);
-
-					
-					#endregion		
-			
-					imguigml_separator();
-			
-				#endregion		
-		}
 	}
 	
 	imguigml_columns(1);
 	var movement_tab = imguigml_collapsing_header("Movement Variabes")
 	if(movement_tab[0])
 	{
+		//master speed
+		imguigml_text("Master Speed:");
+		imguigml_same_line();
+		imguigml_input_float("##master_speed",1,1,1);
+		
+		
 		imguigml_begin_tab_bar("Movement Variables")
 		{
-			if(imguigml_begin_tab_item("Ground"))
+			var ground_tab = imguigml_begin_tab_item("Ground")
+			if(ground_tab[0])
 			{
-				imguigml_text("Here");
+				imguigml_text("Ground");
 				imguigml_end_tab_item();
 			}
-			if(imguigml_begin_tab_item("Air"))
+			var air_tab = imguigml_begin_tab_item("Air")
+			if(air_tab[0])
 			{
-				imguigml_text("Here 2");
+				imguigml_text("Air");
 				imguigml_end_tab_item();
 			}
+			var water_tab = imguigml_begin_tab_item("Water")
+			if(water_tab[0])
+			{
+				imguigml_text("Water");
+				imguigml_end_tab_item();
+			}
+			var blood_tab = imguigml_begin_tab_item("Blood")
+			if(blood_tab[0])
+			{
+				imguigml_text("Blood");
+				imguigml_end_tab_item();
+			}
+			
 			imguigml_end_tab_bar();
 		}
 	}

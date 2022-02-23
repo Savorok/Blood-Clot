@@ -22,8 +22,8 @@ if(follow != noone)
 
 			if(follow != noone)
 			{
-				x_to = follow.x-Camera_Controller.view_width/2;
-				y_to = follow.y-Camera_Controller.view_height/2;
+				x_to = follow.x-view_width/2;
+				y_to = follow.y-view_height/2;
 			}
 	
 			//stop when zoomed out
