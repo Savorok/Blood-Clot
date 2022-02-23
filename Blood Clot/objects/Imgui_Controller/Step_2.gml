@@ -63,14 +63,27 @@ if(imguigml_ready())
 			//player button
 			if(imguigml_button("Player") and !instance_exists(imgui_player))
 			{
-				instance_create_depth(0,0,depth,imgui_player);
+				instance_create_depth(0,0,depth,imgui_player);		
+				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();
 			//cameras button
 			if(imguigml_button("Camera") and !instance_exists(imgui_cameras))
 			{
 				instance_create_depth(0,0,depth,imgui_cameras);
+				if(close_on_open){debug = 0;}
 			}
+			imguigml_same_line();
+			//close on open check
+			imguigml_text("Close on open:");
+			imguigml_same_line();
+			var chk_close_on_open = imguigml_checkbox("##close_on_open", close_on_open)
+			if(chk_close_on_open[0])
+			{
+				close_on_open = chk_close_on_open[1];
+			}
+			
+			
 		}		
 		//end the panel input
 		imguigml_end();

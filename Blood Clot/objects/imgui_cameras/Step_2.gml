@@ -28,6 +28,8 @@ imguigml_set_display_scale(scale,scale);
 if(camera_window[0])
 {
 	
+	#region resoloution
+	
 	//resoloution colapser 
 	var resoloution_tab = imguigml_collapsing_header("Resoloution")
 	if(resoloution_tab[0])
@@ -59,7 +61,6 @@ if(camera_window[0])
 		if(chk_fullscreen[0])
 		{
 			fullscreen = chk_fullscreen[1];
-			
 		}
 		
 		imguigml_same_line();
@@ -74,6 +75,7 @@ if(camera_window[0])
 		}
 	}
 	
+	//custom resolouiton 
 	var custom_resoloution_tab = imguigml_collapsing_header("Custom Resoloution")
 	if(custom_resoloution_tab[0])
 	{	
@@ -136,12 +138,7 @@ if(camera_window[0])
 		
 	}
 	
-	
-	
-	
-	
-	
-	
+	#endregion
 	
 	//draw currently following	
 	imguigml_text("Following:");
