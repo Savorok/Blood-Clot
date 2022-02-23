@@ -68,8 +68,8 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 		
 		#region 43:18
 		case 2:
-			w_view = 860;
-			h_view = 360;
+			w_view = 1075;
+			h_view = 450;
 			switch(resoloution)
 			{
 				//860*360
