@@ -1,4 +1,4 @@
-/// @description 
+/// @description draw camera dev menu
 
 #region close if needed
 
@@ -96,24 +96,6 @@ if(camera_window[0])
 		}
 		
 		imguigml_separator();
-		
-		//view size
-		imguigml_text("View Width:");
-		imguigml_same_line();
-		var input_view_w = imguigml_input_int("##view_w",view_w);
-		if(input_view_w[0])
-		{
-			view_w = input_view_w[1];
-		}
-		imguigml_text("View Height:");
-		imguigml_same_line();
-		var input_view_h = imguigml_input_int("##view_h",view_h);
-		if(input_view_h[0])
-		{
-			view_h = input_view_h[1];
-		}
-		
-		imguigml_separator();
 		 
 		//fullscreen
 		imguigml_text("Fullscreen:");
@@ -129,21 +111,70 @@ if(camera_window[0])
 		var apply_2 = imguigml_button("apply");
 		if(apply_2)
 		{	
-			scr_resoloution_custom(obj_player_camera,win_w,win_h,view_w,view_h,fullscreen);
+			scr_resoloution_custom(obj_player_camera,win_w,win_h,fullscreen);
 			win_w = Camera_Controller.window_width;
 			win_h = Camera_Controller.window_height;
-			view_w = Camera_Controller.view_width;
-			view_h = Camera_Controller.view_height;
 		}
 		
 	}
 	
 	#endregion
 	
-	//draw currently following	
-	imguigml_text("Following:");
-	imguigml_sprite(camera_properties[0],0,64,64);
+	#region cameras
 	
+	imguigml_begin_tab_bar("Cameras")
+	{
+		var player_camera_tab = imguigml_begin_tab_item("obj_player_camera")
+		if(player_camera_tab[0])
+		{
+			imguigml_columns(2);
+	
+			//draw currently following	
+			imguigml_set_column_width(0, 80);
+			imguigml_text("Following:");
+			imguigml_sprite(camera_properties[0],0,64,64);
+			imguigml_next_column()
+			
+			#region view size
+
+			imguigml_text("View Width:");
+			imguigml_same_line();
+			var input_view_w = imguigml_input_int("##view_w",view_w);
+			if(input_view_w[0])
+			{
+				view_w = input_view_w[1];
+			}
+			imguigml_text("View Height:");
+			imguigml_same_line();
+			var input_view_h = imguigml_input_int("##view_h",view_h);
+			if(input_view_h[0])
+			{
+				view_h = input_view_h[1];
+			}
+			var apply_3 = imguigml_button("apply");
+			if(apply_3)
+			{	
+				scr_view_custom(obj_player_camera,view_w,view_h);
+			}
+				
+			#endregion
+				
+			imguigml_next_column();
+			imguigml_separator();
+			
+			imguigml_end_tab_item();
+		}
+		var other_camera_tab = imguigml_begin_tab_item("Another Camera")
+		if(other_camera_tab[0])
+		{
+			imguigml_text("Other Camera Stuff");
+			imguigml_end_tab_item();
+		}		
+		imguigml_end_tab_bar();
+	}
+	
+	#endregion
+		
 	//close window if needed
 	if(!camera_window[1])
 	{
