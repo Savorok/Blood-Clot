@@ -10,7 +10,7 @@ if(!imguigml_ready()){exit;}
 #region get player variables
 
 var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false,false,false];
-var movement_properties = [0,0,0];
+var movement_properties = [0,0,0,0];
 if(instance_exists(obj_player))
 {
 	player_properties[0] = obj_player.dead; 
@@ -43,25 +43,25 @@ if(instance_exists(obj_player))
 	movement_properties[1] = obj_player.v_speed;
 	
 	
-	if(obj_player.on_ground)
+	if(obj_player.on_ground and !obj_player.in_water and !obj_player.in_blood)
 	{
-		//movement_properties[2] = global.ground_acc;
-		movement_properties[2] = global.ground_max_speed;
-	}
-	else if(!obj_player.on_ground)
-	{
-		//movement_properties[2] = global.air_acc;
-		movement_properties[2] = global.air_max_speed;
+		movement_properties[2] = global.ground_acc;
+		movement_properties[3] = global.ground_max_speed;
 	}
 	else if(obj_player.in_water)
 	{
-		//movement_properties[2] = global.water_acc;
-		movement_properties[2] = global.water_max_speed;
+		movement_properties[2] = global.water_acc;
+		movement_properties[3] = global.water_max_speed;
 	}
 	else if(obj_player.in_blood)
 	{
-		//movement_properties[2] = global.blood_acc;
-		movement_properties[2] = global.blood_max_speed;
+		movement_properties[2] = global.blood_acc;
+		movement_properties[3] = global.blood_max_speed;
+	}
+	else if(!obj_player.on_ground)
+	{
+		movement_properties[2] = global.air_acc;
+		movement_properties[3] = global.air_max_speed;
 	}
 	
 }
@@ -311,7 +311,7 @@ if(player_window[0] )
 	{
 		imguigml_text("h_speed:");
 		imguigml_same_line();
-		imguigml_slider_float("##h_speed_slider",movement_properties[0],-5,5);
+		imguigml_slider_float("##h_speed_slider",movement_properties[0],-(movement_properties[3]),movement_properties[3]);
 		imguigml_same_line();
 		imguigml_text("v_speed:");
 		imguigml_same_line();
@@ -319,11 +319,11 @@ if(player_window[0] )
 		
 		imguigml_text("Acc_amount:");
 		imguigml_same_line();
-		imguigml_input_float("##acc_amount",1.0,1.0,1.0);
+		imguigml_input_float("##acc_amount",movement_properties[2],0.1,1.0,2);
 		
 		imguigml_text("Max_speed:");
 		imguigml_same_line();
-		imguigml_input_float("##Max_speed",1.0,1.0,1.0);
+		imguigml_input_float("##Max_speed",movement_properties[3],0.1,1.0,2);
 		
 	}
 	
@@ -334,33 +334,257 @@ if(player_window[0] )
 		//master speed
 		imguigml_text("Master Speed:");
 		imguigml_same_line();
-		imguigml_input_float("##master_speed",1,1,1);
+		var input_master_speed = imguigml_input_float("##master_speed",master_speed,0.1,1.0,2);
+		if(input_master_speed[0])
+		{
+			Global_Controller.master_speed = input_master_speed[1];
+			master_speed = input_master_speed[1];
+		}
 		
 		
 		imguigml_begin_tab_bar("Movement Variables")
 		{
+			//ground
 			var ground_tab = imguigml_begin_tab_item("Ground")
 			if(ground_tab[0])
 			{
-				imguigml_text("Ground");
+				imguigml_text("Acc:");
+				imguigml_same_line();
+				var input_ground_acc = imguigml_input_float("##input_ground_acc",ground_acc,0.1,1.0,1)
+				if(input_ground_acc[0])
+				{
+					Global_Controller.ground_acc = input_ground_acc[1];
+					ground_acc = input_ground_acc[1];
+				}
+				
+				imguigml_text("Max speed:");
+				imguigml_same_line();
+				var input_max_speed = imguigml_input_float("##input_max_speed",ground_max_speed,0.1,1.0,1)
+				if(input_max_speed[0])
+				{
+					Global_Controller.ground_max_speed = input_max_speed[1];
+					ground_max_speed = input_max_speed[1];
+				}
+				
+				imguigml_text("Jump Speed:");
+				imguigml_same_line();
+				var input_jump_speed = imguigml_input_float("##input_jump_speed",-ground_jump,0.1,1.0,1)
+				if(input_jump_speed[0])
+				{
+					Global_Controller.jump_speed = -input_jump_speed[1];
+					ground_jump = -input_jump_speed[1];
+				}
+				
 				imguigml_end_tab_item();
 			}
+			
+			//air
 			var air_tab = imguigml_begin_tab_item("Air")
 			if(air_tab[0])
 			{
-				imguigml_text("Air");
+				imguigml_text("Acc:");
+				imguigml_same_line();
+				var input_air_acc = imguigml_input_float("##input_air_acc",air_acc,0.1,1.0,2)
+				if(input_air_acc[0])
+				{
+					Global_Controller.air_acc = input_air_acc[1];
+					air_acc = input_air_acc[1];
+				}
+				
+				imguigml_text("Max speed:");
+				imguigml_same_line();
+				var input_air_max_speed = imguigml_input_float("##input_air_max_speed",air_max_speed,0.1,1.0,2)
+				if(input_air_max_speed[0])
+				{
+					Global_Controller.air_max_speed = input_air_max_speed[1];
+					air_max_speed = input_air_max_speed[1];
+				}
+				
+				imguigml_text("Fric:");
+				imguigml_same_line();
+				var input_air_fric = imguigml_input_float("##input_air_fric",air_fric,0.1,1.0,3)
+				if(input_air_fric[0])
+				{
+					Global_Controller.air_fric = input_air_fric[1];
+					air_fric = input_air_fric[1];
+				}
+				
+				
+				
 				imguigml_end_tab_item();
 			}
+			
+			//water
 			var water_tab = imguigml_begin_tab_item("Water")
 			if(water_tab[0])
 			{
-				imguigml_text("Water");
+				imguigml_text("Acc:");
+				imguigml_same_line();
+				var input_water_acc = imguigml_input_float("##input_water_acc",water_acc,0.1,1.0,2)
+				if(input_water_acc[0])
+				{
+					Global_Controller.water_acc = input_water_acc[1];
+					water_acc = input_water_acc[1];
+				}
+				
+				imguigml_text("Max speed:");
+				imguigml_same_line();
+				var input_water_max_speed = imguigml_input_float("##input_water_max_speed",water_max_speed,0.1,1.0,2)
+				if(input_water_max_speed[0])
+				{
+					Global_Controller.water_max_speed = input_water_max_speed[1];
+					water_max_speed = input_water_max_speed[1];
+				}
+				
+				imguigml_text("Fric:");
+				imguigml_same_line();
+				var input_water_fric = imguigml_input_float("##input_water_fric",water_fric,0.1,1.0,2)
+				if(input_water_fric[0])
+				{
+					Global_Controller.water_fric = input_water_fric[1];
+					water_fric = input_water_fric[1];
+				}
+				
+				imguigml_text("Grav:");
+				imguigml_same_line();
+				var input_water_grav = imguigml_input_float("##input_water_grav",water_gravity,0.1,1.0,2)
+				if(input_water_grav[0])
+				{
+					Global_Controller.water_gravity = input_water_grav[1];
+					water_gravity = input_water_grav[1];
+				}
+				
+				imguigml_text("Jump:");
+				imguigml_same_line();
+				var input_water_jump = imguigml_input_float("##input_water_jump",-water_jump_speed,0.1,1.0,2)
+				if(input_water_jump[0])
+				{
+					Global_Controller.water_jump_speed = -input_water_jump[1];
+					water_jump_speed = -input_water_jump[1];
+				}
+								
 				imguigml_end_tab_item();
 			}
+			
+			//blood
 			var blood_tab = imguigml_begin_tab_item("Blood")
 			if(blood_tab[0])
 			{
-				imguigml_text("Blood");
+				imguigml_text("Acc:");
+				imguigml_same_line();
+				var input_blood_acc = imguigml_input_float("##input_blood_acc",blood_acc,0.1,1.0,2)
+				if(input_blood_acc[0])
+				{
+					Global_Controller.blood_acc = input_blood_acc[1];
+					blood_acc = input_blood_acc[1];
+				}
+				
+				imguigml_text("Max speed:");
+				imguigml_same_line();
+				var input_blood_max_speed = imguigml_input_float("##input_blood_max_speed",blood_max_speed,0.1,1.0,2)
+				if(input_blood_max_speed[0])
+				{
+					Global_Controller.blood_max_speed = input_blood_max_speed[1];
+					blood_max_speed = input_blood_max_speed[1];
+				}
+				
+				imguigml_text("Fric:");
+				imguigml_same_line();
+				var input_blood_fric = imguigml_input_float("##input_blood_fric",blood_fric,0.1,1.0,2)
+				if(input_blood_fric[0])
+				{
+					Global_Controller.blood_fric = input_blood_fric[1];
+					blood_fric = input_blood_fric[1];
+				}
+				
+				imguigml_text("Grav:");
+				imguigml_same_line();
+				var input_blood_grav = imguigml_input_float("##input_blood_grav",blood_gravity,0.1,1.0,2)
+				if(input_blood_grav[0])
+				{
+					Global_Controller.blood_gravity = input_blood_grav[1];
+					blood_gravity = input_blood_grav[1];
+				}
+				
+				imguigml_text("Jump:");
+				imguigml_same_line();
+				var input_blood_jump = imguigml_input_float("##input_blood_jump",-blood_jump_speed,0.1,1.0,2)
+				if(input_blood_jump[0])
+				{
+					Global_Controller.blood_jump_speed = -input_blood_jump[1];
+					blood_jump_speed = -input_blood_jump[1];
+				}
+				
+				
+				imguigml_end_tab_item();
+			}
+			
+			//level
+			var level_tab = imguigml_begin_tab_item("Level")
+			if(level_tab[0])
+			{
+				imguigml_text("Fric:");
+				imguigml_same_line();
+				var input_level_fric = imguigml_input_float("##input_level_fric",level_fric,0.1,1.0,2)
+				if(input_level_fric[0])
+				{
+					Level_Controller.level_fric = input_level_fric[1];
+					level_fric = input_level_fric[1];
+				}
+				
+				imguigml_text("Grav:");
+				imguigml_same_line();
+				var input_level_grav = imguigml_input_float("##input_level_grav",level_grav,0.1,1.0,2)
+				if(input_level_grav[0])
+				{
+					Level_Controller.level_grav = input_level_grav[1];
+					level_grav = input_level_grav[1];
+				}
+						
+				imguigml_end_tab_item();
+			}
+			
+			//wall
+			var wall_tab = imguigml_begin_tab_item("Wall")
+			if(wall_tab[0])
+			{
+				imguigml_text("Vertical Jump Towards");
+				imguigml_same_line();
+				var input_vjt = imguigml_input_float("##input_vjt",v_jump_t,0.1,1.0,2)
+				if(input_vjt[0])
+				{
+					Global_Controller.v_jump_t = input_vjt[1];
+					v_jump_t = input_vjt[1];
+				}
+				
+				imguigml_text("Horizontal Jump Towards");
+				imguigml_same_line();
+				var input_hjt = imguigml_input_float("##input_hjt",h_jump_t,0.1,1.0,2)
+				if(input_hjt[0])
+				{
+					Global_Controller.h_jump_t = input_hjt[1];
+					h_jump_t = input_hjt[1];
+				}
+				
+				imguigml_text("Vertical Jump Away");
+				imguigml_same_line();
+				var input_vja = imguigml_input_float("##input_vja",v_jump_a,0.1,1.0,2)
+				if(input_vja[0])
+				{
+					Global_Controller.v_jump_a = input_vja[1];
+					v_jump_a = input_vja[1];
+				}
+				
+				imguigml_text("Horizontal Jump Away");
+				imguigml_same_line();
+				var input_hja = imguigml_input_float("##input_hja",h_jump_a,0.1,1.0,2)
+				if(input_hja[0])
+				{
+					Global_Controller.h_jump_a = input_hja[1];
+					h_jump_a = input_hja[1];
+				}
+				
+				
 				imguigml_end_tab_item();
 			}
 			

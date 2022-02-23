@@ -13,6 +13,7 @@ var camera_properties = [spr_none_64];
 if(instance_exists(obj_player))
 {
 	camera_properties[0] = obj_player_camera.follow.sprite_index;
+	camera_properties[1] = Camera_Controller.shaking;
 }
 
 #endregion
@@ -161,6 +162,110 @@ if(camera_window[0])
 				
 			imguigml_next_column();
 			imguigml_separator();
+			imguigml_columns(1);
+			
+			#region movement
+			
+			imguigml_text("Pan speed:");
+			imguigml_same_line();
+			HelpHover("Higher is slower");
+			imguigml_same_line();
+			var pan_speed_input = imguigml_input_int("##pan_speed",pan_speed,1,5);
+			if(pan_speed_input[0])
+			{
+				obj_player_camera.pan_speed = pan_speed_input[1];
+				pan_speed = pan_speed_input[1];
+			}
+			
+			#endregion
+		
+			imguigml_separator();
+		
+			#region shaking
+			
+			imguigml_text("shake amount:");
+			imguigml_same_line();
+			var shake_amount_input = imguigml_input_int("##shake_amount",shake_amount,1,5);
+			if(shake_amount_input[0])
+			{
+				obj_player_camera.shake_amount = shake_amount_input[1];
+				shake_amount = shake_amount_input[1];
+			}
+			imguigml_text("Shaking:");
+			imguigml_same_line();
+			var chk_shaking = imguigml_checkbox("##shake",camera_properties[1])
+			if(chk_shaking[0])
+			{
+				Camera_Controller.shaking = chk_shaking[1]
+			}
+			
+			
+			#endregion
+			
+			imguigml_separator();
+			
+			#region zooming
+			
+			//zoom amount
+			imguigml_text("")
+			
+			//zoom per tick
+			imguigml_text("Zoom_w");
+			imguigml_same_line();
+			HelpHover("The amount of width to zoom\nper tick");
+			imguigml_same_line();
+			var input_zoom_width = imguigml_input_float("##zoom_width",zoom_w,0,1000,1);
+			if(input_zoom_width[0])
+			{
+				obj_player_camera.zoom_w = input_zoom_width[1];
+				zoom_w = input_zoom_width[1];
+			}
+			imguigml_text("Zoom_h");
+			imguigml_same_line();
+			HelpHover("The amount of height to zoom\nper tick");
+			imguigml_same_line();
+			var input_zoom_height = imguigml_input_float("##zoom_height",zoom_h,0,1000,1);
+			if(input_zoom_height[0])
+			{
+				obj_player_camera.zoom_h = input_zoom_height[1];
+				zoom_h = input_zoom_height[1];
+			}
+			
+			//max zoom
+			imguigml_text("max_zoom_w");
+			imguigml_same_line();
+			HelpHover("The width of the view when fully zoomed");
+			imguigml_same_line();
+			var input_max_zoom_width = imguigml_input_float("##max_zoom_width",max_zoom_width,0,1000,1);
+			if(input_max_zoom_width[0])
+			{
+				obj_player_camera.max_zoom_width = input_max_zoom_width[1];
+				max_zoom_width = input_max_zoom_width[1];
+			}
+			imguigml_text("max_zoom_h");
+			imguigml_same_line();
+			HelpHover("The amount of height to zoom\nper tick");
+			imguigml_same_line();
+			var input_max_zoom_height = imguigml_input_float("##max_zoom_height",max_zoom_height,0,1000,1);
+			if(input_max_zoom_height[0])
+			{
+				obj_player_camera.max_zoom_height = input_max_zoom_height[1];
+				max_zoom_height = input_max_zoom_height[1];
+			}
+			
+			//return time
+			imguigml_text("return_time");
+			imguigml_same_line();
+			HelpHover("The amount to return from zoom per tick");
+			imguigml_same_line();
+			var input_return_time = imguigml_input_float("##return_time",return_time,0,1000,1);
+			if(input_return_time[0])
+			{
+				obj_player_camera.return_time = input_return_time[1];
+				return_time = input_return_time[1];
+			}
+			
+			#endregion
 			
 			imguigml_end_tab_item();
 		}

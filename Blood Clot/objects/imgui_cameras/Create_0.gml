@@ -25,3 +25,16 @@ win_w = Camera_Controller.window_width;
 win_h = Camera_Controller.window_height;
 view_w = Camera_Controller.view_width;
 view_h = Camera_Controller.view_height;
+
+//paning
+pan_speed = obj_player_camera.pan_speed;
+
+//shaking
+shake_amount = obj_player_camera.shake_amount;
+
+//zooming
+zoom_w = obj_player_camera.zoom_w;
+zoom_h = obj_player_camera.zoom_h;
+max_zoom_width = obj_player_camera.max_zoom_width;
+max_zoom_height = obj_player_camera.max_zoom_height;
+return_time = obj_player_camera.return_time;
