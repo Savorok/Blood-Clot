@@ -137,7 +137,7 @@ if(player_window[0] )
 		//draw x scale slider
 		imguigml_text("x scale:");
 		imguigml_same_line();
-		_x_scale = imguigml_slider_float("##x_scale",player_properties[8],0,2);
+		var _x_scale = imguigml_slider_float("##x_scale",player_properties[8],0,2);
 		if(_x_scale[0])
 		{
 			player_properties[8] = _x_scale[1];
@@ -147,7 +147,7 @@ if(player_window[0] )
 		//draw y scale slider
 		imguigml_text("y scale:");
 		imguigml_same_line();
-		_y_scale = imguigml_slider_float("##y_scale",player_properties[9],0,2);
+		var _y_scale = imguigml_slider_float("##y_scale",player_properties[9],0,2);
 		if(_y_scale[0])
 		{
 			player_properties[9] = _y_scale[1];
@@ -164,7 +164,7 @@ if(player_window[0] )
 		imguigml_push_item_width(144);
 		imguigml_same_line();
 		imguigml_text("Y Spawn:")
-		_xy_spawn = imguigml_input_int2("##xy_spawn", player_properties[19], player_properties[20]);
+		var _xy_spawn = imguigml_input_int2("##xy_spawn", player_properties[19], player_properties[20]);
 		if (_xy_spawn[0])
 		{
 			Level_Controller.spawn_x = _xy_spawn[1];

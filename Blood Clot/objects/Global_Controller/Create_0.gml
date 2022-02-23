@@ -77,14 +77,6 @@ global.v_jump_towards = 1.2;
 
 #endregion
 
-#region resoloution variables
-
-cur_resoloution = 2;
-cur_ratio = 1;
-fullscreen = true;
-
-#endregion
-
 dev_mode = true;
 
 if(dev_mode and !instance_exists(Imgui_Controller))
