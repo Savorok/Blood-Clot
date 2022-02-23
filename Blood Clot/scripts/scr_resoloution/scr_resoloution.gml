@@ -91,8 +91,7 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 			break;
 		
 		#endregion
-		
-		
+				
 		default:
 		show_debug_message("Invalid Aspect Ratio");
 			break;
@@ -101,12 +100,12 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	//update the view
 	cur_camera.view_width = w_view;
 	cur_camera.view_height = h_view;
+	
+	//update camera controller
 	Camera_Controller.view_width = w_view;
 	Camera_Controller.view_height = h_view;
-	
-	//print width and height to console
-	show_debug_message("View Width:" + string(w_view) + " View Height:" + string(h_view) + "\n");
-	show_debug_message("Window Width:" + string(w_res) + " Window Height:" + string(h_res));
+	Camera_Controller.window_width = w_res;
+	Camera_Controller.window_height = h_res;
 	
 	//set the new window size
 	window_set_size(w_res,h_res);
@@ -125,4 +124,31 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	Camera_Controller.alarm[0] = 1;	
 }
 	
+function scr_resoloution_custom(cur_camera,window_width, window_height, view_width, view_height, fullscreen)
+{
+	//update the view
+	cur_camera.view_width = view_width;
+	cur_camera.view_height = view_height;
 	
+	//update camera controller
+	Camera_Controller.view_width = view_width;
+	Camera_Controller.view_height = view_height;
+	Camera_Controller.window_width = window_width;
+	Camera_Controller.window_height = window_height;
+	
+	//set the new window size
+	window_set_size(window_width,window_height);
+	surface_resize(application_surface,window_width,window_height);
+	//if blood surface is there resize
+	if(surface_exists(Blood_Controller.surface_blood)){surface_resize(Blood_Controller.surface_blood,window_width,window_height);}
+	if(surface_exists(obj_water.waterSurface)){surface_resize(obj_water.waterSurface,window_width,window_height);}
+	
+	//fullscreen
+	if(fullscreen){ window_set_fullscreen(true); }
+	else 
+	{ 
+		window_set_fullscreen(false);	
+	}
+	Camera_Controller.alarm[0] = 1;	
+}
+

@@ -10,6 +10,7 @@ if(!imguigml_ready()){exit;}
 #region get player variables
 
 var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false,false,false];
+var movement_properties = [0,0,0];
 if(instance_exists(obj_player))
 {
 	player_properties[0] = obj_player.dead; 
@@ -37,7 +38,36 @@ if(instance_exists(obj_player))
 	player_properties[22] = obj_player.on_ground;
 	player_properties[23] = obj_player.in_water;
 	player_properties[24] = obj_player.in_blood;
+	
+	movement_properties[0] = obj_player.h_speed;
+	movement_properties[1] = obj_player.v_speed;
+	
+	
+	if(obj_player.on_ground)
+	{
+		//movement_properties[2] = global.ground_acc;
+		movement_properties[2] = global.ground_max_speed;
+	}
+	else if(!obj_player.on_ground)
+	{
+		//movement_properties[2] = global.air_acc;
+		movement_properties[2] = global.air_max_speed;
+	}
+	else if(obj_player.in_water)
+	{
+		//movement_properties[2] = global.water_acc;
+		movement_properties[2] = global.water_max_speed;
+	}
+	else if(obj_player.in_blood)
+	{
+		//movement_properties[2] = global.blood_acc;
+		movement_properties[2] = global.blood_max_speed;
+	}
+	
 }
+
+
+
 
 #endregion
 
@@ -101,17 +131,7 @@ if(player_window[0] )
 			if(chk_in_blood[1]){ obj_player.in_blood = true; }			
 		}
 		
-		
-		//var chk_on_ground = imguigml_checkbox("on_ground:")		
-		//var chk_in_water = imguigml_checkbox("in_water:")
-		//var chk_in_blood = imguigml_checkbox("in_blood:")
-		imguigml_text("");
-		//var chk_holding_jump_key = imguigml_checkbox("holding_jump_jey:")
-		
-		
-		
-		
-		
+		imguigml_text("");	
 		imguigml_next_column();
 		
 		//draw x scale slider
@@ -186,105 +206,201 @@ if(player_window[0] )
 		#endregion
 	}
 	
-	imguigml_columns(4);
+	imguigml_columns(1);
+	var health_tab = imguigml_collapsing_header("Health")
+	if(health_tab[0])
 	{
-		
-		#region column headers
+		imguigml_columns(4);
+		{
+			#region column headers
 	
-		imguigml_text("Var"); 
-		imguigml_push_item_width(32);
-		imguigml_pop_item_width();  
+				imguigml_text("Var"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width();  
 		
-		imguigml_next_column();
+				imguigml_next_column();
 		
-		imguigml_text("Min"); 
-		imguigml_push_item_width(32);
-		imguigml_pop_item_width();  
+				imguigml_text("Min"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width();  
 		
-		imguigml_next_column();
+				imguigml_next_column();
 	
-		imguigml_text("Max"); 
-		imguigml_push_item_width(32);
-		imguigml_pop_item_width(); 
+				imguigml_text("Max"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width(); 
 		
-		imguigml_next_column();
+				imguigml_next_column();
 		
-		imguigml_text("Value"); 
-		imguigml_push_item_width(32);
-		imguigml_pop_item_width(); 
+				imguigml_text("Value"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width(); 
 		
-		imguigml_separator();
-		imguigml_next_column();
+				imguigml_separator();
+				imguigml_next_column();
 		
-		#endregion
+				#endregion
 		
-		#region health
+			#region health
 		
-			#region var
+					#region var
 		
-			imguigml_text("Health"); 
-			imguigml_pop_item_width();  
-			imguigml_same_line();
-			HelpHover("Min: min_blood\nMax: max_blood\nValue: cur_blood");
+					imguigml_text("Health"); 
+					imguigml_pop_item_width();  
+					imguigml_same_line();
+					HelpHover("Min: min_blood\nMax: max_blood\nValue: cur_blood");
 		
-			#endregion
+					#endregion
 		
-			#region min
+					#region min
 		
-			imguigml_next_column();
-			_min_blood = imguigml_input_int("##min", player_properties[7], 1, 10);
-			if (_min_blood[0])
-			{
-				if(_min_blood[1] >= 0)
-				{
-					if(_min_blood[1] < player_properties[6])
+					imguigml_next_column();
+					_min_blood = imguigml_input_int("##min", player_properties[7], 1, 10);
+					if (_min_blood[0])
 					{
-						obj_player.min_blood = _min_blood[1];
-					}			
-				}		
-			}
-			imguigml_same_line();
-			HelpHover("min_blood must be > 0\nmin_blood must be < max_blood");
+						if(_min_blood[1] >= 0)
+						{
+							if(_min_blood[1] < player_properties[6])
+							{
+								obj_player.min_blood = _min_blood[1];
+							}			
+						}		
+					}
+					imguigml_same_line();
+					HelpHover("min_blood must be > 0\nmin_blood must be < max_blood");
 		
-			#endregion
+					#endregion
 			
-			#region max
+					#region max
 		
-			imguigml_next_column();
-			_max_blood = imguigml_input_int("##max", player_properties[6], 1, 10);
-			if (_max_blood[0])
-			{
-				if(_max_blood[1] >= player_properties[7])
-				{	
-					obj_player.max_blood = _max_blood[1];				
-				}		
-			}
-			imguigml_same_line();
-			HelpHover("max_blood must be > min_blood");
+					imguigml_next_column();
+					_max_blood = imguigml_input_int("##max", player_properties[6], 1, 10);
+					if (_max_blood[0])
+					{
+						if(_max_blood[1] >= player_properties[7])
+						{	
+							obj_player.max_blood = _max_blood[1];				
+						}		
+					}
+					imguigml_same_line();
+					HelpHover("max_blood must be > min_blood");
 		
-			#endregion
+					#endregion
 			
-			#region value
+					#region value
 				
-			imguigml_next_column();
-			_cur_blood = imguigml_slider_int("##value",player_properties[5],player_properties[7],player_properties[6]);
-			if(_cur_blood[0])
-			{
-				player_properties[5] = _cur_blood[1];
-				obj_player.cur_blood = _cur_blood[1];				
-			}
+					imguigml_next_column();
+					_cur_blood = imguigml_slider_int("##value",player_properties[5],player_properties[7],player_properties[6]);
+					if(_cur_blood[0])
+					{
+						player_properties[5] = _cur_blood[1];
+						obj_player.cur_blood = _cur_blood[1];				
+					}
 					
-			#endregion		
+					#endregion		
 			
-			imguigml_separator();
+					imguigml_separator();
 			
-		#endregion	
-		
-		#region acc
-		
-		#endregion
+				#endregion		
+		}
 	}
 	
+	imguigml_columns(1);
+	var cur_movement_tab = imguigml_collapsing_header("Current Movement Variabes")
+	if(cur_movement_tab[0])
+	{
+		imguigml_columns(4);
+		{
+			#region column headers
+	
+				imguigml_text("Var"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width();  
+		
+				imguigml_next_column();
+		
+				imguigml_text("Min"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width();  
+		
+				imguigml_next_column();
+	
+				imguigml_text("Max"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width(); 
+		
+				imguigml_next_column();
+		
+				imguigml_text("Value"); 
+				imguigml_push_item_width(32);
+				imguigml_pop_item_width(); 
+		
+				imguigml_separator();
+				imguigml_next_column();
+		
+				#endregion
+		
+			#region h_speed
+		
+					#region var
+		
+					imguigml_text("h_speed"); 
+					imguigml_pop_item_width();  
+					imguigml_same_line();
+					
+					#endregion
+		
+					#region min
+		
+					imguigml_next_column();
+					imguigml_text("0"); 
+					imguigml_pop_item_width();  
+					imguigml_same_line();
+		
+					#endregion
+			
+					#region max
+		
+					imguigml_next_column();
+					imguigml_text(movement_properties[2]); 
+					imguigml_pop_item_width();  
+					imguigml_same_line();
+		
+					#endregion
+			
+					#region value
+				
+					imguigml_next_column();
+					_cur_h_speed = imguigml_slider_float("##value",movement_properties[0],0,movement_properties[2]);
+
+					
+					#endregion		
+			
+					imguigml_separator();
+			
+				#endregion		
+		}
+	}
+	
+	imguigml_columns(1);
+	var movement_tab = imguigml_collapsing_header("Movement Variabes")
+	if(movement_tab[0])
+	{
+		imguigml_begin_tab_bar("Movement Variables")
+		{
+			if(imguigml_begin_tab_item("Ground"))
+			{
+				imguigml_text("Here");
+				imguigml_end_tab_item();
+			}
+			if(imguigml_begin_tab_item("Air"))
+			{
+				imguigml_text("Here 2");
+				imguigml_end_tab_item();
+			}
+			imguigml_end_tab_bar();
+		}
+	}
 	
 	
 	
