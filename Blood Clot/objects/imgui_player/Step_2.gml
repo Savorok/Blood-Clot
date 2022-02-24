@@ -570,14 +570,14 @@ if(player_window[0] )
 			//wall
 			var wall_tab = imguigml_begin_tab_item("Wall")
 			if(wall_tab[0])
-			{
-				imguigml_text("Vertical Jump Towards");
+			{	
+				imguigml_text("Wall jump threshold");
 				imguigml_same_line();
-				var input_vjt = imguigml_input_float("##input_vjt",v_jump_t,0.1,1.0,2)
-				if(input_vjt[0])
+				var input_wall_jump_threshold = imguigml_input_int("##input_wall_jump_threshold",wall_jump_threshold,1,5,)
+				if(input_wall_jump_threshold[0])
 				{
-					Global_Controller.v_jump_t = input_vjt[1];
-					v_jump_t = input_vjt[1];
+					Global_Controller.wall_jump_threshold = input_wall_jump_threshold[1];
+					wall_jump_threshold = input_wall_jump_threshold[1];
 				}
 				
 				imguigml_text("Horizontal Jump Towards");
@@ -614,10 +614,6 @@ if(player_window[0] )
 			imguigml_end_tab_bar();
 		}
 	}
-	
-	
-	
-	
 	
 	//close window if needed
 	if(!player_window[1])

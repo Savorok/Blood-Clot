@@ -7,8 +7,8 @@ function scr_calculate_player_movement()
 	var acc, max_speed, fric;
 	var minimum_velocity = 0.3;
 	
-	var left_wall = place_meeting(x-1,y,obj_solid);
-	var right_wall = place_meeting(x+1,y,obj_solid);
+	var left_wall = place_meeting(x-global.wall_jump_threshold,y,obj_solid);
+	var right_wall = place_meeting(x+global.wall_jump_threshold,y,obj_solid);
 		
 	#region Get key inputs
 			

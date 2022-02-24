@@ -29,6 +29,7 @@ global.h_jump_away = h_jump_a;
 global.v_jump_away = v_jump_a;
 global.h_jump_towards = h_jump_t;
 global.v_jump_towards = v_jump_t;
+global.wall_jump_threshold = wall_jump_threshold;
 
 #endregion
 

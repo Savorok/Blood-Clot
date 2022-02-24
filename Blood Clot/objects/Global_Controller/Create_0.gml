@@ -66,6 +66,9 @@ global.water_jump_speed = water_jump_speed*master_speed;
 global.blood_jump_speed = blood_jump_speed*master_speed;
 
 ///wall jumping
+wall_jump_threshold = 1;
+global.wall_jump_threshold = wall_jump_threshold;
+
 //away
 h_jump_a = 1.1;
 v_jump_a = 0.7;

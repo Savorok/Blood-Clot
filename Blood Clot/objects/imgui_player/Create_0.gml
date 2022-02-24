@@ -45,6 +45,7 @@ blood_gravity = Global_Controller.blood_gravity;
 blood_jump_speed = Global_Controller.blood_jump_speed
 
 //wall
+wall_jump_threshold = global.wall_jump_threshold
 
 h_jump_a = Global_Controller.h_jump_a;
 v_jump_a = Global_Controller.v_jump_a;
