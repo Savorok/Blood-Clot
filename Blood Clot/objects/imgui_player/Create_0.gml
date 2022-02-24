@@ -36,6 +36,7 @@ water_fric = Global_Controller.water_fric;
 water_max_speed = Global_Controller.water_max_speed;
 water_gravity = Global_Controller.water_gravity;
 water_jump_speed = Global_Controller.water_jump_speed
+water_splash_modifier = Global_Controller.water_splash_modifier;
 
 //blood
 blood_acc = Global_Controller.blood_acc;

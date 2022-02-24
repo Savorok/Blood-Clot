@@ -14,7 +14,7 @@ function scr_player_grounded()
 	}
 	else if(in_water)
 	{
-		v_speed += Level_Controller.room_gravity/global.water_gravity;
+		v_speed += Level_Controller.room_gravity/global.water_gravity - v_speed/global.water_splash_modifier;
 		return false;
 	}
 	else if(in_blood)

@@ -32,11 +32,13 @@ water_acc = 0.05;
 water_fric = 0.05;
 water_max_speed = 2;
 water_gravity = 15;
+water_splash_modifier = 10;
 
 global.water_acc = water_acc*master_speed;
 global.water_fric = water_fric*master_speed;
 global.water_max_speed = water_max_speed*master_speed;
 global.water_gravity = water_gravity;
+global.water_splash_modifier = water_splash_modifier;
 
 #endregion
 
