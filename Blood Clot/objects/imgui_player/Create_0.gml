@@ -14,7 +14,6 @@ default_spawn_x = Level_Controller.spawn_x;
 default_spawn_y = Level_Controller.spawn_y;
 
 #region movement variables
-
 master_speed = Global_Controller.master_speed;
 
 //level
@@ -54,3 +53,6 @@ h_jump_t = Global_Controller.h_jump_t;
 v_jump_t = Global_Controller.v_jump_t;
 
 #endregion
+
+no_blood_loss = obj_player.no_blood_loss;
+invincible = obj_player.invincible;

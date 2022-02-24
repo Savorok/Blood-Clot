@@ -210,6 +210,29 @@ if(player_window[0] )
 	var health_tab = imguigml_collapsing_header("Health")
 	if(health_tab[0])
 	{
+		//invincible
+		imguigml_text("Invincible:")
+		imguigml_same_line();
+		var chk_invincible = imguigml_checkbox("##invincible", invincible)
+		if(chk_invincible[0])
+		{
+			obj_player.invincible = chk_invincible[1];
+			invincible = chk_invincible[1];
+		}
+		
+		imguigml_same_line();
+		
+		//invincible
+		imguigml_text("No_blood_loss:")
+		imguigml_same_line();
+		var chk_no_blood_loss = imguigml_checkbox("##No_blood_loss", no_blood_loss)
+		if(chk_no_blood_loss[0])
+		{
+			obj_player.no_blood_loss = chk_no_blood_loss[1];
+			no_blood_loss = chk_no_blood_loss[1];
+		}
+		
+		
 		imguigml_columns(4);
 		{
 			#region column headers
