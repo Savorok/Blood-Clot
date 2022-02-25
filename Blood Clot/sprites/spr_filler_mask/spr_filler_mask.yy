@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_filler_mask","path":"sprites/spr_filler_mask/spr_filler_mask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_filler_mask",
     "tags": [],
     "resourceType": "GMSequence",

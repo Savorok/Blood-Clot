@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_blood_bag","path":"sprites/spr_blood_bag/spr_blood_bag.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_blood_bag",
     "tags": [],
     "resourceType": "GMSequence",

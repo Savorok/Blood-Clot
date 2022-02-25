@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_paint_bomb_single","path":"sprites/spr_paint_bomb_single/spr_paint_bomb_single.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_paint_bomb_single",
     "tags": [],
     "resourceType": "GMSequence",

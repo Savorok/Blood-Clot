@@ -488,11 +488,11 @@ if(player_window[0] )
 				
 				imguigml_text("Water splash modifier:");
 				imguigml_same_line();
-				var input_water_splash_modifier = imguigml_input_float("##input_water_splash_modifier",-water_splash_modifier,0.1,1.0,2)
+				var input_water_splash_modifier = imguigml_input_float("##input_water_splash_modifier",water_splash_modifier,0.1,1.0,2)
 				if(input_water_splash_modifier[0])
 				{
-					Global_Controller.water_splash_modifier = -input_water_splash_modifier[1];
-					water_splash_modifier = -input_water_splash_modifier[1];
+					Global_Controller.water_splash_modifier = input_water_splash_modifier[1];
+					water_splash_modifier = input_water_splash_modifier[1];
 				}
 								
 				imguigml_end_tab_item();

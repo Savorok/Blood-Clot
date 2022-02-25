@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_finish_mask","path":"sprites/spr_finish_mask/spr_finish_mask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_finish_mask",
     "tags": [],
     "resourceType": "GMSequence",

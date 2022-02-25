@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_liquid_blood_mask","path":"sprites/spr_liquid_blood_mask/spr_liquid_blood_mask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_liquid_blood_mask",
     "tags": [],
     "resourceType": "GMSequence",

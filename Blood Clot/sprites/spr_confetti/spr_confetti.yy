@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_confetti","path":"sprites/spr_confetti/spr_confetti.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_confetti",
     "tags": [],
     "resourceType": "GMSequence",

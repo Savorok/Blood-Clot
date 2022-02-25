@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_spikes_right","path":"sprites/spr_spikes_right/spr_spikes_right.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_spikes_right",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bar_filler","path":"sprites/spr_bar_filler/spr_bar_filler.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bar_filler",
     "tags": [],
     "resourceType": "GMSequence",

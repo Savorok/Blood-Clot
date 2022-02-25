@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_water_mask","path":"sprites/spr_water_mask/spr_water_mask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_water_mask",
     "tags": [],
     "resourceType": "GMSequence",
