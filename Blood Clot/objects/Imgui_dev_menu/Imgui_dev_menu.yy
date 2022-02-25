@@ -25,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Debug",
-    "path": "folders/Objects/Debug.yy",
+    "name": "Dev menu",
+    "path": "folders/Objects/Debug/Dev menu.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Imgui_Controller",
+  "name": "Imgui_dev_menu",
   "tags": [],
   "resourceType": "GMObject",
 }

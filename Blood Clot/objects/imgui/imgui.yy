@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ImGuiGML",
-    "path": "folders/ImGuiGML.yy",
+    "path": "folders/Extensions/ImGuiGML.yy",
   },
   "resourceVersion": "1.0",
   "name": "imgui",

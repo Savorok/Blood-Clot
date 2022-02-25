@@ -6,8 +6,8 @@ on_ground = false;
 in_water = false;
 in_blood = false;
 holding_jump_key = false;
-invincible = true;
-no_blood_loss = true;
+invincible = false;
+no_blood_loss = false;
 
 //health
 cur_blood = 3000;

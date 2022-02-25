@@ -88,8 +88,8 @@ global.v_jump_towards = v_jump_t;
 
 dev_mode = true;
 
-if(dev_mode and !instance_exists(Imgui_Controller))
+if(dev_mode and !instance_exists(Imgui_dev_menu))
 {
 	instance_create_depth(x,y,depth,imgui);
-	instance_create_depth(x,y,depth,Imgui_Controller);
+	instance_create_depth(x,y,depth,Imgui_dev_menu);
 } 

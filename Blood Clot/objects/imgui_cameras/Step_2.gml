@@ -286,6 +286,7 @@ if(camera_window[0])
 			
 			imguigml_end_tab_item();
 		}
+		
 		var other_camera_tab = imguigml_begin_tab_item("Another Camera")
 		if(other_camera_tab[0])
 		{
