@@ -7,11 +7,10 @@ if(instance_exists(obj_hold_bar))
 	//calculate scale
 	if(cur_length < 16)
 	{
-		//calculates the % out of 32 ticks
-		var n1		
-		n1 = (obj_player.hold_time/max_length)*100;
-		//turns it into a number relative to 16
-		cur_length = .16*n1	
+		//calculate t as a number between 0 and 1
+		var t = obj_player.hold_time/max_length;
+		//get value between 0 and 16 given t
+		cur_length = lerp(0,16,t);
 	}
 	else
 	{

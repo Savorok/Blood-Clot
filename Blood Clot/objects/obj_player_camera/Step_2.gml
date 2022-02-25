@@ -69,8 +69,8 @@ if(follow != noone)
 		#endregion
 		
 		#region shaking		
-		
-		if(Camera_Controller.shaking)
+
+		if(Camera_Controller.shaking and can_shake)
 		{			
 			//when fully zoomed in
 			if(cur_camera_width <= max_zoom_width or cur_camera_height <= max_zoom_height)

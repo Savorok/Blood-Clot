@@ -20,7 +20,7 @@ function scr_player_action(){
 		}
 				
 		//small blood
-		if(hold_time < max_hold_time)
+		if(hold_time < heavy_bleed_threshold)
 		{
 			if(!no_blood_loss)
 			{

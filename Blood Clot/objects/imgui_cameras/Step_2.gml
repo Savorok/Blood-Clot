@@ -9,7 +9,7 @@ if(!imguigml_ready()){exit;}
 
 #region get camera variables
 
-var camera_properties = [spr_none_64];
+var camera_properties = [spr_none_64,0];
 if(instance_exists(obj_player))
 {
 	camera_properties[0] = obj_player_camera.follow.sprite_index;
@@ -204,7 +204,16 @@ if(camera_window[0])
 			var chk_shaking = imguigml_checkbox("##shake",camera_properties[1])
 			if(chk_shaking[0])
 			{
-				Camera_Controller.shaking = chk_shaking[1]
+				Camera_Controller.shaking = chk_shaking[1];
+			}
+			imguigml_same_line();
+			imguigml_text("Can shake:");
+			imguigml_same_line();
+			var chk_can_shake = imguigml_checkbox("##can_shake",can_shake)
+			if(chk_can_shake[0])
+			{
+				obj_player_camera.can_shake = chk_can_shake[1];
+				can_shake = chk_can_shake[1];
 			}
 			
 			

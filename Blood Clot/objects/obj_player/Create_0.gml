@@ -26,6 +26,7 @@ v_speed = 0;
 //action hold variables
 hold_time = 0;
 max_hold_time = 50;
+heavy_bleed_threshold = round(max_hold_time*0.7);
 
 //stuck spears
 stuck_spears = 0;

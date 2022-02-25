@@ -9,7 +9,7 @@ if(!imguigml_ready()){exit;}
 
 #region get player variables
 
-var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false,false,false];
+var player_properties = [0,0,0,0,0,0,0,0,0,0,0,spr_dead,0,0,0,0,0,0,0,0,0,false,false,false,false,0];
 var movement_properties = [0,0,0,0];
 if(instance_exists(obj_player))
 {
@@ -38,6 +38,7 @@ if(instance_exists(obj_player))
 	player_properties[22] = obj_player.on_ground;
 	player_properties[23] = obj_player.in_water;
 	player_properties[24] = obj_player.in_blood;
+	player_properties[25] = obj_player.hold_time;
 	
 	movement_properties[0] = obj_player.h_speed;
 	movement_properties[1] = obj_player.v_speed;
@@ -65,9 +66,6 @@ if(instance_exists(obj_player))
 	}
 	
 }
-
-
-
 
 #endregion
 
@@ -326,6 +324,37 @@ if(player_window[0] )
 			
 				#endregion		
 		}
+	}
+	
+	imguigml_columns(1);
+	var action_tab = imguigml_collapsing_header("Action")
+	if(action_tab[0])
+	{
+		//draw hold time
+		imguigml_text("hold time:");
+		imguigml_same_line();
+		var hold_time_slider = imguigml_slider_float("##hold_time",player_properties[25],0,max_hold_time);
+		if(hold_time_slider[0])
+		{
+			obj_player.hold_time = hold_time_slider[1];			
+		}
+		//max hold time
+		imguigml_text("Max hold time:")
+		var max_hold_time_input = imguigml_input_int("##max_hold_time", max_hold_time, 1, 10);
+		if (max_hold_time_input[0])
+		{
+			obj_player.max_hold_time = max_hold_time_input[1];
+			max_hold_time = max_hold_time_input[1];
+		}
+		//heavy bleed threshold
+		imguigml_text("Heavy bleed threshold:")
+		var heavy_bleed_threshold_input = imguigml_input_int("##heavy_bleed_threshold", heavy_bleed_threshold, 10, 100);
+		if (heavy_bleed_threshold_input[0])
+		{
+			obj_player.heavy_bleed_threshold = heavy_bleed_threshold_input[1];
+			heavy_bleed_threshold = heavy_bleed_threshold_input[1];
+		}
+		
 	}
 	
 	imguigml_columns(1);

@@ -58,3 +58,6 @@ v_jump_t = Global_Controller.v_jump_t;
 
 no_blood_loss = obj_player.no_blood_loss;
 invincible = obj_player.invincible;
+
+max_hold_time = obj_player.max_hold_time;
+heavy_bleed_threshold = obj_player.heavy_bleed_threshold;

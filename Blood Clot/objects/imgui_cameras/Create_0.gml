@@ -32,6 +32,7 @@ pan_speed = obj_player_camera.pan_speed;
 //shaking
 shake_amount = obj_player_camera.shake_amount;
 zoomed_shake_amount = obj_player_camera.zoomed_shake_amount;
+can_shake = obj_player_camera.can_shake;
 
 //zooming
 zoom_w = obj_player_camera.zoom_w;
