@@ -191,6 +191,14 @@ if(camera_window[0])
 				obj_player_camera.shake_amount = shake_amount_input[1];
 				shake_amount = shake_amount_input[1];
 			}
+			imguigml_text("zoomed shake amount:");
+			imguigml_same_line();
+			var zoom_shake_amount_input = imguigml_input_int("##zoomed_shake_amount",zoomed_shake_amount,1,5);
+			if(zoom_shake_amount_input[0])
+			{
+				obj_player_camera.zoomed_shake_amount = zoom_shake_amount_input[1];
+				zoomed_shake_amount = zoom_shake_amount_input[1];
+			}
 			imguigml_text("Shaking:");
 			imguigml_same_line();
 			var chk_shaking = imguigml_checkbox("##shake",camera_properties[1])

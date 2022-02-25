@@ -72,8 +72,17 @@ if(follow != noone)
 		
 		if(Camera_Controller.shaking)
 		{			
-			x = camera_x - random_range(-shake_amount,shake_amount);
-			y = camera_y + random_range(-shake_amount,shake_amount);
+			//when fully zoomed in
+			if(cur_camera_width <= max_zoom_width or cur_camera_height <= max_zoom_height)
+			{
+				x = camera_x - random_range(-zoomed_shake_amount,zoomed_shake_amount);
+				y = camera_y + random_range(-zoomed_shake_amount,zoomed_shake_amount);
+			}
+			else
+			{
+				x = camera_x - random_range(-shake_amount,shake_amount);
+				y = camera_y + random_range(-shake_amount,shake_amount);
+			}		
 		}
 		
 		#endregion

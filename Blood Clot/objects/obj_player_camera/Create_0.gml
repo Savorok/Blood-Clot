@@ -13,6 +13,7 @@ follow = obj_player;
 
 //shaking
 shake_amount = 10;
+zoomed_shake_amount = 20;
 
 //zooming
 zoom_w = 25.6;
