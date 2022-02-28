@@ -15,6 +15,7 @@ global.water_fric = water_fric*master_speed;
 global.water_max_speed = water_max_speed*master_speed;
 global.water_gravity = water_gravity;
 global.water_splash_modifier = water_splash_modifier;
+global.can_slide_in_water = can_slide_in_water;
 
 //blood
 global.blood_acc = blood_acc*master_speed;

@@ -7,7 +7,7 @@ function scr_player_grounded()
 	{
 		return true;
 	}
-	else if(holding_jump_key)
+	else if(holding_jump_key and !in_water)
 	{
 		v_speed += Level_Controller.room_gravity*0.5;	
 		return false;

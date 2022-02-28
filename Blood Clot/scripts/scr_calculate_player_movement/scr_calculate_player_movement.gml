@@ -58,8 +58,10 @@ function scr_calculate_player_movement()
 			h_speed -= acc;
 			if(h_speed > minimum_velocity){ h_speed -= fric;}
 			//drop some blood
-			alarm[1] = random_range(1,4)
-			
+			if(!in_water and !in_blood)
+			{
+				alarm[1] = random_range(1,4)
+			}		
 		}
 		//right
 		if(key_right)
@@ -67,7 +69,10 @@ function scr_calculate_player_movement()
 			h_speed +=	acc;
 			if(h_speed < -minimum_velocity){h_speed += fric;}
 			//drop some blood
-			alarm[1] = random_range(1,4)
+			if(!in_water and !in_blood)
+			{
+				alarm[1] = random_range(1,4)
+			}	
 		}
 		//cancel friction
 		if((!key_left and !key_right) or (key_left and key_right))
@@ -130,35 +135,48 @@ function scr_calculate_player_movement()
 					h_speed = global.jump_speed*-global.h_jump_towards;
 					v_speed = global.jump_speed*global.v_jump_towards;
 					//drop some blood
-					alarm[3] = random_range(10,15);
+					if(!in_water and !in_blood)
+					{
+						alarm[3] = random_range(10,15);
+					}
 				}
 				else if(left_wall and !key_left)
 				{
 					h_speed = global.jump_speed*-global.h_jump_away;
 					v_speed = global.jump_speed*global.v_jump_away;
 					//drop some blood
-					alarm[3] = random_range(10,15);
+					if(!in_water and !in_blood)
+					{
+						alarm[3] = random_range(10,15);
+					}
 				}
 				else if(right_wall and key_right)
 				{
 					h_speed = global.jump_speed*global.h_jump_towards;
 					v_speed = global.jump_speed*global.v_jump_towards;
 					//drop some blood
-					alarm[2] = random_range(10,15);
+					if(!in_water and !in_blood)
+					{
+						alarm[2] = random_range(10,15);
+					}
 				}
 				else if(right_wall and !key_right)
 				{
 					h_speed = global.jump_speed*global.h_jump_away;
 					v_speed = global.jump_speed*global.v_jump_away;
 					//drop some blood
-					alarm[2] = random_range(10,15);
+					if(!in_water and !in_blood)
+					{
+						alarm[2] = random_range(10,15);
+					}
 				}
 				
 				//adjust scale
 				x_scale = 0.75;
 				y_scale = 1.25;
+				
+				holding_jump_key = true;
 			}
-			holding_jump_key = true;
 		}
 		
 		#endregion
@@ -170,9 +188,11 @@ function scr_calculate_player_movement()
 			v_speed -= Level_Controller.room_gravity*-0.3	
 		}
 		//create blood while sliding down walls
-		if(right_wall and v_speed > 0){alarm[2]=1;}
-		if(left_wall and v_speed > 0){alarm[3]=1;}
-		
+		if(!in_water and !in_blood)
+		{
+			if(right_wall and v_speed > 0){alarm[2]=1;}
+			if(left_wall and v_speed > 0){alarm[3]=1;}
+		}
 		#endregion
 	
 	#endregion

@@ -10,8 +10,6 @@ if(i == 1){real_game_fps = string(fps_real);}
 
 if(imguigml_ready())
 {
-	//var size = [0,0];
-	//var pos = [0,0];
 	if(debug)
 	{
 		//activate the initial window 
@@ -71,6 +69,12 @@ if(imguigml_ready())
 			if(imguigml_button("Camera") and !instance_exists(imgui_cameras))
 			{
 				instance_create_depth(0,0,depth,imgui_cameras);
+				if(close_on_open){debug = 0;}
+			}
+			imguigml_same_line();
+			if(imguigml_button("Spawn") and !instance_exists(imgui_spawn))
+			{
+				instance_create_depth(0,0,depth,imgui_spawn);
 				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();
