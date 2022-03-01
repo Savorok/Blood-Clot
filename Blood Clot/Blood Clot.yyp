@@ -1,10 +1,10 @@
 {
   "resources": [
+    {"id":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},"order":0,},
     {"id":{"name":"scr_player_scale","path":"scripts/scr_player_scale/scr_player_scale.yy",},"order":2,},
     {"id":{"name":"spr_paint_bomb_single","path":"sprites/spr_paint_bomb_single/spr_paint_bomb_single.yy",},"order":2,},
     {"id":{"name":"HelpHover","path":"scripts/HelpHover/HelpHover.yy",},"order":0,},
     {"id":{"name":"obj_spikes_right","path":"objects/obj_spikes_right/obj_spikes_right.yy",},"order":2,},
-    {"id":{"name":"test_room_1","path":"rooms/test_room_1/test_room_1.yy",},"order":0,},
     {"id":{"name":"obj_spikes_up","path":"objects/obj_spikes_up/obj_spikes_up.yy",},"order":0,},
     {"id":{"name":"spr_spikes_up","path":"sprites/spr_spikes_up/spr_spikes_up.yy",},"order":3,},
     {"id":{"name":"spr_none_64","path":"sprites/spr_none_64/spr_none_64.yy",},"order":6,},
@@ -13,7 +13,6 @@
     {"id":{"name":"Camera_Controller","path":"objects/Camera_Controller/Camera_Controller.yy",},"order":3,},
     {"id":{"name":"Template","path":"objects/Template/Template.yy",},"order":5,},
     {"id":{"name":"obj_spikes_parent","path":"objects/obj_spikes_parent/obj_spikes_parent.yy",},"order":4,},
-    {"id":{"name":"test_room_3","path":"rooms/test_room_3/test_room_3.yy",},"order":2,},
     {"id":{"name":"imguigml_config","path":"scripts/imguigml_config/imguigml_config.yy",},"order":5,},
     {"id":{"name":"extImGuiGML","path":"extensions/extImGuiGML/extImGuiGML.yy",},"order":3,},
     {"id":{"name":"shd_imgui_depth","path":"shaders/shd_imgui_depth/shd_imgui_depth.yy",},"order":1,},
@@ -63,7 +62,6 @@
     {"id":{"name":"obj_finish","path":"objects/obj_finish/obj_finish.yy",},"order":0,},
     {"id":{"name":"spr_spikes_down","path":"sprites/spr_spikes_down/spr_spikes_down.yy",},"order":0,},
     {"id":{"name":"imguigml_wrapper","path":"scripts/imguigml_wrapper/imguigml_wrapper.yy",},"order":3,},
-    {"id":{"name":"test_room_2","path":"rooms/test_room_2/test_room_2.yy",},"order":1,},
     {"id":{"name":"obj_spear_thrower","path":"objects/obj_spear_thrower/obj_spear_thrower.yy",},"order":4,},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},"order":0,},
     {"id":{"name":"scr_player_grounded","path":"scripts/scr_player_grounded/scr_player_grounded.yy",},"order":0,},
@@ -106,10 +104,8 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"test_room_1","path":"rooms/test_room_1/test_room_1.yy",},},
-    {"roomId":{"name":"test_room_2","path":"rooms/test_room_2/test_room_2.yy",},},
-    {"roomId":{"name":"test_room_3","path":"rooms/test_room_3/test_room_3.yy",},},
     {"roomId":{"name":"Template_Room","path":"rooms/Template_Room/Template_Room.yy",},},
+    {"roomId":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

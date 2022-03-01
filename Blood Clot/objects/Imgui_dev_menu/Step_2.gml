@@ -61,20 +61,20 @@ if(imguigml_ready())
 			//player button
 			if(imguigml_button("Player") and !instance_exists(imgui_player))
 			{
-				instance_create_depth(0,0,depth,imgui_player);		
+				instance_create_layer(0,0,"Controllers",imgui_player);		
 				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();
 			//cameras button
 			if(imguigml_button("Camera") and !instance_exists(imgui_cameras))
 			{
-				instance_create_depth(0,0,depth,imgui_cameras);
+				instance_create_layer(0,0,"Controllers",imgui_cameras);
 				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();
 			if(imguigml_button("Spawn") and !instance_exists(imgui_spawn))
 			{
-				instance_create_depth(0,0,depth,imgui_spawn);
+				instance_create_layer(0,0,"Controllers",imgui_spawn);
 				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();

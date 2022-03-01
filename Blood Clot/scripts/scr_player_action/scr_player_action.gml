@@ -25,7 +25,7 @@ function scr_player_action(){
 			if(!no_blood_loss)
 			{
 				var blood_amount = irandom_range(hold_time/5, hold_time);
-				repeat(blood_amount) instance_create_depth(obj_player.x,obj_player.y,1,obj_light_blood);
+				repeat(blood_amount) instance_create_layer(obj_player.x,obj_player.y,"Particles",obj_light_blood);
 				cur_blood -= blood_amount;
 				alpha -= blood_amount/10000;
 			}
@@ -37,7 +37,7 @@ function scr_player_action(){
 			if(!no_blood_loss)
 			{
 				var blood_amount = irandom_range(hold_time/10, hold_time/5);
-				repeat(blood_amount) instance_create_depth(obj_player.x,obj_player.y,1,obj_blood);
+				repeat(blood_amount) instance_create_layer(obj_player.x,obj_player.y,"Particles",obj_blood);
 				cur_blood -= blood_amount;
 				alpha -= blood_amount/10000;
 			}
