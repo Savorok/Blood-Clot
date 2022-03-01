@@ -43,26 +43,46 @@ if(spawn_window[0])
 	
 	#endregion
 	
-	var bonus_tab = imguigml_collapsing_header("Blood")
+	var bonus_tab = imguigml_collapsing_header("Particles")
 	if(bonus_tab[0])
 	{
-		imguigml_text("Cur Blood:" + cur_blood);
+		imguigml_text("Cur Particles:" + cur_particle);
 		
 		var none = imguigml_button("None");
-		if(none){ cur_blood = "None"}
-		imguigml_same_line();
+		if(none){ cur_particle = "None"}
+	
 		var blood = imguigml_button("Light Blood");
-		if(blood){ cur_blood = "Light Blood" }
+		if(blood){ cur_particle = "Light Blood" }
 		imguigml_same_line();
 		var heavy_blood = imguigml_button("Heavy Blood");
-		if(heavy_blood){ cur_blood = "Heavy Blood" }	
+		if(heavy_blood){ cur_particle = "Heavy Blood" }	
+		imguigml_same_line();
+		var fast_blood = imguigml_button("Fast Blood");
+		if(fast_blood){ cur_particle = "Fast Blood" }	
+		
+		var confetti = imguigml_button("Confetti");
+		if(confetti){cur_particle = "Confetti";}
+		
+		var paint = imguigml_button("Paint");
+		if(paint){cur_particle = "Paint";}
+		imguigml_same_line();
+		//paint colour
+		imguigml_text("Paint colour:");
+		imguigml_same_line();
+		var paint_colour = imguigml_combo("##paint_colour",paint_colour_num,paint_colours);
+		if(paint_colour[0])
+		{
+			paint_colour_num = paint_colour[1];		
+			imguigml_end_combo();
+		}
+		
 		
 		//amount of blood
-		imguigml_text("Amount of blood:")
-		var amount_of_blood = imguigml_input_int("##amount_of_blood", blood_amount, 1, 10);
-		if (amount_of_blood[0])
+		imguigml_text("Amount of particles:")
+		var amount_of_particles = imguigml_input_int("##amount_of_particles", particle_amount, 1, 10);
+		if (amount_of_particles[0])
 		{
-			blood_amount = amount_of_blood[1];
+			particle_amount = amount_of_particles[1];
 		}
 	}
 	
@@ -82,7 +102,7 @@ if(spawn_window[0])
 
 //create blood
 var click = mouse_check_button(mb_left);
-switch(cur_blood)
+switch(cur_particle)
 {
 	case "None":
 		break;
@@ -90,14 +110,40 @@ switch(cur_blood)
 	case "Light Blood":
 		if(click)
 		{
-			repeat(blood_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_light_blood);}
+			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_light_blood);}
 		}
 		break;
 		
 	case "Heavy Blood":
 	if(click)
 		{
-			repeat(blood_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_blood);}
+			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_blood);}
+		}
+		break;
+	
+	case "Fast Blood":
+	if(click)
+		{
+			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_fast_blood);}
+		}
+		break;
+	
+	case "Confetti":
+	if(click)
+		{
+			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_confetti);}
+		}
+		break;
+		
+	case "Paint":
+	if(click)
+		{
+			repeat(particle_amount)
+			{
+				var paint = instance_create_layer(mouse_x, mouse_y,"Particles",obj_paint);
+				paint.image_index = paint_colour_num;
+				paint.image_speed = 0;
+			}
 		}
 		break;
 }
