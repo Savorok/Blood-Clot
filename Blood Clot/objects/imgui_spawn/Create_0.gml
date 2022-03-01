@@ -13,3 +13,9 @@ cur_particle = "None";
 particle_amount = 1;
 paint_colours = ["Red","Orange","Yellow","Green","Blue","Indigo","Violet"];
 paint_colour_num = 0;
+
+//bonus
+cur_spawn = "None";
+
+spawn_x = floor(mouse_x/16)*16;
+spawn_y = floor(mouse_y/16)*16;

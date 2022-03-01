@@ -46,6 +46,13 @@ if(spawn_window[0])
 	var bonus_tab = imguigml_collapsing_header("Particles")
 	if(bonus_tab[0])
 	{
+		//coloured button
+		imguigml_push_id(1);
+		imguigml_push_style_color(EImGui_Col.Button,imguigml_color_convert_gml_to_u32(c_red));
+		imguigml_button("Click");
+		imguigml_pop_style_color(1);
+		imguigml_pop_id();
+		
 		imguigml_text("Cur Particles:" + cur_particle);
 		
 		var none = imguigml_button("None");
@@ -89,9 +96,51 @@ if(spawn_window[0])
 	var bonus_tab = imguigml_collapsing_header("Bonus")
 	if(bonus_tab[0])
 	{
+		imguigml_text("Cur Instance:" + cur_spawn);
+		
+		var none = imguigml_button("None");
+		if(none){ cur_spawn = "None";}
+		
+		var blood_bag = imguigml_button("Blood Bag");
+		if(blood_bag){ cur_spawn = "Blood bag"; }
+		
+		var confetti_bomb = imguigml_button("Confetti Bomb");
+		if(confetti_bomb){ cur_spawn = "Confetti bomb"; }
+		
+		var paint_bomb = imguigml_button("Paint Bomb");
+		if(paint_bomb){ cur_spawn = "Paint bomb"; }
+		imguigml_same_line();
+		//paint colour
+		imguigml_text("Paint colour:");
+		imguigml_same_line();
+		var paint_colour = imguigml_combo("##paint_colour",paint_colour_num,paint_colours);
+		if(paint_colour[0])
+		{
+			paint_colour_num = paint_colour[1];		
+			imguigml_end_combo();
+		}
 		
 	}
 	
+	var obstacles_tab = imguigml_collapsing_header("Obstacles")
+	if(obstacles_tab[0])
+	{
+		var spikes_tab = imguigml_collapsing_header("Spikes")
+		if(spikes_tab[0])
+		{
+			var spikes_right = imguigml_button("Spikes right");
+			if(spikes_right){ cur_spawn = "Spikes right"; }
+			imguigml_same_line();
+			var spikes_left = imguigml_button("Spikes left");
+			if(spikes_left){ cur_spawn = "Spikes left"; }
+			imguigml_same_line();
+			var spikes_up = imguigml_button("Spikes up");
+			if(spikes_up){ cur_spawn = "Spikes up"; }
+			imguigml_same_line();
+			var spikes_down = imguigml_button("Spikes down");
+			if(spikes_down){ cur_spawn = "Spikes down"; }		
+		}
+	}
 	
 	//close window if needed
 	if(!spawn_window[1])
@@ -100,55 +149,102 @@ if(spawn_window[0])
 	}
 }
 
-//create blood
+//spawn stuff
 var click = mouse_check_button(mb_left);
-switch(cur_particle)
+var click_pressed = mouse_check_button_pressed(mb_left);
+var click_rmb = mouse_check_button_pressed(mb_right);
+//x and y grid snap
+spawn_x = floor(mouse_x/16)*16;
+spawn_y = floor(mouse_y/16)*16;
+//reset spawn
+if(click_rmb)
 {
-	case "None":
-		break;
+	cur_spawn = "None";
+	cur_particle = "None";
+}
+
+
+show_debug_message("Mouse x:" + string(mouse_x) + "|Spawn x:" + string(spawn_x));
+show_debug_message("Mouse y:" + string(mouse_y) + "|Spawn y:" + string(spawn_y));
+if(click)
+{
+	switch(cur_particle)
+	{
+		case "None":
+			break;
 		
-	case "Light Blood":
-		if(click)
-		{
+		case "Light Blood":
 			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_light_blood);}
-		}
-		break;
+			break;
 		
-	case "Heavy Blood":
-	if(click)
-		{
+		case "Heavy Blood":	
 			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_blood);}
-		}
-		break;
+			break;
 	
-	case "Fast Blood":
-	if(click)
-		{
+		case "Fast Blood":
 			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_fast_blood);}
-		}
-		break;
+			break;
 	
-	case "Confetti":
-	if(click)
-		{
+		case "Confetti":
 			repeat(particle_amount){instance_create_layer(mouse_x, mouse_y,"Particles",obj_confetti);}
-		}
-		break;
+			break;
 		
-	case "Paint":
-	if(click)
-		{
+		case "Paint":
 			repeat(particle_amount)
 			{
 				var paint = instance_create_layer(mouse_x, mouse_y,"Particles",obj_paint);
 				paint.image_index = paint_colour_num;
 				paint.image_speed = 0;
 			}
-		}
-		break;
+			break;
+	}
 }
-
-
+if(click_pressed)
+{
+	switch(cur_spawn)
+	{
+		case "None":
+			break;
+	
+		#region bonus
+	
+		case "Blood bag":
+			instance_create_layer(spawn_x,spawn_y,"Instances",obj_blood_bag);	
+			break;
+		
+		case "Confetti bomb":
+			instance_create_layer(spawn_x,spawn_y,"Instances",obj_paint_bomb);					
+			break;
+	
+		case "Paint bomb":		
+			var paint_bomb = instance_create_layer(spawn_x,spawn_y,"Instances",obj_paint_bomb_single);	
+			paint_bomb.image_index = paint_colour_num;
+			paint_bomb.image_speed = 0;
+			break;
+		
+		#endregion
+	
+		#region obstacles
+	
+		case "Spikes right":
+			instance_create_layer(spawn_x,spawn_y,"Instances",obj_spikes_right);
+			break;
+			
+		case "Spikes left":
+			instance_create_layer(spawn_x,spawn_y,"Instances",obj_spikes_left);
+			break;
+			
+		case "Spikes up":
+		instance_create_layer(spawn_x,spawn_y,"Instances",obj_spikes_up);
+		break;
+		
+		case "Spikes down":
+		instance_create_layer(spawn_x,spawn_y,"Instances",obj_spikes_down);
+		break;
+	
+		#endregion
+	}
+}
 
 
 imguigml_end();

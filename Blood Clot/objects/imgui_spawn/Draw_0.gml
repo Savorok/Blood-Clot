@@ -22,3 +22,44 @@ if(draw_grid)
 		cur_y += 16;
 	}
 }
+
+
+switch(cur_spawn)
+{
+	case "None":
+		break;
+	
+	#region bonus
+	
+	case "Blood bag":
+		draw_sprite(spr_blood_bag,0,spawn_x,spawn_y);		
+		break;
+		
+	case "Confetti bomb":
+		draw_sprite(spr_paint_bomb,0,spawn_x,spawn_y);		
+		break;
+		
+	case "Paint bomb":
+	    draw_sprite(spr_paint_bomb_single,paint_colour_num,spawn_x,spawn_y);		
+		break;
+		
+	#endregion
+	
+	#region obstacles
+	
+	case "Spikes right":
+		draw_sprite(spr_spikes_right,0,spawn_x,spawn_y);
+		break;
+	case "Spikes left":
+		draw_sprite(spr_spikes_left,0,spawn_x,spawn_y);
+		break;
+	case "Spikes up":
+		draw_sprite(spr_spikes_up,0,spawn_x,spawn_y);
+		break;
+	case "Spikes down":
+		draw_sprite(spr_spikes_down,0,spawn_x,spawn_y);
+		break;
+		
+	#endregion
+	
+}

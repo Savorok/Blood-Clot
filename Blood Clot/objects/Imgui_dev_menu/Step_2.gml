@@ -25,7 +25,10 @@ if(imguigml_ready())
 		//while the window is uncollapsed and open
 		if(dev_window[0] and dev_window[1])
 		{
-			#region performance metrics and debug masks
+			#region performance metrics and debug masks version
+			
+			imguigml_text("Ver: 5.1.2 |");
+			imguigml_same_line();
 			
 			imguigml_text("Fps:" + string(fps) + " |"); 
 			imguigml_push_item_width(32);
@@ -53,6 +56,7 @@ if(imguigml_ready())
 				if(show_debug_masks){show_debug_masks = false;}
 				else if(!show_debug_masks){show_debug_masks = true;}
 			}
+				
 			
 			#endregion
 		
