@@ -49,12 +49,10 @@ if(imguigml_ready())
 			imguigml_push_item_width(32);
 			imguigml_pop_item_width();
 			imguigml_same_line(); 
-			var ckbox_show_debug_masks = imguigml_checkbox("", imguigml_mem("checkbox_test",false));
+			var ckbox_show_debug_masks = imguigml_checkbox("", show_debug_masks);
 			if(ckbox_show_debug_masks[0])
 			{			
-				imguigml_memset("checkbox_test", ckbox_show_debug_masks[1]);	
-				if(show_debug_masks){show_debug_masks = false;}
-				else if(!show_debug_masks){show_debug_masks = true;}
+				show_debug_masks = ckbox_show_debug_masks[1];	
 			}
 				
 			

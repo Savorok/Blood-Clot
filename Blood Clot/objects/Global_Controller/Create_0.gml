@@ -94,4 +94,5 @@ if(dev_mode and !instance_exists(Imgui_dev_menu))
 {
 	instance_create_layer(x,y,"Controllers",imgui);
 	instance_create_layer(x,y,"Controllers",Imgui_dev_menu);
+	instance_create_layer(x,y,"Controllers",Imgui_level_editor);
 } 
