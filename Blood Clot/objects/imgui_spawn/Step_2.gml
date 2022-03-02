@@ -56,9 +56,10 @@ if(spawn_window[0])
 	imguigml_separator();
 	
 	#endregion
-		
-	but_col_pos = 0;	
 	
+	#region delete
+	
+	but_col_pos = 0;	
 	ColourButton(button_colours[but_col_pos],c_red,"Delete");
 	if(button_colours[but_col_pos] == 0)
 	{
@@ -73,6 +74,7 @@ if(spawn_window[0])
 		}
 	}
 	
+	#endregion
 
 	var bonus_tab = imguigml_collapsing_header("Particles")
 	if(bonus_tab[0])
@@ -328,15 +330,30 @@ if(click)
 			break;
 	}
 }
-if(click_pressed)
+if(click_pressed and delete_mode)
 {
-	if(delete_mode)
+
+	var instance = instance_position(mouse_x,mouse_y,all);
+	var blacklist = ["obj_solid","obj_player_camera","Blood_Controller",
+						"Camera_Controller","Global_Controller","Level_Controller",
+						"imgui_cameras","imgui_dev_menu","imgui_player","imgui_spawn",
+						"imgui_level_editor"]
+	var can_delete = true;
+		
+	with(instance)
 	{
-		var instance = instance_position(mouse_x,mouse_y,all)
-		instance_destroy(instance);
+		for(i = 0; i < array_length(blacklist); i++)
+		{
+			if(string(object_get_name(object_index)) == blacklist[i]){can_delete = false;}
+		}
+		if(can_delete)
+		{
+			instance_destroy(instance);		
+		}
 	}
-	
-	
+}					
+else
+{
 	switch(cur_spawn)
 	{
 		case "None":
@@ -382,6 +399,8 @@ if(click_pressed)
 		#endregion
 	}
 }
+	
+
 
 
 imguigml_end();
