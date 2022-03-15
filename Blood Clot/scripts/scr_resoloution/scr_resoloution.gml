@@ -116,7 +116,10 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 		#endregion
 				
 		default:
-		show_debug_message("Invalid Aspect Ratio");
+			if(instance_exists(Imgui_dev_menu))
+			{
+				Imgui_console.logConsole("[err]","Invalid aspect ratio")
+			}
 			break;
 	}
 	

@@ -89,6 +89,10 @@ if(imguigml_ready())
 				close_on_open = chk_close_on_open[1];
 			}
 			
+			imguigml_separator();
+			
+			
+			
 			
 		}		
 		//end the panel input

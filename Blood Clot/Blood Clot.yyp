@@ -61,6 +61,7 @@
     {"id":{"name":"spr_solid_mask","path":"sprites/spr_solid_mask/spr_solid_mask.yy",},"order":2,},
     {"id":{"name":"imgui_spawn","path":"objects/imgui_spawn/imgui_spawn.yy",},"order":3,},
     {"id":{"name":"spr_checkpoint_mask","path":"sprites/spr_checkpoint_mask/spr_checkpoint_mask.yy",},"order":0,},
+    {"id":{"name":"Imgui_console","path":"objects/Imgui_console/Imgui_console.yy",},"order":0,},
     {"id":{"name":"obj_finish","path":"objects/obj_finish/obj_finish.yy",},"order":0,},
     {"id":{"name":"spr_spikes_down","path":"sprites/spr_spikes_down/spr_spikes_down.yy",},"order":0,},
     {"id":{"name":"imguigml_wrapper","path":"scripts/imguigml_wrapper/imguigml_wrapper.yy",},"order":3,},
@@ -151,6 +152,7 @@
     {"folderPath":"folders/Rooms/TestRooms.yy","order":0,"resourceVersion":"1.0","name":"TestRooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Debug/Dev menu.yy","order":7,"resourceVersion":"1.0","name":"Dev menu","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Debug/level Editor.yy","order":8,"resourceVersion":"1.0","name":"level Editor","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Debug/Console.yy","order":9,"resourceVersion":"1.0","name":"Console","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

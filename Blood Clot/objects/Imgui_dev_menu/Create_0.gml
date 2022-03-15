@@ -8,3 +8,5 @@ debug = false;
 show_debug_masks = false;
 
 close_on_open = true;
+
+
