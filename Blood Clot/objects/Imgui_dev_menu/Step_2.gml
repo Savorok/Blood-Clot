@@ -91,7 +91,15 @@ if(imguigml_ready())
 			
 			imguigml_separator();
 			
-			
+			//main screen bar
+			imguigml_begin_main_menu_bar()
+			{
+				if(imguigml_button("Exit Game"))
+				{
+					game_end();
+				}		
+				imguigml_end_main_menu_bar();
+			}
 			
 			
 		}		
