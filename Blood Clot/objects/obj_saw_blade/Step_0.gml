@@ -4,7 +4,7 @@
 if(dir = "right")
 {
 	x += spd
-	if(x >= start_x+length-edge_buffer*2)
+	if(x >= start_x+track_length-edge_buffer*2)
 	{
 		dir = "left";
 	}
@@ -22,7 +22,7 @@ else if(dir = "left")
 else if(dir = "up")
 {
 	y -= spd
-	if(y <= start_y-length+edge_buffer*2)
+	if(y <= start_y-track_length+edge_buffer*2)
 	{
 		dir = "down";
 	}
