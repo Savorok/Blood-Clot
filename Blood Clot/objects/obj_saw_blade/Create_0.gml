@@ -7,14 +7,8 @@ start_y = y; //initial y pos
 spd = 0;
 length = 0;
 edge_buffer = 0;
+angle = 0;
+dir = "";
 
-//calc starting diretion
-dir = ""
-if(abs(obj_saw_track.image_angle) == 90 || (abs(obj_saw_track.image_angle) == 270))
-{
-	dir = "up";
-}
-else
-{
-	dir = "right";
-}
+alarm[0] = 1;
+
