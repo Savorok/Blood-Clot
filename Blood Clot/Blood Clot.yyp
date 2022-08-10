@@ -100,6 +100,7 @@
     {"id":{"name":"spr_none_32","path":"sprites/spr_none_32/spr_none_32.yy",},"order":7,},
     {"id":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},"order":2,},
     {"id":{"name":"obj_blood","path":"objects/obj_blood/obj_blood.yy",},"order":0,},
+    {"id":{"name":"Test_5","path":"rooms/Test_5/Test_5.yy",},"order":4,},
     {"id":{"name":"scr_calculate_water_colour","path":"scripts/scr_calculate_water_colour/scr_calculate_water_colour.yy",},"order":4,},
     {"id":{"name":"__imguigml_internal_functions","path":"scripts/__imguigml_internal_functions/__imguigml_internal_functions.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
@@ -118,6 +119,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Test_5","path":"rooms/Test_5/Test_5.yy",},},
     {"roomId":{"name":"Test_4","path":"rooms/Test_4/Test_4.yy",},},
     {"roomId":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},},
     {"roomId":{"name":"Test_2","path":"rooms/Test_2/Test_2.yy",},},
