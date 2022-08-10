@@ -75,6 +75,7 @@
     {"id":{"name":"obj_finish","path":"objects/obj_finish/obj_finish.yy",},"order":0,},
     {"id":{"name":"spr_spikes_down","path":"sprites/spr_spikes_down/spr_spikes_down.yy",},"order":0,},
     {"id":{"name":"imguigml_wrapper","path":"scripts/imguigml_wrapper/imguigml_wrapper.yy",},"order":3,},
+    {"id":{"name":"Test_6","path":"rooms/Test_6/Test_6.yy",},"order":5,},
     {"id":{"name":"obj_spear_thrower","path":"objects/obj_spear_thrower/obj_spear_thrower.yy",},"order":4,},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},"order":0,},
     {"id":{"name":"scr_player_grounded","path":"scripts/scr_player_grounded/scr_player_grounded.yy",},"order":0,},
@@ -119,6 +120,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Test_6","path":"rooms/Test_6/Test_6.yy",},},
     {"roomId":{"name":"Test_5","path":"rooms/Test_5/Test_5.yy",},},
     {"roomId":{"name":"Test_4","path":"rooms/Test_4/Test_4.yy",},},
     {"roomId":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},},
