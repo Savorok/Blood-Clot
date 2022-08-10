@@ -30,7 +30,13 @@ if(!Level_Controller.paused)
 			var amount_of_blood = irandom_range(Blood_Controller.splatter_size/2,Blood_Controller.splatter_size)
 			repeat(amount_of_blood) instance_create_layer(obj_player.x,obj_player.y,"Particles",obj_fast_blood);//crete blood splatter
 			dead = true;
-		}		
+		}	
+		
+		//bleed if bleeding
+		if(bleeds > 0)
+		{
+			scr_bleed(bleeds);
+		}
 	}
 	else
 	{

@@ -39,6 +39,7 @@ if(instance_exists(obj_player))
 	player_properties[23] = obj_player.in_water;
 	player_properties[24] = obj_player.in_blood;
 	player_properties[25] = obj_player.hold_time;
+	player_properties[26] = obj_player.bleeds;
 	
 	movement_properties[0] = obj_player.h_speed;
 	movement_properties[1] = obj_player.v_speed;
@@ -220,15 +221,28 @@ if(player_window[0] )
 		
 		imguigml_same_line();
 		
-		//invincible
-		imguigml_text("No_blood_loss:")
+		//No blood loss
+		imguigml_text("No_blood_loss:");
 		imguigml_same_line();
 		var chk_no_blood_loss = imguigml_checkbox("##No_blood_loss", no_blood_loss)
 		if(chk_no_blood_loss[0])
 		{
 			obj_player.no_blood_loss = chk_no_blood_loss[1];
 			no_blood_loss = chk_no_blood_loss[1];
+		}	
+		
+		imguigml_text("curr_bleeds:");
+		imguigml_same_line();
+		curr_bleeds = imguigml_input_int("##min", player_properties[26], 1, 5);
+		if (curr_bleeds[0])
+		{
+			if(curr_bleeds[1] >= 0)
+			{
+				obj_player.bleeds = curr_bleeds[1];		
+			}		
 		}
+		
+		
 		
 		
 		imguigml_columns(4);
@@ -263,7 +277,7 @@ if(player_window[0] )
 				#endregion
 		
 			#region health
-		
+			
 					#region var
 		
 					imguigml_text("Health"); 
@@ -276,12 +290,12 @@ if(player_window[0] )
 					#region min
 		
 					imguigml_next_column();
-					_min_blood = imguigml_input_int("##min", player_properties[7], 1, 10);
-					if (_min_blood[0])
+					bleeds = imguigml_input_int("", player_properties[7], 1, 10);
+					if (bleeds[0])
 					{
-						if(_min_blood[1] >= 0)
+						if(bleeds[1] >= 0)
 						{
-							if(_min_blood[1] < player_properties[6])
+							if(bleeds[1] < player_properties[6])
 							{
 								obj_player.min_blood = _min_blood[1];
 							}			
@@ -321,8 +335,9 @@ if(player_window[0] )
 					#endregion		
 			
 					imguigml_separator();
-			
-				#endregion		
+					imguigml_next_column();
+					
+			#endregion		
 		}
 	}
 	

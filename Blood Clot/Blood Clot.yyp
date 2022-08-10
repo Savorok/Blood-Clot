@@ -62,6 +62,7 @@
     {"id":{"name":"obj_paint_bomb_single","path":"objects/obj_paint_bomb_single/obj_paint_bomb_single.yy",},"order":3,},
     {"id":{"name":"Blood_Controller","path":"objects/Blood_Controller/Blood_Controller.yy",},"order":2,},
     {"id":{"name":"obj_bar_filler","path":"objects/obj_bar_filler/obj_bar_filler.yy",},"order":2,},
+    {"id":{"name":"scr_bleed","path":"scripts/scr_bleed/scr_bleed.yy",},"order":7,},
     {"id":{"name":"spr_solid_mask","path":"sprites/spr_solid_mask/spr_solid_mask.yy",},"order":2,},
     {"id":{"name":"imgui_spawn","path":"objects/imgui_spawn/imgui_spawn.yy",},"order":3,},
     {"id":{"name":"spr_checkpoint_mask","path":"sprites/spr_checkpoint_mask/spr_checkpoint_mask.yy",},"order":0,},
@@ -110,8 +111,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},},
     {"roomId":{"name":"Template_Room","path":"rooms/Template_Room/Template_Room.yy",},},
   ],
   "Folders": [

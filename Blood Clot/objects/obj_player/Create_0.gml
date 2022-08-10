@@ -13,6 +13,8 @@ no_blood_loss = false;
 cur_blood = 3000;
 max_blood = 3000;
 min_blood = 0;
+bleeds = 0;
+can_bleed = true;
 
 //sprite propertys
 x_scale = 1.0; 
