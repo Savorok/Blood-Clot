@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Bonus",
-    "path": "folders/Objects/Bonus.yy",
+    "name": "Pickups",
+    "path": "folders/Objects/Pickups.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_bandages",

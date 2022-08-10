@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr_spikes_left",
     "path": "sprites/spr_spikes_left/spr_spikes_left.yy",
