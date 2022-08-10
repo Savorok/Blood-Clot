@@ -201,6 +201,30 @@ if(spawn_window[0])
 				button_colours[but_col_pos] = 1;
 			}
 		}
+		but_col_pos++;
+		ColourButton(button_colours[but_col_pos],active_button_colour,"Bandage");	
+		if(button_colours[but_col_pos] == 0)
+		{	
+			var bandage = imguigml_button("Bandage");
+			if(bandage)
+			{ 
+				cur_spawn = "Bandage";
+				button_colours = array_create(arr_size,0);
+				button_colours[but_col_pos] = 1;
+			}
+		}
+		but_col_pos++;
+		ColourButton(button_colours[but_col_pos],active_button_colour,"Plaster");	
+		if(button_colours[but_col_pos] == 0)
+		{	
+			var plaster = imguigml_button("Plaster");
+			if(plaster)
+			{ 
+				cur_spawn = "Plaster";
+				button_colours = array_create(arr_size,0);
+				button_colours[but_col_pos] = 1;
+			}
+		}
 		imguigml_same_line();
 		//paint colour
 		imguigml_text("Paint colour:");
@@ -378,6 +402,14 @@ else if(click_pressed)
 			paint_bomb.image_index = paint_colour_num;
 			paint_bomb.image_speed = 0;
 			break;
+			
+		case "Bandage":
+		instance_create_layer(spawn_x,spawn_y,"Instances",obj_bandages);	
+		break;
+		
+		case "Plaster":
+		instance_create_layer(spawn_x,spawn_y,"Instances",obj_plaster);					
+		break;
 		
 		#endregion
 	

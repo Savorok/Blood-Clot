@@ -43,6 +43,14 @@ switch(cur_spawn)
 	    draw_sprite(spr_paint_bomb_single,paint_colour_num,spawn_x,spawn_y);		
 		break;
 		
+	case "Bandage":
+	draw_sprite(spr_bandages,0,spawn_x,spawn_y);		
+	break;
+		
+	case "Plaster":
+	draw_sprite(spr_plaster,0,spawn_x,spawn_y);		
+	break;
+		
 	#endregion
 	
 	#region obstacles

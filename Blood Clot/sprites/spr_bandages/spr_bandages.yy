@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Bonus",
-    "path": "folders/Sprites/Bonus.yy",
+    "name": "Pickups",
+    "path": "folders/Sprites/Pickups.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bandages",
