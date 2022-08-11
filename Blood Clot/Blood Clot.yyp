@@ -25,6 +25,8 @@
     {"id":{"name":"tile_set_other","path":"sprites/tile_set_other/tile_set_other.yy",},"order":0,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"obj_liquid_blood","path":"objects/obj_liquid_blood/obj_liquid_blood.yy",},"order":1,},
+    {"id":{"name":"spr_bleed_icon","path":"sprites/spr_bleed_icon/spr_bleed_icon.yy",},"order":0,},
+    {"id":{"name":"font1","path":"fonts/font1/font1.yy",},"order":0,},
     {"id":{"name":"spr_spikes_left","path":"sprites/spr_spikes_left/spr_spikes_left.yy",},"order":1,},
     {"id":{"name":"scr_collision_check_and_move","path":"scripts/scr_collision_check_and_move/scr_collision_check_and_move.yy",},"order":3,},
     {"id":{"name":"obj_saw_blade","path":"objects/obj_saw_blade/obj_saw_blade.yy",},"order":1,},
@@ -120,13 +122,13 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Test_6","path":"rooms/Test_6/Test_6.yy",},},
     {"roomId":{"name":"Test_5","path":"rooms/Test_5/Test_5.yy",},},
     {"roomId":{"name":"Test_4","path":"rooms/Test_4/Test_4.yy",},},
     {"roomId":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},},
     {"roomId":{"name":"Test_2","path":"rooms/Test_2/Test_2.yy",},},
     {"roomId":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Template_Room","path":"rooms/Template_Room/Template_Room.yy",},},
   ],
   "Folders": [
