@@ -16,6 +16,13 @@ min_blood = 0;
 bleeds = 0;
 can_bleed = true;
 
+//healthbar vars
+healthbar_scale = 3;
+healthbar_width = 96;
+healthbar_height = 12;
+healthbar_x = 16;
+healthbar_y = 16;
+
 //sprite propertys
 x_scale = 1.0; 
 y_scale = 1.0;
