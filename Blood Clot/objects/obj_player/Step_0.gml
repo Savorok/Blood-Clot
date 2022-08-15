@@ -35,7 +35,11 @@ if(!Level_Controller.paused)
 		//bleed if bleeding
 		if(bleeds > 0)
 		{
-			scr_bleed(bleeds);
+			bleed_per_sec = scr_bleed(bleeds);
+		}
+		else
+		{
+			bleed_per_sec = 0;
 		}
 	}
 	else

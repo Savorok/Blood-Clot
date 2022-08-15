@@ -14,14 +14,7 @@ cur_blood = 3000;
 max_blood = 3000;
 min_blood = 0;
 bleeds = 0;
-can_bleed = true;
-
-//healthbar vars
-healthbar_scale = 3;
-healthbar_width = 96;
-healthbar_height = 12;
-healthbar_x = 16;
-healthbar_y = 16;
+bleed_per_sec = 0;
 
 //sprite propertys
 x_scale = 1.0; 
@@ -40,3 +33,24 @@ heavy_bleed_threshold = round(max_hold_time*0.7);
 //stuck spears
 stuck_spears = 0;
 spear_pos = [];
+
+/// GUI variables
+
+//general
+scale = 3;
+
+//healthbar vars
+healthbar_scale = scale;
+healthbar_width = 96;
+healthbar_height = 12;
+healthbar_x = 16;
+healthbar_y = 16;
+
+//bleed gui vars
+bleed_icon_scale = scale;
+bleed_icon_x = 340;
+bleed_icon_y = 10;
+bleed_number_x = 385;
+bleed_number_y = 25;
+bleed_sec_x = 330;
+bleed_sec_y = 55;

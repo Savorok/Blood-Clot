@@ -5,4 +5,5 @@ function scr_bleed(bleeds)
 		instance_create_layer(x,y,"Particles",obj_blood);
 	}
 	cur_blood -= round(bleeds/2);
+	return round(bleeds/2);
 }
