@@ -43,14 +43,14 @@ scale = 3;
 healthbar_scale = scale;
 healthbar_width = 96;
 healthbar_height = 12;
-healthbar_x = 16;
+healthbar_x = 416;
 healthbar_y = 16;
 
 //bleed gui vars
 bleed_icon_scale = scale;
-bleed_icon_x = 340;
+bleed_icon_x = 740;
 bleed_icon_y = 10;
-bleed_number_x = 385;
+bleed_number_x = 785;
 bleed_number_y = 25;
-bleed_sec_x = 330;
+bleed_sec_x = 730;
 bleed_sec_y = 55;

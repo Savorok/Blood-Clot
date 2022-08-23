@@ -10,3 +10,14 @@ spawn_y = 0;
 
 paused = false; 
 level_complete = false;
+
+//clock variables
+seconds = 0;
+minutes = 0;
+
+count_up = false; 
+
+time_xoff = 45;
+time_yoff = 55;
+gui_xoff = 8;
+gui_yoff = 4;

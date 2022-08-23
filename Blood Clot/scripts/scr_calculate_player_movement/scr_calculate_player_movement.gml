@@ -19,6 +19,19 @@ function scr_calculate_player_movement()
 				
 	#endregion
 		
+	#region start timer
+	
+	if(!Level_Controller.count_up)
+	{
+		if(key_left or key_right or key_jump)
+		{
+			Level_Controller.count_up = true;	
+		}
+	}
+	
+	#endregion
+		
+		
 	#region set acc, max speed and friction 
 		
 		if(!on_ground and !in_water and !in_blood)
@@ -107,7 +120,7 @@ function scr_calculate_player_movement()
 			x_scale = 0.75;
 			y_scale = 1.25;
 			//drop some blood
-			alarm[1] = random_range(1,4)
+			alarm[4] = random_range(1,4)
 			holding_jump_key = true;
 		}
 		if(key_jump and in_blood)
@@ -117,7 +130,7 @@ function scr_calculate_player_movement()
 			x_scale = 0.75;
 			y_scale = 1.25;
 			//drop some blood
-			alarm[1] = random_range(1,4)
+			alarm[4] = random_range(1,4)
 			holding_jump_key = true;
 		}		
 		if(key_jump_release){holding_jump_key = false;}

@@ -19,3 +19,19 @@ if(level_complete == true)
 	level_complete = false;
 	alarm[1] = 120;
 }
+
+//timer
+if(!paused)
+{
+	//increase seconds
+	if(count_up)
+	{
+		seconds += 1/room_speed;
+	}
+	//add minutes at 60 sec
+	if(seconds < 60 and seconds > 59.9)
+	{
+		seconds = 0;
+		minutes += 1;
+	}
+}

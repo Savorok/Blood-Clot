@@ -22,6 +22,8 @@ if(!Level_Controller.paused)
 		//draw to surface
 		if(surface_exists(Blood_Controller.surface_blood))
 		{
+			image_xscale = scale;
+			image_yscale = scale;
 			surface_set_target(Blood_Controller.surface_blood);
 			draw_sprite_ext(spr_blood,0,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
 			surface_reset_target();
@@ -32,13 +34,17 @@ if(!Level_Controller.paused)
 		if(speed > 0)
 		{
 			speed -= slow_down;
-			alpha -= 0.01;
+			var increase_size = random_range(0.01,0.02);
+			image_xscale += increase_size;
+			image_yscale += increase_size;
+			alpha -= 0.03;
 		}
 	}
 	else
 	{
 		visible = true;	
 	}
+	
 	if(alpha <= 0)
 	{
 		instance_destroy();	
