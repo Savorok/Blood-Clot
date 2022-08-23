@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 142,
+  "bbox_right": 59,
   "bbox_top": 0,
-  "bbox_bottom": 15,
+  "bbox_bottom": 11,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 144,
-  "height": 16,
+  "width": 60,
+  "height": 12,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f533eafb-2448-4408-ae4c-2b3f3c79afc8","path":"sprites/spr_time_box/spr_time_box.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f533eafb-2448-4408-ae4c-2b3f3c79afc8","path":"sprites/spr_time_box/spr_time_box.yy",},"LayerId":{"name":"8d2c93ac-706a-465c-a227-ef2a10983325","path":"sprites/spr_time_box/spr_time_box.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_time_box","path":"sprites/spr_time_box/spr_time_box.yy",},"resourceVersion":"1.0","name":"f533eafb-2448-4408-ae4c-2b3f3c79afc8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9e35592e-9dc1-4024-8bf9-67c63f4d2727","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9e35592e-9dc1-4024-8bf9-67c63f4d2727","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},"LayerId":{"name":"f79829e3-56c7-436a-84e5-ad978d6fd066","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_checkpoint_time","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},"resourceVersion":"1.0","name":"9e35592e-9dc1-4024-8bf9-67c63f4d2727","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_time_box","path":"sprites/spr_time_box/spr_time_box.yy",},
+    "spriteId": {"name":"spr_checkpoint_time","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"984c2b71-140b-42d7-acc7-ca53cf910217","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f533eafb-2448-4408-ae4c-2b3f3c79afc8","path":"sprites/spr_time_box/spr_time_box.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
+            {"id":"937c9d63-334d-4112-9427-6e38a7d32ec8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9e35592e-9dc1-4024-8bf9-67c63f4d2727","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_time_box","path":"sprites/spr_time_box/spr_time_box.yy",},
+    "parent": {"name":"spr_checkpoint_time","path":"sprites/spr_checkpoint_time/spr_checkpoint_time.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_time_box",
+    "name": "spr_checkpoint_time",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8d2c93ac-706a-465c-a227-ef2a10983325","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f79829e3-56c7-436a-84e5-ad978d6fd066","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Gui/Timer.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_time_box",
+  "name": "spr_checkpoint_time",
   "tags": [],
   "resourceType": "GMSprite",
 }

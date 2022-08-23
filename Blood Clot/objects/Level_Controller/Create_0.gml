@@ -15,9 +15,13 @@ level_complete = false;
 seconds = 0;
 minutes = 0;
 
+checkpoint_num = 0;
+checkpoint_times = [];
+checkpoint_times_gui_active = 0;
+
 count_up = false; 
 
-time_xoff = 45;
-time_yoff = 55;
-gui_xoff = 8;
+time_xoff = 38;
+time_yoff = 0;
+gui_xoff = 4;
 gui_yoff = 4;

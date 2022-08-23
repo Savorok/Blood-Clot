@@ -11,4 +11,7 @@ if(activated = false)
 	//set new spawn
 	Level_Controller.spawn_x = spawn_x;
 	Level_Controller.spawn_y = spawn_y;
+	
+	//activate checkpoint gui time
+	Level_Controller.alarm[2] = 20;
 }

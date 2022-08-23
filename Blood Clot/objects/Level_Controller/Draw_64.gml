@@ -5,8 +5,8 @@ if(!level_complete)
 	var xx = view_get_xport(view_camera[0]);//x pot
 	var yy = view_get_yport(view_camera[0]);//y pot
 
-	draw_set_font(font1);
-	draw_set_color(c_black);//draw in black
+	draw_set_font(fnt_timer_12);
+	draw_set_color(c_white);//draw in black
 	draw_set_alpha(1);
 
 	draw_sprite_ext(spr_time_box,sprite_index,xx+gui_xoff,yy+gui_yoff,2,2,image_angle,image_blend,image_alpha)
