@@ -20,8 +20,14 @@ draw_text(centre_x-58,centre_y-30,"Options");
 draw_text(centre_x-65,centre_y+10,"Main Menu");
 draw_text(centre_x-65,centre_y+50,"Exit Game");
 
+//draw version number
+draw_set_color(c_gray);
+draw_set_font(fnt_timer_10);
+draw_text(centre_x-130,centre_y+130,"Ver: " + string(Global_Controller.version));
+
 //draw menu position
 //continue
+draw_set_color(c_white);
 if(mpos == 0)
 {
 	draw_text(centre_x - 100, centre_y - 110,"[");

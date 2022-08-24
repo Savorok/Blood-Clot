@@ -27,7 +27,7 @@ if(imguigml_ready())
 		{
 			#region performance metrics and debug masks version
 			
-			imguigml_text("Ver: 5.3.1 |");
+			imguigml_text("Ver: " + string(Global_Controller.version) + "|");
 			imguigml_same_line();
 			
 			imguigml_text("Fps:" + string(fps) + " |"); 
