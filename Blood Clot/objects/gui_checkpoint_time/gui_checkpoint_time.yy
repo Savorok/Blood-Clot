@@ -25,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Controllers",
-    "path": "folders/Objects/Controllers.yy",
+    "name": "Gui",
+    "path": "folders/Objects/Gui.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_checkpoint_time",
+  "name": "gui_checkpoint_time",
   "tags": [],
   "resourceType": "GMObject",
 }

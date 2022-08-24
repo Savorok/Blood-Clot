@@ -1,5 +1,6 @@
 ///@description Init camera variables
 
+
 //view and window sizes
 view_width = 640;
 view_height = 360;
