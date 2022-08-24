@@ -6,6 +6,7 @@ if(key_pause and !paused)
 { 
 	paused = true; 
 	can_respawn = false;
+	instance_create_layer(x,y,"Controllers",gui_pause_menu);
 }
 else if(key_pause and paused)
 { 
