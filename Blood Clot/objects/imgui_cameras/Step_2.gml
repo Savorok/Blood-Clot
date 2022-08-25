@@ -125,8 +125,10 @@ if(camera_window[0])
 	
 	imguigml_begin_tab_bar("Cameras")
 	{
-		var player_camera_tab = imguigml_begin_tab_item("obj_player_camera")
-		if(player_camera_tab[0])
+		if(instance_exists(obj_player_camera))
+		{
+			var player_camera_tab = imguigml_begin_tab_item("Player Camere")
+			if(player_camera_tab[0])
 		{
 			imguigml_columns(2);
 	
@@ -286,6 +288,55 @@ if(camera_window[0])
 			
 			imguigml_end_tab_item();
 		}
+		}
+		
+		if(instance_exists(obj_room_camera))
+		{
+			var room_camera_tab = imguigml_begin_tab_item("Room Camera")
+			if(room_camera_tab[0])
+			{
+				
+				//debug options
+				imguigml_text("Show debug sprite:");
+				imguigml_same_line();
+				var chk_debugSprite = imguigml_checkbox("##debugSprite",obj_room_camera.show_debug)
+				if(chk_debugSprite[0])
+				{
+					obj_room_camera.show_debug = chk_debugSprite[1];
+				}
+				imguigml_separator();
+				
+				#region view size
+				
+					imguigml_text("View Width:");
+					imguigml_same_line();
+					var input_view_w = imguigml_input_int("##view_w",view_w);
+					if(input_view_w[0])
+					{
+						view_w = input_view_w[1];
+					}
+					imguigml_text("View Height:");
+					imguigml_same_line();
+					var input_view_h = imguigml_input_int("##view_h",view_h);
+					if(input_view_h[0])
+					{
+						view_h = input_view_h[1];
+					}
+					var apply_3 = imguigml_button("apply");
+					if(apply_3)
+					{	
+						scr_view_custom(obj_room_camera,view_w,view_h);
+					}
+				
+				#endregion
+				
+				
+				
+				
+				imguigml_end_tab_item();
+			}		
+		}
+		
 		
 		var other_camera_tab = imguigml_begin_tab_item("Another Camera")
 		if(other_camera_tab[0])

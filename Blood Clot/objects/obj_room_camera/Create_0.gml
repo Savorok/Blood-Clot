@@ -1,5 +1,8 @@
 /// @description init camera variables
 
+//dev propertites
+show_debug = false;
+
 //view propertys
 view_width = Camera_Controller.view_width;
 view_height = Camera_Controller.view_height;
@@ -7,7 +10,7 @@ view_height = Camera_Controller.view_height;
 //follow properties
 x_to = x;
 y_to = y;
-pan_speed = 15;
+zoom_speed = 5;
 
 follow = obj_room_camera;
 

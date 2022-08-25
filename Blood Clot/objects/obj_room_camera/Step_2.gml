@@ -1,7 +1,7 @@
 #region camera variables 
 
-var cur_camera_width = camera_get_view_width(view_camera[0]);
-var cur_camera_height = camera_get_view_height(view_camera[0]);
+var cur_camera_width = view_width;
+var cur_camera_height = view_height;
 var new_camera_width = cur_camera_width;
 var new_camera_height = cur_camera_height;
 
@@ -9,14 +9,32 @@ var new_camera_height = cur_camera_height;
 
 #region camera code 
 
-
-
-
+if(mouse_wheel_up())
+{
+	view_width -= cur_camera_width/zoom_speed
+	view_height-= cur_camera_height/zoom_speed
+	
+	camera_set_view_pos(view_camera[0],x,y);
+	camera_set_view_size(view_camera[0],view_width, view_height);	
+	
+	alarm[0] = 1;
+}
+if(mouse_wheel_down())
+{
+	view_width += cur_camera_width/zoom_speed
+	view_height += cur_camera_height/zoom_speed
+	
+	camera_set_view_pos(view_camera[0],x,y);
+	camera_set_view_size(view_camera[0],view_width, view_height);	
+	
+	alarm[0] = 1;
+}
 
 
 //set camera position and size
 camera_set_view_pos(view_camera[0],x,y);
-camera_set_view_size(view_camera[0],new_camera_width, new_camera_height);
+camera_set_view_size(view_camera[0],view_width, view_height);
+
 
 #endregion
 
