@@ -1,6 +1,6 @@
 if(!Level_Controller.paused)
 {
-	if(!dead)
+	if(!dead and !Level_Controller.free_cam)
 	{
 		//get the players state and handle gravity
 		scr_player_state();

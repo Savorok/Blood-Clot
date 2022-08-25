@@ -330,6 +330,22 @@ if(camera_window[0])
 				
 				#endregion
 				
+				imguigml_separator();
+				
+				#region zoom
+				
+				imguigml_text("Zoom amount:");
+				imguigml_same_line();
+				HelpHover("More zooms slower \n(Dont put 1)","?")
+				imguigml_same_line();
+				var zoom_amount_input = imguigml_input_int("##zoom_amount",zoom_speed,1,5);
+				if(zoom_amount_input[0])
+				{
+					obj_room_camera.zoom_speed = zoom_amount_input[1];
+					zoom_speed = zoom_amount_input[1];
+				}
+				
+				#endregion
 				
 				
 				

@@ -27,7 +27,7 @@ view_w = Camera_Controller.view_width;
 view_h = Camera_Controller.view_height;
 
 #region player camera variables
-if(instance_exists(obj_player_camera))
+	if(instance_exists(obj_player_camera))
 {
 	//paning
 	pan_speed = obj_player_camera.pan_speed;
@@ -45,3 +45,14 @@ if(instance_exists(obj_player_camera))
 	return_time = obj_player_camera.return_time;
 }
 #endregion
+
+#region room camera variables
+
+	if(instance_exists(obj_room_camera))
+	{
+		zoom_speed = obj_room_camera.zoom_speed
+	}
+	
+#endregion
+
+

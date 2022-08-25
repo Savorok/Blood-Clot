@@ -89,6 +89,17 @@ if(imguigml_ready())
 				close_on_open = chk_close_on_open[1];
 			}
 			
+			imguigml_same_line();
+			//Free cam
+			imguigml_text("Free cam:");
+			imguigml_same_line();
+			var chk_free_cam = imguigml_checkbox("##free_cam", free_cam)
+			if(chk_free_cam[0])
+			{
+				free_cam = chk_free_cam[1];
+				Level_Controller.free_cam = chk_free_cam[1];
+			}
+			
 			imguigml_separator();
 			
 			//main screen bar
