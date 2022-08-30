@@ -15,7 +15,7 @@ else if(key_pause and paused)
 }
 
 //timer
-if(!paused)
+if(!paused and !level_complete)
 {
 	//increase seconds
 	if(count_up)

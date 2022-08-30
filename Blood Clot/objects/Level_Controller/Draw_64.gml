@@ -1,4 +1,4 @@
-/// @description Draw pause
+/// @description Draw pause and Timer
 
 if(!level_complete)
 {
