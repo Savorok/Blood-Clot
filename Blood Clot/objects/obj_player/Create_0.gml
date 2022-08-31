@@ -24,6 +24,7 @@ alpha = 1;
 //movement variables 
 h_speed = 0;
 v_speed = 0;
+jump_relief = 1;
 
 //action hold variables
 hold_time = 0;

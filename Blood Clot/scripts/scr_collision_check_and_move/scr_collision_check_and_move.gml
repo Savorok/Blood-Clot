@@ -25,7 +25,7 @@ function scr_collision_check_and_move()
 		while(!place_meeting(x,y+sign(v_speed),obj_solid)){y += sign(v_speed);}
 		v_speed = 0;
 			
-		if(place_meeting(x,y+1,obj_solid))
+		if(place_meeting(x,y+jump_relief,obj_solid))
 		{
 			on_ground = true;
 			x_scale = 1.25;

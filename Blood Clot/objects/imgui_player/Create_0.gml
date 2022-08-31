@@ -24,6 +24,7 @@ level_grav = Level_Controller.room_gravity;
 ground_acc = Global_Controller.ground_acc;
 ground_max_speed = Global_Controller.ground_max_speed;
 ground_jump = Global_Controller.jump_speed;
+jump_relief = obj_player.jump_relief;
 
 //air
 air_acc = Global_Controller.air_acc;

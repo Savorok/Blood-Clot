@@ -43,6 +43,7 @@ if(instance_exists(obj_player))
 	
 	movement_properties[0] = obj_player.h_speed;
 	movement_properties[1] = obj_player.v_speed;
+	movement_properties[2] = obj_player.jump_relief;
 	
 	
 	if(obj_player.on_ground and !obj_player.in_water and !obj_player.in_blood)
@@ -440,6 +441,15 @@ if(player_window[0] )
 				{
 					Global_Controller.jump_speed = -input_jump_speed[1];
 					ground_jump = -input_jump_speed[1];
+				}
+				
+				imguigml_text("Jump Relief:");
+				imguigml_same_line();
+				var input_jump_relief = imguigml_input_float("##input_jump_relief",jump_relief,0.1,1.0,1)
+				if(input_jump_relief[0])
+				{
+					obj_player.jump_relief = input_jump_relief[1];
+					jump_relief = input_jump_relief[1];
 				}
 				
 				imguigml_end_tab_item();

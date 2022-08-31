@@ -3,7 +3,7 @@
 
 function scr_player_grounded()
 {
-	if(place_meeting(x,y+1,obj_solid))
+	if(place_meeting(x,y+jump_relief,obj_solid))
 	{
 		return true;
 	}
