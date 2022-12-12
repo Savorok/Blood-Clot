@@ -40,7 +40,8 @@ if(mpos == 1 and push)
 //options
 if(mpos == 2 and push)
 {
-	
+	instance_create_layer(x,y,"Controllers",gui_pause_options)
+	instance_destroy();
 }
 //main menu
 if(mpos == 3 and push)
@@ -52,3 +53,5 @@ if(mpos == 4 and push)
 {
 	game_end();
 }
+
+
