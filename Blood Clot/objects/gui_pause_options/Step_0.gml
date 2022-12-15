@@ -8,13 +8,14 @@ if(back)
 	instance_destroy();
 }
 
-//move menu
+#region //move menu
+
 var up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or mouse_wheel_up() or (gamepad_button_check_pressed(0,gp_padu));
 var down = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S")) or mouse_wheel_down() or (gamepad_button_check_pressed(0,gp_padd));
 
 if(mpos == 0 and up)
 {
-	mpos = 3;
+	mpos = 4;
 }
 else if(mpos != 0 and up)
 {
@@ -28,7 +29,116 @@ else if(mpos != 0 and down)
 {
 	mpos += 1
 }
-if(mpos > 3 and down)
+if(mpos > 4 and down)
 {
 	mpos  = 0;
 }
+
+#endregion
+
+#region //menu functionality
+
+var right = keyboard_check_released(vk_right);
+var left = keyboard_check_released(vk_left);
+var push = keyboard_check_released(vk_enter) or keyboard_check_released(ord("E")) or (gamepad_button_check_pressed(0,gp_face1)) or mouse_check_button(mb_left) or (gamepad_button_check_pressed(0,gp_start));
+
+//aspect ratio
+if(mpos == 0)
+{
+	if(right)
+	{
+		if(cur_aspect_ratio = 2)
+		{
+			cur_aspect_ratio = 0;
+		}
+		else
+		{
+			cur_aspect_ratio++;
+		}
+	}
+	else if(left)
+	{
+		if(cur_aspect_ratio = 0)
+		{
+			cur_aspect_ratio = 2;
+		}
+		else
+		{
+			cur_aspect_ratio--;
+		}
+	}
+	else if(push)
+	{
+		//update aspect ratio
+		scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, fullscreen);
+		//update menu
+		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio-1;
+		cur_resoloution = Camera_Controller.cur_resoloution-1;
+	}
+}
+if(mpos == 1)
+{
+	if(right)
+	{
+		if(cur_resoloution = 2)
+		{
+			cur_resoloution = 0;
+		}
+		else
+		{
+			cur_resoloution++;
+		}
+	}
+	else if(left)
+	{
+		if(cur_resoloution = 0)
+		{
+			cur_resoloution = 2;
+		}
+		else
+		{
+			cur_resoloution--;
+		}
+	}
+	else if(push)
+	{
+		
+	}
+}
+if(mpos == 2)
+{
+	if(right)
+	{
+		if(cur_fullscreen = 1)
+		{
+			cur_fullscreen = 0;
+		}
+		else
+		{
+			cur_fullscreen++;
+		}
+	}
+	else if(left)
+	{
+		if(cur_fullscreen = 0)
+		{
+			cur_fullscreen = 1;
+		}
+		else
+		{
+			cur_fullscreen--;
+		}
+	}
+	else if(push)
+	{
+		//update aspect ratio
+		scr_resoloution(Camera_Controller.cur_aspect_ratio-1, Camera_Controller.cur_resoloution-1, obj_player_camera, cur_fullscreen);
+		//update menu
+		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio-1;
+		cur_resoloution = Camera_Controller.cur_resoloution-1;
+		cur_fullscreen = Camera_Controller.cur_fullscreen;
+	}
+}
+
+
+#endregion

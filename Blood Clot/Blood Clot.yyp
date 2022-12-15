@@ -121,6 +121,7 @@
     {"id":{"name":"spr_dead","path":"sprites/spr_dead/spr_dead.yy",},"order":5,},
     {"id":{"name":"obj_hold_bar","path":"objects/obj_hold_bar/obj_hold_bar.yy",},"order":1,},
     {"id":{"name":"__rousr_functions","path":"scripts/__rousr_functions/__rousr_functions.yy",},"order":1,},
+    {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},"order":2,},
     {"id":{"name":"spr_water_mask","path":"sprites/spr_water_mask/spr_water_mask.yy",},"order":3,},
     {"id":{"name":"spr_none_32","path":"sprites/spr_none_32/spr_none_32.yy",},"order":7,},
     {"id":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},"order":2,},
@@ -217,6 +218,6 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.11.0.54",
+    "IDEVersion": "2022.11.1.56",
   },
 }
