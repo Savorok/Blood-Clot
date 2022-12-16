@@ -5,5 +5,5 @@ bracket_offset = 3;
 
 display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height)
 
-centre_x = window_get_width()/2;
-centre_y = window_get_height()/2;
+centre_x = Camera_Controller.window_width/2;
+centre_y = Camera_Controller.window_height/2;

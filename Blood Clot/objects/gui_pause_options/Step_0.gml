@@ -70,12 +70,17 @@ if(mpos == 0)
 	else if(push)
 	{
 		//update aspect ratio
-		scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, fullscreen);
+		scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, cur_fullscreen);
 		//update menu
 		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
 		cur_resoloution = Camera_Controller.cur_resoloution;
+		//update gui
+		display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height);
+		centre_x = Camera_Controller.window_width/2;
+		centre_y = Camera_Controller.window_height/2;
 	}
 }
+//resoloution
 if(mpos == 1)
 {
 	if(right)
@@ -102,9 +107,18 @@ if(mpos == 1)
 	}
 	else if(push)
 	{
-		
+		//update aspect ratio
+		scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, cur_fullscreen);
+		//update menu
+		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
+		cur_resoloution = Camera_Controller.cur_resoloution;
+		//update gui
+		display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height);
+		centre_x = Camera_Controller.window_width/2;
+		centre_y = Camera_Controller.window_height/2;
 	}
 }
+//fullscreen
 if(mpos == 2)
 {
 	if(right)
@@ -137,8 +151,27 @@ if(mpos == 2)
 		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
 		cur_resoloution = Camera_Controller.cur_resoloution;
 		cur_fullscreen = Camera_Controller.cur_fullscreen;
+		//update gui
+		display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height);
+		centre_x = Camera_Controller.window_width/2;
+		centre_y = Camera_Controller.window_height/2;
 	}
 }
+//apply
+if(mpos == 4 and push)
+{
+	//update aspect ratio
+	scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, cur_fullscreen);
+	//update menu
+	cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
+	cur_resoloution = Camera_Controller.cur_resoloution;
+	cur_fullscreen = Camera_Controller.cur_fullscreen;
+	//update gui
+	display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height);
+	centre_x = Camera_Controller.window_width/2;
+	centre_y = Camera_Controller.window_height/2;
+}
+
 
 
 #endregion

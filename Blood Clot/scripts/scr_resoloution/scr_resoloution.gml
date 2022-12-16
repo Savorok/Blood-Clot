@@ -135,6 +135,11 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	
 	//set the new window size
 	window_set_size(w_res,h_res);
+	show_debug_message("New Screen Width: " + string(w_res));
+	show_debug_message("New Screen Height: " + string(h_res));
+
+	
+	
 	surface_resize(application_surface,w_res,h_res);
 	//if blood surface is there resize
 	if(surface_exists(Blood_Controller.surface_blood)){surface_resize(Blood_Controller.surface_blood,w_res,h_res);}

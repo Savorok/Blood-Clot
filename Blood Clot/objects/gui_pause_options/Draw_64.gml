@@ -1,9 +1,20 @@
 /// @description draw pause menu
 
+//var centre_x = Camera_Controller.window_width/2;
+//var centre_y = Camera_Controller.window_height/2;
+
 //draw backround
 draw_set_color(c_black);
 draw_set_alpha(.5);
 draw_rectangle(0,0,centre_x*2,centre_y*2,false);
+	
+show_debug_message("Window Width: " + string(window_get_width()));
+show_debug_message("Window Height: " + string(window_get_height()));
+show_debug_message("Controller Width: " + string(Camera_Controller.window_width));
+show_debug_message("Controller Height: " + string(Camera_Controller.window_height));
+show_debug_message("Centre X: " + string(centre_x));
+show_debug_message("Centre Y: " + string(centre_y));
+
 	
 //draw pause menu text
 draw_set_alpha(1);
@@ -13,15 +24,15 @@ draw_set_color(c_white);
 draw_text(centre_x-140,centre_y-(3*option_offset_y),"Aspect Ratio:");
 draw_text(centre_x+65,centre_y-(3*option_offset_y),aspect_ratios[cur_aspect_ratio]);
 draw_text(centre_x-140,centre_y-(2*option_offset_y),"Resoloution:");
-if(cur_resoloution == 0)
+if(cur_aspect_ratio == 0)
 {
 	draw_text(centre_x+45,centre_y-(2*option_offset_y),resoloutions[0,cur_resoloution]);
 }
-else if(cur_resoloution == 1)
+else if(cur_aspect_ratio == 1)
 {
 	draw_text(centre_x+45,centre_y-(2*option_offset_y),resoloutions[1,cur_resoloution]);
 }
-else if(cur_resoloution == 2)
+else if(cur_aspect_ratio == 2)
 {
 	draw_text(centre_x+45,centre_y-(2*option_offset_y),resoloutions[2,cur_resoloution]);
 }

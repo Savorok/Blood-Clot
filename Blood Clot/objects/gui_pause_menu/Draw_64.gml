@@ -1,5 +1,8 @@
 /// @description draw pause menu
 
+//var centre_x = Camera_Controller.window_width/2;
+//var centre_y = Camera_Controller.window_height/2;
+
 //draw backround
 draw_set_color(c_black);
 draw_set_alpha(.5);
