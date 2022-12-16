@@ -71,6 +71,6 @@ else if(mpos == 3)
 //Apply
 else if(mpos == 4)
 {
-	draw_text(centre_x - 40, centre_y + (3*option_offset_y) + bracket_offset,"[") ;
+	draw_text(centre_x - 40, centre_y + (3*option_offset_y) + bracket_offset,"[");
 	draw_text(centre_x + 60, centre_y + (3*option_offset_y) + bracket_offset,"]");
 }

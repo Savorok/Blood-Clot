@@ -2,6 +2,8 @@
 centre_x = Camera_Controller.window_width/2;
 centre_y = Camera_Controller.window_height/2;
 
+active = true;
+
 mpos = 0;
 option_offset_y = 35;
 bracket_offset = 5;

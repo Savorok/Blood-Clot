@@ -5,6 +5,7 @@
   "resources": [
     {"id":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},"order":0,},
     {"id":{"name":"scr_player_scale","path":"scripts/scr_player_scale/scr_player_scale.yy",},"order":2,},
+    {"id":{"name":"spr_revert_changes","path":"sprites/spr_revert_changes/spr_revert_changes.yy",},"order":3,},
     {"id":{"name":"spr_paint_bomb_single","path":"sprites/spr_paint_bomb_single/spr_paint_bomb_single.yy",},"order":2,},
     {"id":{"name":"ColourButton","path":"scripts/ColourButton/ColourButton.yy",},"order":1,},
     {"id":{"name":"HelpHover","path":"scripts/HelpHover/HelpHover.yy",},"order":0,},
@@ -59,6 +60,7 @@
     {"id":{"name":"ts_main_white","path":"tilesets/ts_main_white/ts_main_white.yy",},"order":0,},
     {"id":{"name":"Global_Controller","path":"objects/Global_Controller/Global_Controller.yy",},"order":0,},
     {"id":{"name":"ts_other_white","path":"tilesets/ts_other_white/ts_other_white.yy",},"order":1,},
+    {"id":{"name":"gui_revert_changes","path":"objects/gui_revert_changes/gui_revert_changes.yy",},"order":4,},
     {"id":{"name":"Imgui_level_editor","path":"objects/Imgui_level_editor/Imgui_level_editor.yy",},"order":0,},
     {"id":{"name":"obj_fast_blood","path":"objects/obj_fast_blood/obj_fast_blood.yy",},"order":4,},
     {"id":{"name":"spr_backround_health_bar","path":"sprites/spr_backround_health_bar/spr_backround_health_bar.yy",},"order":2,},
