@@ -6,7 +6,7 @@ scale = 2;
 
 //aspect ratios
 aspect_ratios = ["4:3","16:9","43:18"];
-cur_aspect_ratio = Camera_Controller.cur_aspect_ratio-1;
+cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
 
 //resoloutions
 resoloutions = 
@@ -15,7 +15,7 @@ resoloutions =
 	["1280*720","1920*1080","3840*2160"],
 	["860*360","1720*720","3440*1440"]
 ];
-cur_resoloution = Camera_Controller.cur_resoloution-1;
+cur_resoloution = Camera_Controller.cur_resoloution;
 
 //fullscreen
 fullscreen = Camera_Controller.cur_fullscreen;

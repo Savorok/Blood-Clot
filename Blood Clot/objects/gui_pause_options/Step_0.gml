@@ -72,8 +72,8 @@ if(mpos == 0)
 		//update aspect ratio
 		scr_resoloution(cur_aspect_ratio, cur_resoloution, obj_player_camera, fullscreen);
 		//update menu
-		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio-1;
-		cur_resoloution = Camera_Controller.cur_resoloution-1;
+		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
+		cur_resoloution = Camera_Controller.cur_resoloution;
 	}
 }
 if(mpos == 1)
@@ -132,10 +132,10 @@ if(mpos == 2)
 	else if(push)
 	{
 		//update aspect ratio
-		scr_resoloution(Camera_Controller.cur_aspect_ratio-1, Camera_Controller.cur_resoloution-1, obj_player_camera, cur_fullscreen);
+		scr_resoloution(Camera_Controller.cur_aspect_ratio, Camera_Controller.cur_resoloution, obj_player_camera, cur_fullscreen);
 		//update menu
-		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio-1;
-		cur_resoloution = Camera_Controller.cur_resoloution-1;
+		cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
+		cur_resoloution = Camera_Controller.cur_resoloution;
 		cur_fullscreen = Camera_Controller.cur_fullscreen;
 	}
 }

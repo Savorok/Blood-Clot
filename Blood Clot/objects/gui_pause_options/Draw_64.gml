@@ -3,11 +3,7 @@
 //draw backround
 draw_set_color(c_black);
 draw_set_alpha(.5);
-draw_rectangle(0,0,window_get_width(),window_get_height(),false);
-
-//pause menu offsets
-var centre_x = surface_get_width(application_surface)/2;
-var centre_y = surface_get_height(application_surface)/2;
+draw_rectangle(0,0,centre_x*2,centre_y*2,false);
 	
 //draw pause menu text
 draw_set_alpha(1);

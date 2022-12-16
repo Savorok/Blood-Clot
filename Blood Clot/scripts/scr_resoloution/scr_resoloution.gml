@@ -150,10 +150,10 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	}
 	
 	//update camera controller variables
-	cur_aspect_ratio = aspect_ratio;
-	cur_resoloution = resoloution;
-	cur_active_camera = cur_camera;
-	cur_fullscreen = fullscreen;
+	Camera_Controller.cur_aspect_ratio = aspect_ratio;
+	Camera_Controller.cur_resoloution = resoloution;
+	Camera_Controller.cur_active_camera = cur_camera;
+	Camera_Controller.cur_fullscreen = fullscreen;
 	
 	
 	

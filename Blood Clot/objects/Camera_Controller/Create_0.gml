@@ -7,9 +7,9 @@ view_height = 360;
 window_width = 1920;
 window_height = 1080;
 
-cur_aspect_ratio = 2;
-cur_resoloution = 3;
-cur_fullscreen = 1;
+cur_aspect_ratio = 1;
+cur_resoloution = 1;
+cur_fullscreen = 0;
 cur_active_camera = obj_player_camera;
 
 //shaking
