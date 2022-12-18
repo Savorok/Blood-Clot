@@ -2,7 +2,7 @@
 
 if(active)
 {
-	depth = -1;
+	depth = -1000;
 	//check to go back to pause 
 	var back = keyboard_check_released(vk_escape) or keyboard_check_released(vk_backspace) or (gamepad_button_check_pressed(0,gp_start))
 
@@ -155,6 +155,6 @@ if(active)
 }
 else
 {
-	depth = 1;	
+	depth = -999;	
 }
 

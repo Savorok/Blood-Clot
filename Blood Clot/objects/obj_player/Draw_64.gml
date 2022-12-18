@@ -1,5 +1,8 @@
 /// @description Draw player gui
 
+//draw on the player instance level
+depth = -600
+
 //draw healthbar
 draw_sprite_ext(spr_backround_health_bar,0,healthbar_x,healthbar_y,healthbar_scale,healthbar_scale,0,c_white,1);
 draw_sprite_stretched(spr_inner_health_bar,0,healthbar_x,healthbar_y,(cur_blood/max_blood) * healthbar_width * healthbar_scale,healthbar_height * healthbar_scale)

@@ -6,7 +6,7 @@ draw_set_alpha(.5);
 draw_rectangle(0,0,centre_x*2,centre_y*2,false);
 
 //set depth to be above current gui layer
-depth = -1;
+depth = -1000;
 
 //draw the sprite and text
 draw_set_alpha(1);

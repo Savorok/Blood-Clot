@@ -1,7 +1,10 @@
-/// @description Draw pause and Timer
+/// @description Draw Timer
 
 if(!level_complete)
 {
+	//draw on the player instance level
+	depth = -600
+	
 	var xx = view_get_xport(view_camera[0]);//x pot
 	var yy = view_get_yport(view_camera[0]);//y pot
 
