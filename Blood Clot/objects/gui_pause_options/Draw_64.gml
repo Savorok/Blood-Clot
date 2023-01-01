@@ -18,8 +18,11 @@ show_debug_message("Centre Y: " + string(centre_y));
 	
 //draw pause menu text
 draw_set_alpha(1);
-draw_sprite_ext(spr_pause_options,image_index,centre_x,centre_y,2,2,image_angle,image_blend,image_alpha)
-draw_set_font(fnt_timer_12);
+draw_sprite_ext(spr_pause_options,image_index,centre_x,centre_y,2*(gui_scale),2*(gui_scale),image_angle,image_blend,image_alpha)
+
+//get the right font for Gui scale
+//scr_gui_set_font(gui_scale);
+
 draw_set_color(c_white);
 draw_text(centre_x-140,centre_y-(3*option_offset_y),"Aspect Ratio:");
 draw_text(centre_x+65,centre_y-(3*option_offset_y),aspect_ratios[cur_aspect_ratio]);
@@ -39,7 +42,7 @@ else if(cur_aspect_ratio == 2)
 draw_text(centre_x-130,centre_y-(1*option_offset_y),"Fullscreen:");
 draw_text(centre_x+70,centre_y-(1*option_offset_y),fullscreen[cur_fullscreen]);
 draw_text(centre_x-110,centre_y,"Gui Scale:");
-draw_text(centre_x+50,centre_y,"1");
+draw_text(centre_x+50,centre_y,gui_scale);
 draw_text(centre_x-20,centre_y+(3*option_offset_y),"Apply");
 
 //draw menu position
@@ -47,26 +50,26 @@ draw_text(centre_x-20,centre_y+(3*option_offset_y),"Apply");
 draw_set_color(c_white);
 if(mpos == 0)
 {
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 50,centre_y - (3*option_offset_y) + arrow_offset,-1,1,image_angle,image_blend,image_alpha);
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 130,centre_y - (3*option_offset_y) + arrow_offset,1,1,image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 50,centre_y - (3*option_offset_y) + arrow_offset,-1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 130,centre_y - (3*option_offset_y) + arrow_offset,1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
 }
 //resoloution
 if(mpos == 1)
 {
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 30,centre_y - (2*option_offset_y) + arrow_offset,-1,1,image_angle,image_blend,image_alpha);
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 160,centre_y - (2*option_offset_y) + arrow_offset,1,1,image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 30,centre_y - (2*option_offset_y) + arrow_offset,-1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 160,centre_y - (2*option_offset_y) + arrow_offset,1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
 }
 //fullscreen
 else if(mpos == 2)
 {
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 20,centre_y - (1*option_offset_y) + arrow_offset,-1,1,image_angle,image_blend,image_alpha);
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 70,centre_y - (1*option_offset_y) + arrow_offset,1,1,image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 20,centre_y - (1*option_offset_y) + arrow_offset,-1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 70,centre_y - (1*option_offset_y) + arrow_offset,1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
 }
 //Gui size
 else if(mpos == 3)
 {
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 20,centre_y + arrow_offset,-1,1,image_angle,image_blend,image_alpha);
-	draw_sprite_ext(spr_arrow,image_index,centre_x + 70,centre_y + arrow_offset,1,1,image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 20,centre_y + arrow_offset,-1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
+	draw_sprite_ext(spr_arrow,image_index,centre_x + 70,centre_y + arrow_offset,1*(gui_scale),1*(gui_scale),image_angle,image_blend,image_alpha);
 }
 //Apply
 else if(mpos == 4)

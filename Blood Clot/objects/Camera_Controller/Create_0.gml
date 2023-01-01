@@ -1,6 +1,5 @@
 ///@description Init camera variables
 
-
 //view and window sizes
 view_width = 640;
 view_height = 360;
@@ -16,6 +15,9 @@ cur_active_camera = obj_player_camera;
 shaking = false;
 //zooming
 zoom = false;
+
+//gui
+gui_scale = 1;
 
 //if player exists and no camera make one
 if(instance_exists(obj_player))

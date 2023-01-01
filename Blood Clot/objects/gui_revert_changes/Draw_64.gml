@@ -11,7 +11,7 @@ depth = -1000;
 //draw the sprite and text
 draw_set_alpha(1);
 draw_sprite_ext(spr_revert_changes,image_index,centre_x,centre_y,2,2,image_angle,image_blend,image_alpha)
-draw_set_font(fnt_timer_12);
+draw_set_font(fnt_gui_12);
 draw_set_color(c_white);
 draw_text(centre_x-70,centre_y,"Yes");
 draw_text(centre_x+40,centre_y,"No");

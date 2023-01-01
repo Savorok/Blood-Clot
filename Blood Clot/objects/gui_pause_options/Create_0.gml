@@ -3,11 +3,14 @@ centre_x = Camera_Controller.window_width/2;
 centre_y = Camera_Controller.window_height/2;
 
 active = true;
+gui_scale = Camera_Controller.gui_scale;
 
 mpos = 0;
-option_offset_y = 35;
-bracket_offset = 5;
-arrow_offset = 20;
+option_offset_y = 35*gui_scale*3;
+bracket_offset = 5*gui_scale*3;
+arrow_offset = 20*gui_scale*3;
+
+
 
 display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height)
 

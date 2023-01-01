@@ -2,6 +2,8 @@
 
 var cur_camera_width = view_width;
 var cur_camera_height = view_height;
+
+//are these doing anything???
 var new_camera_width = cur_camera_width;
 var new_camera_height = cur_camera_height;
 

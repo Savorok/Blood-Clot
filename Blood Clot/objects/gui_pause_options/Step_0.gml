@@ -123,6 +123,33 @@ if(active)
 			}
 		}
 	}
+	//gui scale
+	if(mpos == 3)
+	{
+		if(right)
+		{
+			if(gui_scale = 2)
+			{
+				gui_scale = 1;
+			}
+			else
+			{
+				gui_scale += 0.2;
+			}
+		}
+		else if(left)
+		{
+			if(gui_scale = 1)
+			{
+				gui_scale = 2;
+			}
+			else
+			{
+				gui_scale -= 0.2;
+			}
+		}
+		Camera_Controller.gui_scale = gui_scale;
+	}
 	//apply
 	if(mpos == 4 and push)
 	{

@@ -38,17 +38,15 @@ spear_pos = [];
 /// GUI variables
 
 //general
-scale = 3;
+scale = 3 * Camera_Controller.gui_scale;
 
 //healthbar vars
-healthbar_scale = scale;
 healthbar_width = 96;
 healthbar_height = 12;
 healthbar_x = 416;
 healthbar_y = 16;
 
 //bleed gui vars
-bleed_icon_scale = scale;
 bleed_icon_x = 740;
 bleed_icon_y = 10;
 bleed_number_x = 785;

@@ -12,7 +12,7 @@ var centre_y = surface_get_height(application_surface)/2;
 //draw pause menu text
 draw_set_alpha(1);
 draw_sprite_ext(spr_end_level,image_index,centre_x,centre_y,2,2,image_angle,image_blend,image_alpha)
-draw_set_font(fnt_timer_12);
+draw_set_font(fnt_gui_12);
 draw_set_color(c_white);
 if(Level_Controller.minutes < 10)
 {
@@ -28,7 +28,7 @@ draw_text(centre_x-58,centre_y + (1*option_offset_y),"Exit Game");
 
 //draw version number
 draw_set_color(c_gray);
-draw_set_font(fnt_timer_10);
+draw_set_font(fnt_gui_10);
 draw_text(centre_x-130,centre_y+130,"Ver: " + string(Global_Controller.version));
 
 //draw menu position

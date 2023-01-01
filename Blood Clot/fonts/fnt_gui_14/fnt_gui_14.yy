@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "fnt_gui_14",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
@@ -6,7 +9,7 @@
   "applyKerning": 0,
   "fontName": "Pixeled",
   "styleName": "Regular",
-  "size": 12.0,
+  "size": 14.0,
   "bold": false,
   "italic": false,
   "charset": 0,
@@ -129,11 +132,7 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "Fonts",
-    "path": "folders/Fonts.yy",
+    "name": "gui fonts",
+    "path": "folders/Fonts/gui fonts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "fnt_timer_12",
-  "tags": [],
-  "resourceType": "GMFont",
 }

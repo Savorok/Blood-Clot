@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "fnt_gui_10",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
@@ -129,11 +132,7 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "Fonts",
-    "path": "folders/Fonts.yy",
+    "name": "gui fonts",
+    "path": "folders/Fonts/gui fonts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "fnt_timer_10",
-  "tags": [],
-  "resourceType": "GMFont",
 }

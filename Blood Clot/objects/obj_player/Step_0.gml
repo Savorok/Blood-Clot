@@ -41,6 +41,7 @@ if(!Level_Controller.paused)
 		{
 			bleed_per_sec = 0;
 		}
+		
 	}
 	else
 	{

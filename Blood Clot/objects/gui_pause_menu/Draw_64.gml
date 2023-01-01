@@ -10,8 +10,8 @@ draw_rectangle(0,0,centre_x*2,centre_y*2,false);
 	
 //draw pause menu text
 draw_set_alpha(1);
-draw_sprite_ext(spr_pause_box,image_index,centre_x,centre_y,2,2,image_angle,image_blend,image_alpha)
-draw_set_font(fnt_timer_12);
+draw_sprite_ext(spr_pause_box,image_index,centre_x,centre_y,2*(Camera_Controller.gui_scale),2*(Camera_Controller.gui_scale),image_angle,image_blend,image_alpha)
+draw_set_font(fnt_gui_12);
 draw_set_color(c_white);
 draw_text(centre_x-52,centre_y-(3*option_offset_y),"Continue");
 draw_text(centre_x-50,centre_y-(2*option_offset_y),"Restart");
@@ -21,7 +21,7 @@ draw_text(centre_x-58,centre_y+(1*option_offset_y),"Exit Game");
 
 //draw version number
 draw_set_color(c_gray);
-draw_set_font(fnt_timer_10);
+draw_set_font(fnt_gui_10);
 draw_text(centre_x-130,centre_y+130,"Ver: " + string(Global_Controller.version));
 
 //draw menu position
