@@ -1,14 +1,22 @@
 ///@description Init camera variables
 
+//get prefrences from options file
+prefs = scr_get_display_pref();
+
+for(i = 0; i < array_length(prefs); i++)
+{
+	show_debug_message("Pref:" + string(prefs[i]));
+}
+
 //view and window sizes
 view_width = 640;
 view_height = 360;
 window_width = 1920;
 window_height = 1080;
 
-cur_aspect_ratio = 1;
-cur_resoloution = 1;
-cur_fullscreen = 0;
+cur_aspect_ratio = prefs[0];
+cur_resoloution = prefs[1];
+cur_fullscreen = prefs[2];
 cur_active_camera = obj_player_camera;
 
 //shaking

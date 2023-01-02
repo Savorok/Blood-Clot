@@ -8,14 +8,6 @@ draw_set_color(c_black);
 draw_set_alpha(.5);
 draw_rectangle(0,0,centre_x*2,centre_y*2,false);
 	
-show_debug_message("Window Width: " + string(window_get_width()));
-show_debug_message("Window Height: " + string(window_get_height()));
-show_debug_message("Controller Width: " + string(Camera_Controller.window_width));
-show_debug_message("Controller Height: " + string(Camera_Controller.window_height));
-show_debug_message("Centre X: " + string(centre_x));
-show_debug_message("Centre Y: " + string(centre_y));
-
-	
 //draw pause menu text
 draw_set_alpha(1);
 draw_sprite_ext(spr_pause_options,image_index,centre_x,centre_y,2*(gui_scale),2*(gui_scale),image_angle,image_blend,image_alpha)

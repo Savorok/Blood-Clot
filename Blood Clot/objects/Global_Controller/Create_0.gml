@@ -99,3 +99,13 @@ if(dev_mode and !instance_exists(Imgui_dev_menu))
 	instance_create_layer(x,y,"Controllers",Imgui_console)
 } 
 
+//check for pref file
+var file = "options.txt";
+
+//if it doesnt exists add the required info
+if(!file_exists(working_directory + file))
+{
+	scr_init_options_file(file)
+}
+
+
