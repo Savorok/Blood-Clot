@@ -1,18 +1,30 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+// initialise the options file
 function scr_init_options_file(filename)
 {
-	var f = file_text_open_write(filename);
+	//create options file with given name
+	var file = file_text_open_write(filename);
 
-	file_text_write_string(f, "DevMode=True");
-	file_text_writeln(f);
-	file_text_write_string(f, "AspectRatio=1");
-	file_text_writeln(f);
-	file_text_write_string(f, "Resoloution=1");
-	file_text_writeln(f);
-	file_text_write_string(f, "Fullscreen=0");
+	//the options to put in the file
+	var options = [
+	"///// Dev Options /////",
+	"DevMode=True",
+	"///// Display Options /////",
+	"AspectRatio=1",
+	"Resoloution=1920x1080",
+	"CurRes=0",
+	"ViewSize=640x360",
+	"Fullscreen=0"
+	]
+
+	//go through all the options and add them to the file
+	for(var i = 0; i < array_length(options); i++)
+	{
+		file_text_write_string(file, options[i]);
+		file_text_writeln(file);
+	}
 	
-	file_text_close(f);
+	//close the file
+	file_text_close(file);
 	
 	show_debug_message("Created options file")
 }

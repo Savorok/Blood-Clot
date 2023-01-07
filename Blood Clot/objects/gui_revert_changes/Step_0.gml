@@ -37,7 +37,9 @@ if(mpos == 1 and push)
 	gui_pause_options.mpos = 0;
 	
 	//save new changes to options file
-	scr_save_display_pref(Camera_Controller.cur_aspect_ratio, Camera_Controller.cur_resoloution, Camera_Controller.cur_fullscreen);
+	scr_save_display_pref(Camera_Controller.cur_aspect_ratio,Camera_Controller.window_width,
+	Camera_Controller.window_height, Camera_Controller.cur_resoloution, Camera_Controller.view_width,
+	Camera_Controller.view_height, Camera_Controller.cur_fullscreen);
 	
 	instance_destroy();
 }

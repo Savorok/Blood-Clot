@@ -3,8 +3,12 @@ function scr_get_display_pref()
 {
 	//an array of display prefrences
 	//0:Aspect Ratio
-	//1:Resoloution
-	//2:Fullscreen
+	//1:Window Width
+	//2:Window Height
+	//3:CurResoloution
+	//4:View Width
+	//5:View Height
+	//6:Fullscreen
 	//
 	prefs = [];
 	
@@ -17,19 +21,40 @@ function scr_get_display_pref()
 		//update aspect ratio
 		if(string_pos("AspectRatio=",options[i]) != 0)
 		{
-			prefs[0] = real(string_split(options[i],"=")[1]);
+			var aspectRatio = string_split(options[i],"=");			
+			prefs[0] = real(aspectRatio[1])
 		}
 		
-		//update resoloution
+		//Window Width and Height
 		if(string_pos("Resoloution=",options[i]) != 0)
 		{	
-			prefs[1] = real(string_split(options[i],"=")[1]);
+			var resoloutions = string_split(options[i],"=");	
+			var resoloution = string_split(resoloutions[1],"x");
+			
+			prefs[1] = real(resoloution[0]);
+			prefs[2] = real(resoloution[1]);
 		}
 		
+		//Current resoloution
+		if(string_pos("CurRes=",options[i]) != 0)
+		{	
+			prefs[3] = real(string_split(options[i],"=")[1]);		
+		}
+		
+		
+		//View Width and Height
+		if(string_pos("ViewSize=",options[i]) != 0)
+		{	
+			var viewSizes = string_split(options[i],"=")[1];
+			var viewSize = string_split(viewSizes,"x");
+			
+			prefs[4] = real(viewSize[0]);
+			prefs[5] = real(viewSize[1]);
+		}		
 		//update fullscreen
 		if(string_pos("Fullscreen=",options[i]) != 0)
 		{
-			prefs[2] = real(string_split(options[i],"=")[1]);
+			prefs[6] = real(string_split(options[i],"=")[1]);
 		}
 	}
 	

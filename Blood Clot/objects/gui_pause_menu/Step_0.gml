@@ -36,6 +36,7 @@ if(mpos == 0 and push)
 if(mpos == 1 and push)
 {
 	room_restart();
+	Camera_Controller.alarm[2] = 1;
 }
 //options
 if(mpos == 2 and push)

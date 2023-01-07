@@ -135,10 +135,6 @@ function scr_resoloution(aspect_ratio, resoloution, cur_camera, fullscreen)
 	
 	//set the new window size
 	window_set_size(w_res,h_res);
-	show_debug_message("New Screen Width: " + string(w_res));
-	show_debug_message("New Screen Height: " + string(h_res));
-
-	
 	
 	surface_resize(application_surface,w_res,h_res);
 	//if blood surface is there resize
@@ -196,4 +192,3 @@ function scr_view_custom(cur_camera,view_width,view_height)
 	Camera_Controller.view_width = view_width;
 	Camera_Controller.view_height = view_height;
 }
-

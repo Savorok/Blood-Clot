@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_save_display_pref(aspectRatio, resoloution, fullscreen)
+function scr_save_display_pref(aspectRatio, windowWidth, windowHeight, curResoloution, viewWidth, viewHeight, fullscreen)
 {
 	var filename = "options.txt"
 	
@@ -19,10 +19,23 @@ function scr_save_display_pref(aspectRatio, resoloution, fullscreen)
 			options[i] = "AspectRatio=" + string(aspectRatio);
 		}
 		
-		//update resoloution
+		//update window width and height
 		if(string_pos("Resoloution=",options[i]) != 0)
 		{	
-			options[i] = "Resoloution=" + string(resoloution);
+			options[i] = "Resoloution=" + string(windowWidth) + "x" + string(windowHeight);
+		}
+		
+		
+		//update resoloution
+		if(string_pos("CurRes=",options[i]) != 0)
+		{	
+			options[i] = "CurRes=" + string(curResoloution);
+		}
+		
+		//update view width and height
+		if(string_pos("ViewSize=",options[i]) != 0)
+		{	
+			options[i] = "ViewSize=" + string(viewWidth) + "x" + string(viewHeight);
 		}
 		
 		//update fullscreen
