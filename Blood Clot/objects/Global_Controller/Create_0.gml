@@ -108,7 +108,8 @@ var file = "options.txt";
 //if it doesnt exists add the required info
 if(!file_exists(working_directory + file))
 {
-	scr_init_options_file(file)
+	scr_init_options_file(file);
 }
+
 
 

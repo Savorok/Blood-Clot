@@ -1,6 +1,4 @@
 /// @description spawn review camera
-
-
 if(instance_exists(obj_player_camera))
 {
 	obj_player_camera.alarm[0] = 1;

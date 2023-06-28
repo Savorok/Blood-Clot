@@ -18,7 +18,7 @@ view_height = prefs[5]
 cur_aspect_ratio = prefs[0];
 cur_resoloution = prefs[3]
 cur_fullscreen = prefs[6]
-cur_active_camera = obj_player_camera;
+cur_active_camera = obj_menu_camera;
 
 //shaking
 shaking = false;
