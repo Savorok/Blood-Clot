@@ -3,10 +3,13 @@
 //get prefrences from options file
 prefs = scr_get_display_pref();
 
+//show prefs
+/*
 for(i = 0; i < array_length(prefs); i++)
 {
 	show_debug_message("Pref:" + string(prefs[i]));
 }
+*/
 
 //view and window sizes
 window_width = prefs[1];
