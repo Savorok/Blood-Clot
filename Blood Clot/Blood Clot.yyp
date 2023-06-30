@@ -172,6 +172,7 @@
     {"id":{"name":"obj_paint","path":"objects/obj_paint/obj_paint.yy",},},
     {"id":{"name":"fnt_gui_10","path":"fonts/fnt_gui_10/fnt_gui_10.yy",},},
     {"id":{"name":"obj_paint_bomb_single","path":"objects/obj_paint_bomb_single/obj_paint_bomb_single.yy",},},
+    {"id":{"name":"spr_pause_continue","path":"sprites/spr_pause_continue/spr_pause_continue.yy",},},
     {"id":{"name":"spr_pause_box","path":"sprites/spr_pause_box/spr_pause_box.yy",},},
     {"id":{"name":"Blood_Controller","path":"objects/Blood_Controller/Blood_Controller.yy",},},
     {"id":{"name":"scr_array_to_file","path":"scripts/scr_array_to_file/scr_array_to_file.yy",},},
