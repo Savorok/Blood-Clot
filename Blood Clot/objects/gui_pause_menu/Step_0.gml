@@ -1,8 +1,10 @@
 /// @description Move menu
 
-var up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or mouse_wheel_up() or (gamepad_button_check_pressed(0,gp_padu));
-var down = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S")) or mouse_wheel_down() or (gamepad_button_check_pressed(0,gp_padd));
+//keyboard inputs for navigation
+up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or mouse_wheel_up() or (gamepad_button_check_pressed(0,gp_padu));
+down = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S")) or mouse_wheel_down() or (gamepad_button_check_pressed(0,gp_padd));
 
+//change menu postion
 if(mpos == 0 and up)
 {
 	mpos = 4;
@@ -35,7 +37,8 @@ if(mpos == 0 and push)
 //restart
 if(mpos == 1 and push)
 {
-	room_restart();
+	show_debug_message("HERE");
+	//room_restart();
 	Camera_Controller.alarm[2] = 1;
 }
 //options
@@ -47,7 +50,8 @@ if(mpos == 2 and push)
 //main menu
 if(mpos == 3 and push)
 {
-
+	show_debug_message("Should be here");
+	room_goto(rm_main_menu);
 }
 //exit game
 if(mpos == 4 and push)

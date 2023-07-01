@@ -1,5 +1,4 @@
 /// @description keyboard controll for menu
-show_debug_message("Mpos:"+string(mpos));
 
 //init keyboard controlls
 var up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or mouse_wheel_up() or (gamepad_button_check_pressed(0,gp_padu));
@@ -21,7 +20,7 @@ if(mpos < 0)
 {
 	mpos = 7;	
 }
-//player is using mouse input
+//player is going from keyboard to mouse mode
 if(menu_mode = 1)
 {
 	//player is using mouse input 
