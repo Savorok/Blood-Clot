@@ -1,7 +1,5 @@
 /// @description draw pause menu
 
-show_debug_message("Mpos:"+string(mpos))
-
 //draw backround
 draw_set_color(c_black);
 draw_set_alpha(.5);
@@ -79,67 +77,69 @@ draw_sprite_ext(spr_pause_exit_game,0,centre_x,centre_y+(2*button_offset),gui_sc
 	}
 	
 	//mouse controll
-	
-	//continue
-	if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-    centre_x-sprite_get_width(spr_pause_continue)/2,
-	centre_y-(2*button_offset),
-	centre_x+sprite_get_width(spr_pause_continue)/2,
-	centre_y-(2*button_offset)+sprite_get_height(spr_pause_continue)*gui_scale,
-	))
+	if(menu_mode == 0)
 	{
-		draw_sprite_ext(spr_pause_continue,1,centre_x,centre_y-(2*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-		mpos = 0;
-	}
 	
-	//restart
-	if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-    centre_x-sprite_get_width(spr_pause_restart)/2,
-	centre_y-(1*button_offset),
-	centre_x+sprite_get_width(spr_pause_restart)/2,
-	centre_y-(1*button_offset)+sprite_get_height(spr_pause_restart)*gui_scale,
-	))
-	{
-		draw_sprite_ext(spr_pause_restart,1,centre_x,centre_y-(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-		mpos = 1;
-	}
+		//continue
+		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
+	    centre_x-sprite_get_width(spr_pause_continue)/2,
+		centre_y-(2*button_offset),
+		centre_x+sprite_get_width(spr_pause_continue)/2,
+		centre_y-(2*button_offset)+sprite_get_height(spr_pause_continue)*gui_scale,
+		))
+		{
+			draw_sprite_ext(spr_pause_continue,1,centre_x,centre_y-(2*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			mpos = 0;
+		}
 	
-	//settings
-	if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-    centre_x-sprite_get_width(spr_pause_settings)/2,
-	centre_y,
-	centre_x+sprite_get_width(spr_pause_settings)/2,
-	centre_y+sprite_get_height(spr_pause_settings)*gui_scale,
-	))
-	{
-		draw_sprite_ext(spr_pause_settings,1,centre_x,centre_y,gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-		mpos = 2;
-	}
+		//restart
+		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
+	    centre_x-sprite_get_width(spr_pause_restart)/2,
+		centre_y-(1*button_offset),
+		centre_x+sprite_get_width(spr_pause_restart)/2,
+		centre_y-(1*button_offset)+sprite_get_height(spr_pause_restart)*gui_scale,
+		))
+		{
+			draw_sprite_ext(spr_pause_restart,1,centre_x,centre_y-(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			mpos = 1;
+		}
 	
-	//main menu
-	if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-    centre_x-sprite_get_width(spr_pause_main_menu)/2,
-	centre_y+(1*button_offset),
-	centre_x+sprite_get_width(spr_pause_main_menu)/2,
-	centre_y+(1*button_offset)+sprite_get_height(spr_pause_main_menu)*gui_scale,
-	))
-	{
-		draw_sprite_ext(spr_pause_main_menu,1,centre_x,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-		mpos = 3;
-	}
+		//settings
+		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
+	    centre_x-sprite_get_width(spr_pause_settings)/2,
+		centre_y,
+		centre_x+sprite_get_width(spr_pause_settings)/2,
+		centre_y+sprite_get_height(spr_pause_settings)*gui_scale,
+		))
+		{
+			draw_sprite_ext(spr_pause_settings,1,centre_x,centre_y,gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			mpos = 2;
+		}
 	
-	//exit game
-	if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-    centre_x-sprite_get_width(spr_pause_exit_game)/2,
-	centre_y+(2*button_offset),
-	centre_x+sprite_get_width(spr_pause_exit_game)/2,
-	centre_y+(2*button_offset)+sprite_get_height(spr_pause_exit_game)*gui_scale,
-	))
-	{	
-		draw_sprite_ext(spr_pause_exit_game,1,centre_x,centre_y+(2*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-		mpos = 4;
-	}
+		//main menu
+		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
+	    centre_x-sprite_get_width(spr_pause_main_menu)/2,
+		centre_y+(1*button_offset),
+		centre_x+sprite_get_width(spr_pause_main_menu)/2,
+		centre_y+(1*button_offset)+sprite_get_height(spr_pause_main_menu)*gui_scale,
+		))
+		{
+			draw_sprite_ext(spr_pause_main_menu,1,centre_x,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			mpos = 3;
+		}
 	
+		//exit game
+		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
+	    centre_x-sprite_get_width(spr_pause_exit_game)/2,
+		centre_y+(2*button_offset),
+		centre_x+sprite_get_width(spr_pause_exit_game)/2,
+		centre_y+(2*button_offset)+sprite_get_height(spr_pause_exit_game)*gui_scale,
+		))
+		{	
+			draw_sprite_ext(spr_pause_exit_game,1,centre_x,centre_y+(2*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			mpos = 4;
+		}
+	}
 	
 	
 #endregion

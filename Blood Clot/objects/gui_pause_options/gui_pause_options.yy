@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Gui",
-    "path": "folders/Objects/Gui.yy",
+    "name": "Pause menu",
+    "path": "folders/Objects/Gui/Pause menu.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -1,7 +1,7 @@
 /// @description initialise main menu
 
 mpos = 0; //current menu pos
-menu_mode = 0; // check if the user is using mouse or keyboard input 0=mouse, 1=keyboard
+menu_mode = 1; // check if the user is using mouse or keyboard input 0=mouse, 1=keyboard
 
 //variables for mouse controll
 mx = mouse_x;

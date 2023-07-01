@@ -8,7 +8,7 @@ var push = keyboard_check_released(vk_enter) or keyboard_check_released(ord("E")
 #region //switch between input modes
 
 //player is using keyboard input
-if(menu_mode = 0 and (up || down))
+if(menu_mode == 0 and (up || down))
 {
 	menu_mode = 1;
 	mx = mouse_x;
@@ -21,7 +21,7 @@ if(mpos < 0)
 	mpos = 7;	
 }
 //player is going from keyboard to mouse mode
-if(menu_mode = 1)
+if(menu_mode == 1)
 {
 	//player is using mouse input 
 	var moving = point_distance(mx,my,mouse_x,mouse_y);
@@ -67,7 +67,7 @@ if(mpos > 6 and down)
 #endregion
 
 #region //interact with menu
-if(menu_mode = 1)
+if(menu_mode == 1)
 {
 	//new game
 	if(mpos == 0 and push)
@@ -110,7 +110,7 @@ if(menu_mode = 1)
 
 #region //highlight relevent button if needed
 
-if(menu_mode = 1)
+if(menu_mode == 1)
 {
 	for(i = 0; i < array_length(menu_buttons); i++)
 	{

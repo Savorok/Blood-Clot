@@ -29,7 +29,7 @@ shaking = false;
 zoom = false;
 
 //gui
-gui_scale = 1;
+gui_scale = 2;
 
 //if player exists and no camera make one
 alarm[2] = 1;

@@ -27,7 +27,7 @@ if(mpos > 4 and down)
 }
 
 //do menu function
-var push = keyboard_check_released(vk_enter) or keyboard_check_released(ord("E")) or (gamepad_button_check_pressed(0,gp_face1)) or mouse_check_button(mb_left) or (gamepad_button_check_pressed(0,gp_start));
+var push = keyboard_check_released(vk_enter) or keyboard_check_released(ord("E")) or (gamepad_button_check_pressed(0,gp_face1)) or mouse_check_button_pressed(mb_left) or (gamepad_button_check_pressed(0,gp_start));
 
 //continue
 if(mpos == 0 and push)
@@ -37,8 +37,7 @@ if(mpos == 0 and push)
 //restart
 if(mpos == 1 and push)
 {
-	show_debug_message("HERE");
-	//room_restart();
+	room_restart();
 	Camera_Controller.alarm[2] = 1;
 }
 //options
@@ -56,7 +55,8 @@ if(mpos == 3 and push)
 //exit game
 if(mpos == 4 and push)
 {
-	game_end();
+	instance_create_layer(x,y,"Controllers",gui_quit_game);
+	instance_destroy();
 }
 
 
