@@ -9,7 +9,6 @@ if(key_pause and !paused and !level_complete and !pause_blocked)
 	instance_create_layer(x,y,"Controllers",gui_pause_menu);
 }
 
-
 //timer
 if(!paused and !level_complete)
 {

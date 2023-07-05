@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "tile_set_other",
-  "bbox_bottom": 31,
+  "bbox_bottom": 47,
   "bbox_left": 16,
   "bbox_right": 63,
   "bbox_top": 0,
