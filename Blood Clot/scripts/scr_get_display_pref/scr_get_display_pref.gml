@@ -9,7 +9,8 @@ function scr_get_display_pref()
 	//4:View Width
 	//5:View Height
 	//6:Fullscreen
-	//
+	//7:GuiScale
+	
 	prefs = [];
 	
 	//read in the file
@@ -51,10 +52,15 @@ function scr_get_display_pref()
 			prefs[4] = real(viewSize[0]);
 			prefs[5] = real(viewSize[1]);
 		}		
-		//update fullscreen
+		//get fullscreen
 		if(string_pos("Fullscreen=",options[i]) != 0)
 		{
 			prefs[6] = real(string_split(options[i],"=")[1]);
+		}
+		//get gui scale
+		if(string_pos("GuiScale=",options[i]) != 0)
+		{
+			prefs[7] = real(string_split(options[i],"=")[1]);	
 		}
 	}
 	

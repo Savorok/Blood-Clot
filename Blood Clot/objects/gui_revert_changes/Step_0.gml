@@ -39,7 +39,7 @@ if(mpos == 1 and push)
 	//save new changes to options file
 	scr_save_display_pref(Camera_Controller.cur_aspect_ratio,Camera_Controller.window_width,
 	Camera_Controller.window_height, Camera_Controller.cur_resoloution, Camera_Controller.view_width,
-	Camera_Controller.view_height, Camera_Controller.cur_fullscreen);
+	Camera_Controller.view_height, Camera_Controller.cur_fullscreen, Camera_Controller.gui_scale);
 	
 	instance_destroy();
 }
@@ -49,7 +49,6 @@ if(mpos == 0 and push)
 	//update aspect ratio
 	scr_resoloution(prev_aspect_ratio, prev_resoloution, obj_player_camera, prev_fullscreen);
 	//update gui
-	display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height);
 	centre_x = Camera_Controller.window_width/2;
 	centre_y = Camera_Controller.window_height/2;
 	//set the options back to what they where

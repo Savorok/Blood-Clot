@@ -1,10 +1,11 @@
 {
   "FolderOrderSettings": [
     {"name":"Main Menu","order":5,"path":"folders/Objects/Gui/Main Menu.yy",},
+    {"name":"Pause menu","order":6,"path":"folders/Objects/Gui/Pause menu.yy",},
     {"name":"Main Menu","order":1,"path":"folders/Sprites/Gui/Main Menu.yy",},
     {"name":"pause menu","order":5,"path":"folders/Sprites/Gui/Pause menu/pause menu.yy",},
     {"name":"quit to desktop","order":6,"path":"folders/Sprites/Gui/Pause menu/pause menu/quit to desktop.yy",},
-    {"name":"Pause menu","order":6,"path":"folders/Objects/Gui/Pause menu.yy",},
+    {"name":"settings","order":6,"path":"folders/Sprites/Gui/Pause menu/settings.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fnt_gui_18","order":4,"path":"fonts/fnt_gui_18/fnt_gui_18.yy",},
@@ -28,6 +29,7 @@
     {"name":"imguigml_config","order":5,"path":"scripts/imguigml_config/imguigml_config.yy",},
     {"name":"obj_level_editor","order":3,"path":"objects/obj_level_editor/obj_level_editor.yy",},
     {"name":"extImGuiGML","order":3,"path":"extensions/extImGuiGML/extImGuiGML.yy",},
+    {"name":"rm_load","order":4,"path":"rooms/rm_load/rm_load.yy",},
     {"name":"fnt_gui_12","order":1,"path":"fonts/fnt_gui_12/fnt_gui_12.yy",},
     {"name":"obj_plaster","order":2,"path":"objects/obj_plaster/obj_plaster.yy",},
     {"name":"shd_imgui_depth","order":1,"path":"shaders/shd_imgui_depth/shd_imgui_depth.yy",},

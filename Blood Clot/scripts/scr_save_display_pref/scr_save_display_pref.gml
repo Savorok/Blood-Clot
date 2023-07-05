@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_save_display_pref(aspectRatio, windowWidth, windowHeight, curResoloution, viewWidth, viewHeight, fullscreen)
+function scr_save_display_pref(aspectRatio, windowWidth, windowHeight, curResoloution, viewWidth, viewHeight, fullscreen, guiScale)
 {
 	var filename = "options.txt"
 	
@@ -42,6 +42,12 @@ function scr_save_display_pref(aspectRatio, windowWidth, windowHeight, curResolo
 		if(string_pos("Fullscreen=",options[i]) != 0)
 		{
 			options[i] = "Fullscreen=" + string(fullscreen);
+		}
+		
+		//update gui scale
+		if(string_pos("GuiScale=", options[i]) != 0)
+		{
+			options[i] = "GuiScale=" + string(guiScale);
 		}
 	}
 		

@@ -13,7 +13,8 @@ function scr_init_options_file(filename)
 	"Resoloution=1920x1080",
 	"CurRes=0",
 	"ViewSize=640x360",
-	"Fullscreen=0"
+	"Fullscreen=0",
+	"GuiScale=1"
 	]
 
 	//go through all the options and add them to the file
@@ -27,4 +28,5 @@ function scr_init_options_file(filename)
 	file_text_close(file);
 	
 	show_debug_message("Created options file")
+	return true;
 }

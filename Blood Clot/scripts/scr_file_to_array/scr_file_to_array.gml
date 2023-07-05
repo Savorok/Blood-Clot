@@ -5,7 +5,6 @@ function scr_file_to_array(filename)
 	var file = file_text_open_read(filename);
 	lines[0] = "";
 	
-	
 	//while there are still lines in the file put them into the array
 	var pos = 0;
 	while(!file_text_eof(file))

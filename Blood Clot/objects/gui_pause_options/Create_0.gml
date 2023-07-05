@@ -6,9 +6,9 @@ active = true;
 gui_scale = Camera_Controller.gui_scale;
 
 mpos = 0;
-option_offset_y = 35*gui_scale*3;
-bracket_offset = 5*gui_scale*3;
-arrow_offset = 20*gui_scale*3;
+option_offset_y = 35*gui_scale;
+bracket_offset = 5*gui_scale;
+arrow_offset = 20*gui_scale;
 
 
 
@@ -30,3 +30,4 @@ cur_resoloution = Camera_Controller.cur_resoloution;
 //fullscreen
 fullscreen = ["No","Yes"];
 cur_fullscreen = Camera_Controller.cur_fullscreen;
+

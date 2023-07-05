@@ -89,7 +89,9 @@ global.v_jump_towards = v_jump_t;
 #endregion
 
 dev_mode = true;
-version = "5.5.8";
+version = "5.5.9";
+Loaded = false;
+var load = false;
 
 if(dev_mode and !instance_exists(Imgui_dev_menu))
 {
@@ -102,14 +104,20 @@ if(dev_mode and !instance_exists(Imgui_dev_menu))
 //check for pref file
 var file = "options.txt";
 
-//scr_init_options_file(file)
-//scr_file_to_console(file)
-
 //if it doesnt exists add the required info
 if(!file_exists(working_directory + file))
 {
-	scr_init_options_file(file);
+	load = scr_init_options_file(file);
+}
+else
+{
+
+	show_debug_message("File Exists");		
+	Loaded = true;
 }
 
-
+if(load)
+{
+	Loaded = true;	
+}
 

@@ -1,5 +1,9 @@
 ///@description Init camera variables
 
+//macros for interacting with view via gui
+#macro mouse_gui_x device_mouse_x_to_gui(0)
+#macro mouse_gui_y device_mouse_y_to_gui(0)
+
 //get prefrences from options file
 prefs = scr_get_display_pref();
 
@@ -13,14 +17,15 @@ for(i = 0; i < array_length(prefs); i++)
 
 //view and window sizes
 window_width = prefs[1];
-window_height = prefs[2]
-view_width = prefs[4]
-view_height = prefs[5]
-
+window_height = prefs[2];
+view_width = prefs[4];
+view_height = prefs[5];
 
 cur_aspect_ratio = prefs[0];
-cur_resoloution = prefs[3]
-cur_fullscreen = prefs[6]
+cur_resoloution = prefs[3];
+cur_fullscreen = prefs[6];
+gui_scale = prefs[7];
+
 cur_active_camera = obj_menu_camera;
 
 //shaking
@@ -29,7 +34,7 @@ shaking = false;
 zoom = false;
 
 //gui
-gui_scale = 2;
+//gui_scale = 2;
 
 //if player exists and no camera make one
 alarm[2] = 1;

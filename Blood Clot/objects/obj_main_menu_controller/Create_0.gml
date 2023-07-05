@@ -33,4 +33,3 @@ for(i = 0; i < array_length(menu_buttons); i++)
 	menu_buttons[i].image_xscale = gui_scale;	
 	menu_buttons[i].image_yscale = gui_scale;
 }
-
