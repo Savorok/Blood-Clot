@@ -15,4 +15,7 @@ gui_scale = Camera_Controller.gui_scale;
 //offset for buttons
 button_offset = 40*gui_scale;
 
+//dont let pause menu be opened
+Level_Controller.pause_blocked = true;
+
 

@@ -11,6 +11,7 @@ spawn_x = 0;
 spawn_y = 0;
 
 paused = false; 
+pause_blocked = false;
 level_complete = false;
 
 //clock variables

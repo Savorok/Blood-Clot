@@ -28,3 +28,11 @@ if(mpos == 1 and push)
 {
 	game_end();
 }
+
+//close dialog with esc
+if(keyboard_check_pressed(vk_escape))
+{
+	Level_Controller.pause_blocked = false;
+	instance_create_layer(x,y,"Controllers",gui_pause_menu);
+	instance_destroy();	
+}

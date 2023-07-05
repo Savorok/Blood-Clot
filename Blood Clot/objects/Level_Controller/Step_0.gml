@@ -2,17 +2,13 @@
 //pause functionality
 key_pause = keyboard_check_pressed(vk_escape) or gamepad_button_check_pressed(0,gp_start);
 
-if(key_pause and !paused and !level_complete)
+if(key_pause and !paused and !level_complete and !pause_blocked)
 { 
 	paused = true; 
 	can_respawn = false;
 	instance_create_layer(x,y,"Controllers",gui_pause_menu);
 }
-else if(key_pause and paused)
-{ 
-	paused = false; 
-	can_respawn = true;
-}
+
 
 //timer
 if(!paused and !level_complete)

@@ -59,4 +59,8 @@ if(mpos == 4 and push)
 	instance_destroy();
 }
 
-
+if(keyboard_check_pressed(vk_escape))
+{
+	Level_Controller.paused = false; 
+	Level_Controller.can_respawn = true;
+}
