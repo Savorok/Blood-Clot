@@ -8,6 +8,7 @@
     {"name":"settings","order":6,"path":"folders/Sprites/Gui/Pause menu/settings.yy",},
     {"name":"Saw blade","order":1,"path":"folders/Sprites/Obstacles/Saw blade.yy",},
     {"name":"spikes","order":8,"path":"folders/Sprites/Obstacles/spikes.yy",},
+    {"name":"spikes","order":6,"path":"folders/Objects/Obstacles/spikes.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fnt_gui_18","order":4,"path":"fonts/fnt_gui_18/fnt_gui_18.yy",},

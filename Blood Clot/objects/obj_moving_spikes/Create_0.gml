@@ -3,12 +3,15 @@
 //init variables
 active = false;
 activating = false;
-activate_delay = 10;
-deactivate_delay = 40;
-deactivating = false;
+activate_delay = 10;	//time to wait to come up
 
-//the spikes for this object
+deactivating = false;
+deactivate_delay = 40;	//time to wait to go down
+
+//the spike object refrence
 spikes = 0;
+
+#region //get spike rotation
 
 //get rotation
 rot = image_angle
@@ -33,6 +36,8 @@ else if(rot == 90)
 {
 	spikes = instance_create_layer(x+16,y-16,"Instances",obj_spikes_left);
 }
+
+#endregion
 
 
 

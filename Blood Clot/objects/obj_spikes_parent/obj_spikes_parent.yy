@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Static spikes",
-    "path": "folders/Objects/Obstacles/Static spikes.yy",
+    "path": "folders/Objects/Obstacles/spikes/Static spikes.yy",
   },
   "parentObjectId": null,
   "persistent": false,

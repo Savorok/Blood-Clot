@@ -1,4 +1,4 @@
-/// @description delay
+/// @description delay active and deactivate
 if(active)
 {
 	active = false;	

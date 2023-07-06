@@ -4,7 +4,7 @@
   "name": "tile_set_other",
   "bbox_bottom": 47,
   "bbox_left": 16,
-  "bbox_right": 63,
+  "bbox_right": 79,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
