@@ -31,6 +31,10 @@ hold_time = 0;
 max_hold_time = 50;
 heavy_bleed_threshold = round(max_hold_time*0.7);
 
+//variables for ghosts
+actions = [];	
+step = 0;
+
 //stuck spears
 stuck_spears = 0;
 spear_pos = [];

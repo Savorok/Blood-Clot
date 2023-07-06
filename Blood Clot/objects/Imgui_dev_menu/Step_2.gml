@@ -74,6 +74,13 @@ if(imguigml_ready())
 				if(close_on_open){debug = 0;}
 			}
 			imguigml_same_line();
+			//level button
+			if(imguigml_button("Level") and !instance_exists(imgui_level))
+			{
+				instance_create_layer(0,0,"Controllers",imgui_level);
+				if(close_on_open){debug = 0;}
+			}
+			imguigml_same_line();
 			if(imguigml_button("Spawn") and !instance_exists(imgui_spawn))
 			{
 				instance_create_layer(0,0,"Controllers",imgui_spawn);

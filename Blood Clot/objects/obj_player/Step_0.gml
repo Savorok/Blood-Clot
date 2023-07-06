@@ -42,6 +42,18 @@ if(!Level_Controller.paused)
 			bleed_per_sec = 0;
 		}
 		
+		//if ghost is enabled record player movement
+		if(Level_Controller.ghost_enabled)
+		{
+			//data for ghost player
+			actions[step,0] = x; 
+			actions[step,1] = y; 
+			actions[step,2] = image_xscale;
+			actions[step,3] = image_yscale;
+			
+			step++;
+		}
+		
 	}
 	else
 	{
@@ -50,6 +62,13 @@ if(!Level_Controller.paused)
 		//stop camera shaking and zooming
 		Camera_Controller.shaking = false;
 		Camera_Controller.zoom = false;
+				
+		//give ghost data to the level controller
+		if(Level_Controller.ghost_enabled)
+		{
+			Level_Controller.ghosts[Level_Controller.ghost_num] = actions;
+			Level_Controller.ghost_num++;
+		}
 				
 		instance_destroy();	
 	}

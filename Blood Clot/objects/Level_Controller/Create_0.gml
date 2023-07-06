@@ -28,3 +28,8 @@ time_xoff = 38;
 time_yoff = 0;
 gui_xoff = 4;
 gui_yoff = 4;
+
+//ghost variables
+ghost_enabled = true;
+ghost_num = 0;
+ghosts = [];

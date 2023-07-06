@@ -89,7 +89,7 @@ global.v_jump_towards = v_jump_t;
 #endregion
 
 dev_mode = true;
-version = "5.5.9";
+version = "5.5.10";
 Loaded = false;
 var load = false;
 
