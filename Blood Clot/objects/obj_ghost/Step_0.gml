@@ -21,4 +21,9 @@ if(!Level_Controller.paused)
 		Level_Controller.alarm[3] = 1;
 		instance_destroy();
 	}
+	
+	if(!instance_exists(obj_player))
+	{
+		instance_destroy();	
+	}
 }

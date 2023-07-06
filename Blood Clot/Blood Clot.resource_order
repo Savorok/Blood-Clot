@@ -2,14 +2,14 @@
   "FolderOrderSettings": [
     {"name":"Main Menu","order":5,"path":"folders/Objects/Gui/Main Menu.yy",},
     {"name":"Pause menu","order":6,"path":"folders/Objects/Gui/Pause menu.yy",},
+    {"name":"spikes","order":6,"path":"folders/Objects/Obstacles/spikes.yy",},
+    {"name":"ghost","order":3,"path":"folders/Objects/Player/ghost.yy",},
     {"name":"Main Menu","order":1,"path":"folders/Sprites/Gui/Main Menu.yy",},
     {"name":"pause menu","order":5,"path":"folders/Sprites/Gui/Pause menu/pause menu.yy",},
     {"name":"quit to desktop","order":6,"path":"folders/Sprites/Gui/Pause menu/pause menu/quit to desktop.yy",},
     {"name":"settings","order":6,"path":"folders/Sprites/Gui/Pause menu/settings.yy",},
     {"name":"Saw blade","order":1,"path":"folders/Sprites/Obstacles/Saw blade.yy",},
     {"name":"spikes","order":8,"path":"folders/Sprites/Obstacles/spikes.yy",},
-    {"name":"spikes","order":6,"path":"folders/Objects/Obstacles/spikes.yy",},
-    {"name":"ghost","order":3,"path":"folders/Objects/Player/ghost.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fnt_gui_18","order":4,"path":"fonts/fnt_gui_18/fnt_gui_18.yy",},

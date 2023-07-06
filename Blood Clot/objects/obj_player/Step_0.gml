@@ -53,7 +53,6 @@ if(!Level_Controller.paused)
 			
 			step++;
 		}
-		
 	}
 	else
 	{
