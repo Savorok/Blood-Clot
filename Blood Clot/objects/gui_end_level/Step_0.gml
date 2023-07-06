@@ -35,7 +35,11 @@ if(mpos == 0 and push)
 //review level
 if(mpos == 1 and push)
 {
+	//spawn review camera
 	Camera_Controller.alarm[1] = 1;
+	//spawn wining ghost
+	Level_Controller.alarm[3] = 1;
+	//destroy gui
 	instance_destroy();
 }
 //exit game

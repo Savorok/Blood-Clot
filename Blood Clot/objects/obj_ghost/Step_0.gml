@@ -11,8 +11,14 @@ if(!Level_Controller.paused)
 		
 		step++;
 	}
+	else if(!Level_Controller.level_complete)
+	{
+		instance_destroy();
+	}
+	//when in review loop wining ghost
 	else
 	{
+		Level_Controller.alarm[3] = 1;
 		instance_destroy();
 	}
 }

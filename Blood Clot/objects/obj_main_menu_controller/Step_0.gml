@@ -72,7 +72,8 @@ if(menu_mode == 1)
 	//new game
 	if(mpos == 0 and push)
 	{
-	
+		Camera_Controller.alarm[2] = 1;
+		room_goto(Test_1);
 	}
 	//continue
 	if(mpos == 1 and push)
