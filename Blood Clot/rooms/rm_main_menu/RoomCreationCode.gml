@@ -1,0 +1,1 @@
+room_goto(collision_generation_test_room);

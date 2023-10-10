@@ -33,3 +33,6 @@ gui_yoff = 4;
 ghost_enabled = true;
 ghost_num = 0;
 ghosts = [];
+
+//generate level collisions
+alarm[4] = 1;
