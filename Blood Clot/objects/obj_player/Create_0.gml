@@ -9,6 +9,9 @@ holding_jump_key = false;
 invincible = false;
 no_blood_loss = false;
 
+//inf jump:
+IJ = false;
+
 //health
 cur_blood = 3000;
 max_blood = 3000;

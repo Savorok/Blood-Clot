@@ -10,7 +10,7 @@ draw_rectangle(0,0,centre_x*2,centre_y*2,false);
 	
 //draw pause menu text
 draw_set_alpha(1);
-draw_sprite_ext(spr_pause_options,image_index,centre_x,centre_y,2*(gui_scale),2*(gui_scale),image_angle,image_blend,image_alpha)
+draw_sprite_ext(spr_settings_box,image_index,centre_x,centre_y,2*(gui_scale),2*(gui_scale),image_angle,image_blend,image_alpha)
 
 //get the right font for Gui scale
 //scr_gui_set_font(gui_scale);

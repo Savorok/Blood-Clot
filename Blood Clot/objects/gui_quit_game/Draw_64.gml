@@ -10,8 +10,8 @@ draw_set_alpha(1);
 draw_sprite_ext(spr_quit_game,image_index,centre_x,centre_y,2*gui_scale,2*gui_scale,image_angle,image_blend,image_alpha);
 
 //draw options
-draw_sprite_ext(spr_quit_no,0,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
-draw_sprite_ext(spr_quit_yes,0,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+draw_sprite_ext(spr_no,0,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+draw_sprite_ext(spr_yes,0,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
 
 #region //keyboard controll
 
@@ -31,12 +31,12 @@ draw_sprite_ext(spr_quit_yes,0,centre_x+30*gui_scale,centre_y+(1*button_offset),
 		{
 			//continue
 			case 0:
-				draw_sprite_ext(spr_quit_no,1,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+				draw_sprite_ext(spr_no,1,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
 				break;
 		
 			//restart
 			case 1:
-				draw_sprite_ext(spr_quit_yes,1,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+				draw_sprite_ext(spr_yes,1,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
 				break;
 		}
 	}
@@ -64,13 +64,13 @@ draw_sprite_ext(spr_quit_yes,0,centre_x+30*gui_scale,centre_y+(1*button_offset),
 	
 		//no
 		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
-	    centre_x-sprite_get_width(spr_quit_no)-20*gui_scale,
+	    centre_x-sprite_get_width(spr_no)-20*gui_scale,
 		centre_y+(1*button_offset),
 		centre_x-20*gui_scale,
-		centre_y+(1*button_offset)+sprite_get_height(spr_quit_no)*gui_scale,
+		centre_y+(1*button_offset)+sprite_get_height(spr_no)*gui_scale,
 		))
 		{
-			draw_sprite_ext(spr_quit_no,1,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			draw_sprite_ext(spr_no,1,centre_x-20*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
 			mpos = 0;
 		}
 	
@@ -78,11 +78,11 @@ draw_sprite_ext(spr_quit_yes,0,centre_x+30*gui_scale,centre_y+(1*button_offset),
 		if(point_in_rectangle(mouse_gui_x,mouse_gui_y,
 	    centre_x+30*gui_scale,
 		centre_y+(1*button_offset),
-		centre_x+30*gui_scale+sprite_get_width(spr_quit_yes),
-		centre_y+(1*button_offset)+sprite_get_height(spr_quit_yes)*gui_scale,
+		centre_x+30*gui_scale+sprite_get_width(spr_yes),
+		centre_y+(1*button_offset)+sprite_get_height(spr_yes)*gui_scale,
 		))
 		{
-			draw_sprite_ext(spr_quit_yes,1,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
+			draw_sprite_ext(spr_yes,1,centre_x+30*gui_scale,centre_y+(1*button_offset),gui_scale,gui_scale,image_angle,image_blend,image_alpha);
 			mpos = 1;
 		}
 	}
