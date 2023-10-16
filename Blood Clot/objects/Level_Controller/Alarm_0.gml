@@ -1,5 +1,5 @@
 /// @description Spawn new player and if applicable ghosts
-if(can_respawn)
+if(can_respawn && !generating)
 {
 	//player
 	instance_create_layer(spawn_x,spawn_y,"Instances",obj_player);

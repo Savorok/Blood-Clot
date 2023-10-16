@@ -18,44 +18,59 @@ function scr_generate_collision_areas(collision_areas)
 	//the current number of rectangle we are on (start from 2 as 1 is our collision area)
 	var _rectangle_num = 1;
 	
+	//array of the rectangles
+	var rectangle_array = [[]];
+	
 	//check if there is still collidable area in the grid
 	while(getStartingCoOrd(_width,_height,rectangle_grid) != false)
 	{	
 		//show_debug_message("////////NEW RECTANGLE////////// NUM:" + string(_rectangle_num));
 		
-		temp = getStartingCoOrd(_width,_height,rectangle_grid);
-		_x = temp[0];
-		_y = temp[1];
+		var temp = getStartingCoOrd(_width,_height,rectangle_grid);
+		var _x = temp[0];
+		var _y = temp[1];
 		
 		//show_debug_message("Starting coord:" + string(_x) + " " + string(_y));
 		
-		var rect = makeRectangle(_x,_y,rectangle_grid);
-		var _x2 = rect[0]
-		var _y2 = rect[1]
+		var rect_bottom_corner = makeRectangle(_x,_y,rectangle_grid);
+		var _x2 = rect_bottom_corner[0]
+		var _y2 = rect_bottom_corner[1]
 		
 		//show_debug_message("rect co-ords:" + string(_x) + "," + string(_y) + "," + string(_x2) + "," + string(_y2));
 		
 		ds_grid_set_region(rectangle_grid,_x,_y,_x2,_y2,_rectangle_num);
+		
+		var rect = [];
+		rect[0] = _x;
+		rect[1] = _y;
+		rect[2] = _x2;
+		rect[3] = _y2;
+		
+		rectangle_array[_rectangle_num-1] = rect;
+		
 		_rectangle_num++;
 	}
 	
-		#region // Used to make Textfile to check the rectangles 
-		
-		/*
-		show_debug_message("Finished Getting cols")
-		
-		var file_name = "rectangleArray.csv"
 	
-		//create file to save array
-		var file = file_text_open_write(file_name)
-	
-		//show_debug_message(tilemap_array);
-	
-		scr_ds_grid_to_file(file_name,rectangle_grid);	
-		//
-		*/
+	#region // Used to make Textfile to check the rectangles 
+			
+	show_debug_message("Finished Getting cols")
 		
-		#endregion
+	var file_name = "rectangleArray.csv"
+	
+	//create file to save array
+	var file = file_text_open_write(file_name)
+	
+	//show_debug_message(tilemap_array);
+	
+	scr_ds_grid_to_file(file_name,rectangle_grid);	
+	
+	#endregion
+	
+	//return the rectangle array
+	return rectangle_array;
+	
+
 	
 }
 

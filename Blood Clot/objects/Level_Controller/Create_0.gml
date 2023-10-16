@@ -35,4 +35,5 @@ ghost_num = 0;
 ghosts = [];
 
 //generate level collisions
+generating = true;
 alarm[4] = 1;
