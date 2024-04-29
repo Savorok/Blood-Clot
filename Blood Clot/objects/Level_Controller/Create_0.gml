@@ -30,7 +30,7 @@ gui_xoff = 4;
 gui_yoff = 4;
 
 //ghost variables
-ghost_enabled = true;
+ghost_enabled = false;
 ghost_num = 0;
 ghosts = [];
 

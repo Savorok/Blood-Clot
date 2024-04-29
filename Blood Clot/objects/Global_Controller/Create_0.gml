@@ -111,7 +111,6 @@ if(!file_exists(working_directory + file))
 }
 else
 {
-
 	show_debug_message("File Exists");		
 	Loaded = true;
 }
