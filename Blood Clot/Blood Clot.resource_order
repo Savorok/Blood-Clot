@@ -4,6 +4,7 @@
     {"name":"Pause menu","order":6,"path":"folders/Objects/Gui/Pause menu.yy",},
     {"name":"spikes","order":6,"path":"folders/Objects/Obstacles/spikes.yy",},
     {"name":"ghost","order":3,"path":"folders/Objects/Player/ghost.yy",},
+    {"name":"Essential Autowall","order":7,"path":"folders/Scripts/Essential Autowall.yy",},
     {"name":"GenerateCollisions","order":6,"path":"folders/Scripts/GenerateCollisions.yy",},
     {"name":"Main Menu","order":1,"path":"folders/Sprites/Gui/Main Menu.yy",},
     {"name":"pause menu","order":2,"path":"folders/Sprites/Gui/Pause menu/pause menu.yy",},
@@ -15,7 +16,6 @@
     {"name":"Headers","order":1,"path":"folders/Sprites/Gui/Pause menu/settings/Headers.yy",},
     {"name":"Saw blade","order":1,"path":"folders/Sprites/Obstacles/Saw blade.yy",},
     {"name":"spikes","order":8,"path":"folders/Sprites/Obstacles/spikes.yy",},
-    {"name":"Essential Autowall","order":7,"path":"folders/Scripts/Essential Autowall.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fnt_gui_18","order":4,"path":"fonts/fnt_gui_18/fnt_gui_18.yy",},

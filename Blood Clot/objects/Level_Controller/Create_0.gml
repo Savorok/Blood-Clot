@@ -37,3 +37,6 @@ ghosts = [];
 //generate level collisions
 generating = true;
 alarm[4] = 1;
+
+//regenereate vars
+re_gen = false;

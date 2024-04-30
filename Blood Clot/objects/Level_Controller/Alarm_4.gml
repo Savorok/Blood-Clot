@@ -10,7 +10,14 @@ var rects = scr_generate_collision_areas(collision_map);
 scr_instantiate_collisions(rects);
 
 //we are finished generating the level collision so destroy the spawn object, spawn the player and player camera
-generating = false;
-instance_destroy(obj_player_spawn);
-alarm[0] = 1;
-Camera_Controller.alarm[2] =1;
+if(!re_gen)
+{
+	generating = false;
+	instance_destroy(obj_player_spawn);
+	alarm[0] = 1;
+	Camera_Controller.alarm[2] =1;
+}
+else
+{
+	re_gen = false;	
+}
