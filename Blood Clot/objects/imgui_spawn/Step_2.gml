@@ -369,12 +369,10 @@ if(click_pressed and delete_mode)
 		for(i = 0; i < array_length(blacklist); i++)
 		{
 			if(string(object_get_name(object_index)) == blacklist[i]){
-				Imgui_console.logConsole("Err","Cant Delete");
 				can_delete = false;}
 		}
 		if(can_delete)
 		{
-			Imgui_console.logConsole(,"Can Delete");
 			instance_destroy(instance);		
 		}
 	}

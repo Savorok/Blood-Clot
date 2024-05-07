@@ -98,8 +98,18 @@ if(dev_mode and !instance_exists(Imgui_dev_menu))
 	instance_create_layer(x,y,"Controllers",imgui);
 	instance_create_layer(x,y,"Controllers",Imgui_dev_menu);
 	instance_create_layer(x,y,"Controllers",Imgui_level_editor);
-	instance_create_layer(x,y,"Controllers",Imgui_console)
 } 
+
+#region init rt-shell
+
+if(dev_mode and !instance_exists(obj_shell))
+{
+	instance_create_layer(x,y,"Controllers",obj_shell);	
+}
+
+#endregion
+
+#region prefrences 
 
 //check for pref file
 var file = "options.txt";
@@ -120,3 +130,4 @@ if(load)
 	Loaded = true;	
 }
 
+#endregion
