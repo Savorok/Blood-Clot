@@ -24,3 +24,18 @@ function meta_goto()
 		deferred: false
 	}
 }
+
+function meta_fullscreen()
+{
+	return
+	{
+		description: "Change the fullscreen state of the window.",
+		arguments: ["Fullscreen state"],
+		suggestions: [["true","false"]],
+		argumentDescriptions: ["The state to set the windows fullscreen."],
+		hidden: false,
+		deferred: false
+	}
+}
+
+

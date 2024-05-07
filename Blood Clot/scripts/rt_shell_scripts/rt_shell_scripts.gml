@@ -20,3 +20,33 @@ function sh_goto(args)
 		return "The specified room '" + _room_name + "' Does not exist."
 	}	
 }
+
+//set fullscreen
+function sh_fullscreen(args)
+{
+	_cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
+	_cur_resoloution = Camera_Controller.cur_resoloution;
+	_cur_camera = Camera_Controller.cur_active_camera;
+	_cur_fullscreen = Camera_Controller.cur_fullscreen;
+	
+	if(args[1] == "true" or args[1] == "t")
+	{
+		_cur_fullscreen = true;
+	}
+	else if(args[1] == "false" or args[1] == "f")
+	{
+		_cur_fullscreen = false;
+	}
+	else
+	{
+		return "Invalid argument!"	
+	}
+	
+	scr_resoloution(_cur_aspect_ratio,_cur_resoloution,_cur_camera,_cur_fullscreen);
+}
+
+function sh_quit(args)
+{
+	game_end();	
+}
+	
