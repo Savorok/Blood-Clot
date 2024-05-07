@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings": [
+    {"name":"rt-shell","order":1,"path":"folders/Extensions/rt-shell.yy",},
     {"name":"Main Menu","order":5,"path":"folders/Objects/Gui/Main Menu.yy",},
     {"name":"Pause menu","order":6,"path":"folders/Objects/Gui/Pause menu.yy",},
     {"name":"spikes","order":6,"path":"folders/Objects/Obstacles/spikes.yy",},
@@ -16,7 +17,6 @@
     {"name":"Headers","order":1,"path":"folders/Sprites/Gui/Pause menu/settings/Headers.yy",},
     {"name":"Saw blade","order":1,"path":"folders/Sprites/Obstacles/Saw blade.yy",},
     {"name":"spikes","order":8,"path":"folders/Sprites/Obstacles/spikes.yy",},
-    {"name":"rt-shell","order":1,"path":"folders/Extensions/rt-shell.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"fnt_gui_18","order":4,"path":"fonts/fnt_gui_18/fnt_gui_18.yy",},
@@ -113,6 +113,7 @@
     {"name":"Test_8","order":8,"path":"rooms/Test_8/Test_8.yy",},
     {"name":"scr_gui_set_font","order":5,"path":"scripts/scr_gui_set_font/scr_gui_set_font.yy",},
     {"name":"EA_Setters","order":4,"path":"scripts/EA_Setters/EA_Setters.yy",},
+    {"name":"rt_shell_meta","order":3,"path":"scripts/rt_shell_meta/rt_shell_meta.yy",},
     {"name":"spr_spikes_down","order":1,"path":"sprites/spr_spikes_down/spr_spikes_down.yy",},
     {"name":"imgui_level","order":4,"path":"objects/imgui_level/imgui_level.yy",},
     {"name":"imguigml_wrapper","order":3,"path":"scripts/imguigml_wrapper/imguigml_wrapper.yy",},
