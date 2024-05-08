@@ -21,32 +21,40 @@ function sh_goto(args)
 	}	
 }
 
-//set fullscreen
-function sh_fullscreen(args)
-{
-	_cur_aspect_ratio = Camera_Controller.cur_aspect_ratio;
-	_cur_resoloution = Camera_Controller.cur_resoloution;
-	_cur_camera = Camera_Controller.cur_active_camera;
-	_cur_fullscreen = Camera_Controller.cur_fullscreen;
-	
-	if(args[1] == "true" or args[1] == "t")
-	{
-		_cur_fullscreen = true;
-	}
-	else if(args[1] == "false" or args[1] == "f")
-	{
-		_cur_fullscreen = false;
-	}
-	else
-	{
-		return "Invalid argument!"	
-	}
-	
-	scr_resoloution(_cur_aspect_ratio,_cur_resoloution,_cur_camera,_cur_fullscreen);
-}
-
 function sh_quit(args)
 {
 	game_end();	
 }
 	
+#region resolution
+
+function sh_set_resolution(args)
+{
+	var _window_width = args[1];
+	var _window_height = args[2];
+	
+	scr_set_resolution(_window_width,_window_height);
+}
+
+function sh_set_aspect_ratio(args)
+{
+	var _aspect_ratio = args[1];
+	scr_set_aspect_ratio(_aspect_ratio);
+}
+
+function sh_fullscreen(args)
+{
+	//toggle fullscreen if no argument is given
+	if(array_length(args) == 1)
+	{
+		var _value = !Camera_Controller.cur_fullscreen
+		scr_set_fullscreen(!Camera_Controller.cur_fullscreen);
+	}
+	else
+	{
+		var _value = args[1];
+		scr_set_fullscreen(_value);	
+	}
+}
+
+#endregion

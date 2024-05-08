@@ -11,59 +11,59 @@ function scr_get_display_pref()
 	//6:Fullscreen
 	//7:GuiScale
 	
-	prefs = [];
+	var _prefs = [];
 	
 	//read in the file
-	options = scr_file_to_array("options.txt");
+	var _options = scr_file_to_array("options.txt");
 	
 	//get the prefrences
-	for(i = 0; i <  array_length(options); i++)
+	for(i = 0; i <  array_length(_options); i++)
 	{
 		//update aspect ratio
-		if(string_pos("AspectRatio=",options[i]) != 0)
+		if(string_pos("AspectRatio=",_options[i]) != 0)
 		{
-			var aspectRatio = string_split(options[i],"=");			
-			prefs[0] = real(aspectRatio[1])
+			var _aspectRatio = string_split(_options[i],"=");			
+			_prefs[0] = real(_aspectRatio[1])
 		}
 		
 		//Window Width and Height
-		if(string_pos("Resoloution=",options[i]) != 0)
+		if(string_pos("Resoloution=",_options[i]) != 0)
 		{	
-			var resoloutions = string_split(options[i],"=");	
-			var resoloution = string_split(resoloutions[1],"x");
+			var _resoloutions = string_split(_options[i],"=");	
+			var _resoloution = string_split(_resoloutions[1],"x");
 			
-			prefs[1] = real(resoloution[0]);
-			prefs[2] = real(resoloution[1]);
+			_prefs[1] = real(_resoloution[0]);
+			_prefs[2] = real(_resoloution[1]);
 		}
 		
 		//Current resoloution
-		if(string_pos("CurRes=",options[i]) != 0)
+		if(string_pos("CurRes=",_options[i]) != 0)
 		{	
-			prefs[3] = real(string_split(options[i],"=")[1]);		
+			_prefs[3] = real(string_split(_options[i],"=")[1]);		
 		}
 		
 		
 		//View Width and Height
-		if(string_pos("ViewSize=",options[i]) != 0)
+		if(string_pos("ViewSize=",_options[i]) != 0)
 		{	
-			var viewSizes = string_split(options[i],"=")[1];
-			var viewSize = string_split(viewSizes,"x");
+			var _viewSizes = string_split(_options[i],"=")[1];
+			var _viewSize = string_split(_viewSizes,"x");
 			
-			prefs[4] = real(viewSize[0]);
-			prefs[5] = real(viewSize[1]);
+			_prefs[4] = real(_viewSize[0]);
+			_prefs[5] = real(_viewSize[1]);
 		}		
 		//get fullscreen
-		if(string_pos("Fullscreen=",options[i]) != 0)
+		if(string_pos("Fullscreen=",_options[i]) != 0)
 		{
-			prefs[6] = real(string_split(options[i],"=")[1]);
+			_prefs[6] = real(string_split(_options[i],"=")[1]);
 		}
 		//get gui scale
-		if(string_pos("GuiScale=",options[i]) != 0)
+		if(string_pos("GuiScale=",_options[i]) != 0)
 		{
-			prefs[7] = real(string_split(options[i],"=")[1]);	
+			_prefs[7] = real(string_split(_options[i],"=")[1]);	
 		}
 	}
 	
 	//return the prefrences
-	return prefs;
+	return _prefs;
 }

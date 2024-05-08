@@ -2,19 +2,20 @@
 function scr_file_to_array(filename)
 {
 	//open the file and init the array of lines
-	var file = file_text_open_read(filename);
+	var _file = file_text_open_read(filename);
 	lines[0] = "";
 	
+	
 	//while there are still lines in the file put them into the array
-	var pos = 0;
-	while(!file_text_eof(file))
+	var _pos = 0;
+	while(!file_text_eof(_file))
 	{
-		lines[pos++] = file_text_read_string(file);
-		file_text_readln(file);
+		lines[_pos++] = file_text_read_string(_file);
+		file_text_readln(_file);
 	}
 	
 	//close the file and return the contents
-	file_text_close(file);
+	file_text_close(_file);
 	
 	return lines;
 }
