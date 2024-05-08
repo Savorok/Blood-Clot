@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_resoloution",
+  "name": "scr_resoloution_OLD",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Resolution",
+    "path": "folders/Scripts/Resolution.yy",
   },
 }

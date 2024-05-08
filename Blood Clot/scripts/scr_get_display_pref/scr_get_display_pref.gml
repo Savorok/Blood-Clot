@@ -5,11 +5,8 @@ function scr_get_display_pref()
 	//0:Aspect Ratio
 	//1:Window Width
 	//2:Window Height
-	//3:CurResoloution
-	//4:View Width
-	//5:View Height
-	//6:Fullscreen
-	//7:GuiScale
+	//3:Fullscreen
+	//4:GuiScale
 	
 	var _prefs = [];
 	
@@ -23,7 +20,7 @@ function scr_get_display_pref()
 		if(string_pos("AspectRatio=",_options[i]) != 0)
 		{
 			var _aspectRatio = string_split(_options[i],"=");			
-			_prefs[0] = real(_aspectRatio[1])
+			_prefs[0] = _aspectRatio[1]
 		}
 		
 		//Window Width and Height
@@ -35,32 +32,17 @@ function scr_get_display_pref()
 			_prefs[1] = real(_resoloution[0]);
 			_prefs[2] = real(_resoloution[1]);
 		}
-		
-		//Current resoloution
-		if(string_pos("CurRes=",_options[i]) != 0)
-		{	
-			_prefs[3] = real(string_split(_options[i],"=")[1]);		
-		}
-		
-		
-		//View Width and Height
-		if(string_pos("ViewSize=",_options[i]) != 0)
-		{	
-			var _viewSizes = string_split(_options[i],"=")[1];
-			var _viewSize = string_split(_viewSizes,"x");
 			
-			_prefs[4] = real(_viewSize[0]);
-			_prefs[5] = real(_viewSize[1]);
-		}		
 		//get fullscreen
 		if(string_pos("Fullscreen=",_options[i]) != 0)
 		{
-			_prefs[6] = real(string_split(_options[i],"=")[1]);
+			_prefs[3] = real(string_split(_options[i],"=")[1]);
 		}
+		
 		//get gui scale
 		if(string_pos("GuiScale=",_options[i]) != 0)
 		{
-			_prefs[7] = real(string_split(_options[i],"=")[1]);	
+			_prefs[4] = real(string_split(_options[i],"=")[1]);	
 		}
 	}
 	

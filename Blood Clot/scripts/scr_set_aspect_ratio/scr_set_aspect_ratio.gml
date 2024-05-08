@@ -1,25 +1,9 @@
 /// Set the view size of the camera (Aspect Ratio) to the given ratio
-function scr_set_aspect_ratio(_aspect_ratio)
+function scr_set_aspect_ratio(_aspect_ratio_string)
 {
-	var _view_width;
-	var _view_height;
-	
-	//get the required view size given an aspect ratio
-	switch(_aspect_ratio)
-	{
-		case "4:3":
-			_view_width = 640;
-			_view_height = 480;
-			break;
-		case "16:9":
-			_view_width = 640;
-			_view_height = 360;
-			break;
-		case "43:18":
-			_view_width = 1075;
-			_view_height = 450;
-			break;
-	}
+	var _aspect_ratio = scr_aspect_ratio_to_view_size(_aspect_ratio_string);
+	var _view_width = _aspect_ratio[0];
+	var _view_height = _aspect_ratio[1];
 	
 	var _cur_camera = Camera_Controller.cur_active_camera;
 	

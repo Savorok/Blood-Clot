@@ -18,13 +18,17 @@ for(i = 0; i < array_length(prefs); i++)
 //view and window sizes
 window_width = prefs[1];
 window_height = prefs[2];
-view_width = prefs[4];
-view_height = prefs[5];
 
-cur_aspect_ratio = prefs[0];
-cur_resoloution = prefs[3];
-cur_fullscreen = prefs[6];
-gui_scale = prefs[7];
+//convert aspect ratio string to view size
+var _aspect_ratio = scr_aspect_ratio_to_view_size(prefs[0])
+
+view_width = _aspect_ratio[0];
+view_height = _aspect_ratio[1];
+
+//cur_aspect_ratio = prefs[0];
+//cur_resoloution = prefs[3];
+cur_fullscreen = prefs[3];
+gui_scale = prefs[4];
 
 cur_active_camera = obj_menu_camera;
 

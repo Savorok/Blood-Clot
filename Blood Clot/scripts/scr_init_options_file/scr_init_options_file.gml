@@ -9,10 +9,8 @@ function scr_init_options_file(filename)
 	"///// Dev Options /////",
 	"DevMode=True",
 	"///// Display Options /////",
-	"AspectRatio=1",
+	"AspectRatio=16:9",
 	"Resoloution=1920x1080",
-	"CurRes=0",
-	"ViewSize=640x360",
 	"Fullscreen=0",
 	"GuiScale=1"
 	]
