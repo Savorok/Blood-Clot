@@ -3,7 +3,7 @@
 //pause functionality
 var key_pause = keyboard_check_pressed(vk_escape) or gamepad_button_check_pressed(0,gp_start);
 
-if(key_pause and !paused and !level_complete and !pause_blocked)
+if(key_pause and !paused and !level_complete and !pause_blocked and !shell_open)
 { 
 	paused = true; 
 	can_respawn = false;

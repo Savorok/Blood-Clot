@@ -79,6 +79,16 @@ function open() {
 	if (!is_undefined(openFunction)) {
 		openFunction();
 	}
+	
+	//disable input for the character while the shell is open
+	Level_Controller.accept_input = false;
+	Level_Controller.shell_open = true;
+	
+	//stop the players current movement 
+	if(instance_exists(obj_player))
+	{
+		obj_player.h_speed = 0;	
+	}
 }
 
 /// Closes the shell
@@ -98,6 +108,10 @@ function close() {
 	if (saveHistory) {
 		self._save_history();
 	}
+	
+	//enable input for the character after closing
+	Level_Controller.accept_input = true;
+	Level_Controller.shell_open = false;
 }
 
 /// Closes autocomplete

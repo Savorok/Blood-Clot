@@ -10,8 +10,6 @@ option_offset_y = 35*gui_scale;
 bracket_offset = 5*gui_scale;
 arrow_offset = 20*gui_scale;
 
-
-
 display_set_gui_size(Camera_Controller.window_width,Camera_Controller.window_height)
 
 //aspect ratio

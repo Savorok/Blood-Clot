@@ -2,14 +2,15 @@ if(!Level_Controller.paused)
 {
 	if(!dead and !Level_Controller.free_cam)
 	{
+		
 		//get the players state and handle gravity
 		scr_player_state();
-		//calculate player movement
-		scr_calculate_player_movement();
+		//calculate player movement (get input)
+		if(Level_Controller.accept_input) {scr_calculate_player_movement()};
 		//check for collisions and move
 		scr_collision_check_and_move();							
 		//player action 
-		scr_player_action();
+		if(Level_Controller.accept_input) {scr_player_action()};
 		//scale player
 		scr_player_scale();
 		//manage alpha

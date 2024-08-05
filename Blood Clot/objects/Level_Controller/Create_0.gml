@@ -14,6 +14,10 @@ paused = false;
 pause_blocked = false;
 level_complete = false;
 
+//shell variables
+shell_open = false;
+accept_input = true;
+
 //clock variables
 seconds = 0;
 minutes = 0;
