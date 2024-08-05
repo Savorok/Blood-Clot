@@ -58,3 +58,47 @@ function sh_fullscreen(args)
 }
 
 #endregion
+
+#region build mode
+
+function sh_build_mode(args)
+{
+	var _build_state = args[1];
+	
+	try
+	{
+		switch(_build_state)
+		{
+			case true:
+				if(!instance_exists(LevelEditor_Controller))
+				{
+					instance_create_depth(x,y,-1000,LevelEditor_Controller);	
+				}
+				else
+				{
+					return "Already in build mode";	
+				}
+				
+				break;
+				
+			case false:
+				if(instance_exists(LevelEditor_Controller))
+				{
+					instance_destroy(LevelEditor_Controller);
+				}
+				else
+				{
+					return "Build mode not active";	
+				}
+			
+				break;
+		}
+	}
+	catch(_exception)
+	{
+		return "Not a valid state of build mode";	
+	}
+	
+}
+
+#endregion

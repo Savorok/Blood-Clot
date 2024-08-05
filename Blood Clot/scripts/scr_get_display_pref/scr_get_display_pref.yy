@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_get_display_pref",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Options File",
-    "path": "folders/Scripts/Options File.yy",
+  "$GMScript":"v1",
+  "%Name":"scr_get_display_pref",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_get_display_pref",
+  "parent":{
+    "name":"Options File",
+    "path":"folders/Scripts/Options File.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

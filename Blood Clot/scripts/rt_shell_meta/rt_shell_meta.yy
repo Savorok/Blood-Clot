@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "rt_shell_meta",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "rt-shell",
-    "path": "folders/Extensions/rt-shell.yy",
+  "$GMScript":"v1",
+  "%Name":"rt_shell_meta",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"rt_shell_meta",
+  "parent":{
+    "name":"rt-shell",
+    "path":"folders/Extensions/rt-shell.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

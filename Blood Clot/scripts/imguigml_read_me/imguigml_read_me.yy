@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "imguigml_read_me",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/Extensions/ImGuiGML/Scripts.yy",
+  "$GMScript":"v1",
+  "%Name":"imguigml_read_me",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"imguigml_read_me",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Extensions/ImGuiGML/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

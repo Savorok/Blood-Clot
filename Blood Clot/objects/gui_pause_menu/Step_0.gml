@@ -61,6 +61,6 @@ if(mpos == 4 and push)
 
 if(keyboard_check_pressed(vk_escape))
 {
-	Level_Controller.paused = false; 
-	Level_Controller.can_respawn = true;
+	//Level_Controller.paused = false; 
+	//Level_Controller.can_respawn = true;
 }

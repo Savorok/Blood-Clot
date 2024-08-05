@@ -5,8 +5,8 @@ if(!level_complete)
 	//draw on the player instance level
 	depth = -600
 	
-	var xx = view_get_xport(view_camera[0]);//x pot
-	var yy = view_get_yport(view_camera[0]);//y pot
+	var xx = view_get_xport(view_camera[0]);//x port
+	var yy = view_get_yport(view_camera[0]);//y port
 
 	draw_set_font(fnt_gui_12);
 	draw_set_color(c_white);//draw in black

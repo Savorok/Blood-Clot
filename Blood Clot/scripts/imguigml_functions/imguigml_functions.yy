@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "imguigml_functions",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "extension",
-    "path": "folders/Extensions/ImGuiGML/Scripts/extension.yy",
+  "$GMScript":"v1",
+  "%Name":"imguigml_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"imguigml_functions",
+  "parent":{
+    "name":"extension",
+    "path":"folders/Extensions/ImGuiGML/Scripts/extension.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

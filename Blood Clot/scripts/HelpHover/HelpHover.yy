@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "HelpHover",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "scripts",
-    "path": "folders/Objects/Debug/scripts.yy",
+  "$GMScript":"v1",
+  "%Name":"HelpHover",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HelpHover",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/Objects/Debug/scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
