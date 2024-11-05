@@ -290,8 +290,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_load","path":"rooms/rm_load/rm_load.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Test_1","path":"rooms/Test_1/Test_1.yy",},},
     {"roomId":{"name":"Test_2","path":"rooms/Test_2/Test_2.yy",},},
     {"roomId":{"name":"Test_3","path":"rooms/Test_3/Test_3.yy",},},

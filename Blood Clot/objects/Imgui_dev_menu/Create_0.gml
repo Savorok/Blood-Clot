@@ -5,6 +5,7 @@ menu_height = 480;
 scale = 2;
 
 debug = false;
+build_mode = false;
 show_debug_masks = false;
 
 close_on_open = true;

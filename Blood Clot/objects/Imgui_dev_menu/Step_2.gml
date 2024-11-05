@@ -54,8 +54,19 @@ if(imguigml_ready())
 			{			
 				show_debug_masks = ckbox_show_debug_masks[1];	
 			}
-				
+			imguigml_same_line(); 
 			
+			imguigml_text("Build Mode:");
+			imguigml_push_item_width(32);
+			imguigml_pop_item_width();
+			imguigml_same_line(); 
+			var ckbox_build_mode = imguigml_checkbox("##build_mode", build_mode);
+			if(ckbox_build_mode[0])
+			{			
+				build_mode = ckbox_build_mode[1];	
+				Global_Controller.build_mode = ckbox_build_mode[1];
+			}
+				
 			#endregion
 		
 			imguigml_separator();

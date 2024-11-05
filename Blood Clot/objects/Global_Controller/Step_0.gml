@@ -45,3 +45,11 @@ if(keyboard_check(ord("F")))
 	//game_end();	
 }
 
+if(build_mode and !instance_exists(LevelEditor_Controller))
+{
+	instance_create_depth(0,0,-100,LevelEditor_Controller);	
+}
+else if(!build_mode and instance_exists(LevelEditor_Controller))
+{
+	instance_destroy(LevelEditor_Controller);	
+}
