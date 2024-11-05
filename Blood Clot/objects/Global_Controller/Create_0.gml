@@ -90,7 +90,7 @@ global.v_jump_towards = v_jump_t;
 
 dev_mode = true;
 build_mode = false;
-version = "5.6.12";
+version = "5.6.13";
 Loaded = false;
 var load = false;
 
